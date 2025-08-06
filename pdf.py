@@ -5,7 +5,7 @@ import os  # Added for handling file paths
 from datetime import date  # Added for getting the current date
 
 # --- Configuration ---
-pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (9).pdf"
+pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (10).pdf"
 excluded_domains = ['@squareboat.com', '@hudle.in']
 emails = set()
 
