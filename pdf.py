@@ -1,25 +1,18 @@
 import re
 import csv
 import pdfplumber
-import os  # Added for handling file paths
-from datetime import date  # Added for getting the current date
+import os
+from datetime import date
 
 # --- Configuration ---
-pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (10).pdf"
-excluded_domains = ['@squareboat.com', '@hudle.in']
+pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Bangalore_Chennai (17).pdf"
+excluded_domains = ['@squareboat.com', '@hudle.in','@infosys.com']
 emails = set()
 
 # --- Generate Dynamic CSV Filename ---
-# 1. Get just the filename from the path (e.g., "NCR_Noida_Delhi_Gurgaon (7).pdf")
 base_filename = os.path.basename(pdf_path)
-
-# 2. Get the first word of the filename before the first underscore or space
 first_word = re.split(r'[_ ]', base_filename)[0]
-
-# 3. Get today's date in YYYY-MM-DD format
 today_date_str = date.today().strftime("%Y-%m-%d")
-
-# 4. Combine them to create the final CSV filename
 output_csv_name = f"{first_word}_{today_date_str}.csv"
 
 # --- PDF Processing ---
@@ -37,7 +30,6 @@ with pdfplumber.open(pdf_path) as pdf:
                     emails.add(email_lower)
 
 # --- Write to CSV ---
-# Use the dynamically generated filename here instead of a hardcoded name
 with open(output_csv_name, "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["Email"])
@@ -45,3 +37,10 @@ with open(output_csv_name, "w", newline="") as f:
         writer.writerow([email])
 
 print(f"✅ Successfully extracted {len(emails)} emails and saved to '{output_csv_name}'")
+
+# --- Delete the PDF file ---
+try:
+    os.remove(pdf_path)
+    print(f"🗑️ Deleted PDF file: '{pdf_path}'")
+except Exception as e:
+    print(f"⚠️ Could not delete PDF file: {e}")
