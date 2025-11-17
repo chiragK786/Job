@@ -5,7 +5,7 @@ import os
 from datetime import date
 
 # --- Configuration ---
-pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Bangalore_Chennai (17).pdf"
+pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/TestingJobs_FullList (2).pdf"
 excluded_domains = ['@squareboat.com', '@hudle.in','@infosys.com']
 emails = set()
 
