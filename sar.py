@@ -27,7 +27,7 @@ from typing import Set
 
 # ---------------------- CONFIGURATION ----------------------
 # Input PDF (set your path)
-PDF_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (29).pdf"
+PDF_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (32).pdf"
 
 # Resume attachment (set your path)
 ATTACHMENT_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/SARITA KUMARI CV1.pdf"
