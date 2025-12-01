@@ -8,7 +8,7 @@ from email.message import EmailMessage
 import mimetypes
 
 # --- Configuration ---
-pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (26).pdf"
+pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (37).pdf"
 excluded_domains = ['@squareboat.com', '@hudle.in','@infosys.com','@s3staff.com']
 emails = set()
 
@@ -51,7 +51,7 @@ except Exception as e:
 # --- Send the CSV as an Email Attachment ---
 # Change these to your credentials and recipient  # Use Gmail App Password (not your regular password)
 EMAIL_ADDRESS = 'chiragkhanduja786@gmail.com'
-EMAIL_PASSWORD = 'ibbe sacy xfxu olfe'
+EMAIL_PASSWORD = 'xshh zjbn ckjg yryl'
 RECIPIENT_EMAIL = 'priyashuklasays@gmail.com'
 
 subject = "HR email"

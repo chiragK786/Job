@@ -8,7 +8,7 @@ from email.message import EmailMessage
 import mimetypes
 
 # --- Configuration ---
-pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/TestingJobs_FullList (5).pdf"
+pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/TestingJobs_FullList (6).pdf"
 excluded_domains = ['@squareboat.com', '@hudle.in','@infosys.com']
 emails = set()
 
