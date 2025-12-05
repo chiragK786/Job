@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-"""
-send_job_applications.py
-
-Simple script per your request:
-- Extract emails from a PDF (excluding configured domains),
-- Save extracted emails to a timestamped CSV,
-- Send plain+HTML email (HTML is bold+italic) with resume attached,
-- After attempting sends, delete both the original PDF and the generated CSV.
-
-Important:
-- Credentials are embedded because you asked; hard-coding is insecure.
-- Script will NOT delete files if SMTP login fails or if no emails are found.
-"""
 
 import re
 import csv
@@ -25,232 +12,237 @@ import smtplib
 from email.message import EmailMessage
 from typing import Set
 
-# ---------------------- CONFIGURATION ----------------------
-# Input PDF (set your path)
-PDF_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (34).pdf"
+# ---------------------- CONFIG ----------------------
 
-# Resume attachment (set your path)
-ATTACHMENT_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/SARITA KUMARI CV1.pdf"
+PDF_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (45).pdf"
+ATTACHMENT_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/ChetnaBansal_Resume_.pdf"
 
-# Exclusions
-EXCLUDED_DOMAINS = ['@squareboat.com']   # case-insensitive
+EXCLUDED_DOMAINS = ["@squareboat.com"]
 ALWAYS_EXCLUDE = "info@jobcurator.in"
 
-# EMAIL CREDENTIALS (hard-coded as requested). Gmail app-password often displayed with spaces;
-# we strip spaces automatically below.
 EMAIL_ADDRESS = "chetnabansal.rohini@gmail.com"
 EMAIL_PASSWORD = "kmbm oseh vajy jkhe"
 
-# Email subject and bodies (includes the "Skills & Tools" section you asked for)
-EMAIL_SUBJECT = "[Job Application] Application for Senior QA Engineer Role"
+# DEFAULT = plain
+EMAIL_MODE = "html"   # change to "html" anytime
 
-PLAIN_BODY = """Dear Hiring Team,
+EMAIL_SUBJECT = "Your perfect candidate for content marketing is here"
 
-I came across that your team is hiring for a QA Engineer role. I would like to express my interest in the same. Please find my profile details below:
+# File that stores already sent emails
+SENT_FILE = "chetna_mail_sent.txt"
 
-• Current Role: Manual & Automation Test Engineer
-• Total Experience: 8 years
-• Relevant Experience in QA: 5+ years
-• Current Location: New Delhi
-• Notice Period: Immediate Joiner
+PLAIN_BODY = """Hola,
 
-Skills & Tools:
+I am writing because I am actively looking for my next opportunity to create impactful and conversion-focused content in the tech space, and I was curious if your team is currently hiring for a content or copywriting role.
 
-Manual Testing, Functional Testing, Regression Testing
+If so, here is a quick snapshot of what I'd bring:
 
-Automation Testing using Selenium WebDriver with Java
+I’m Chetna, a technical content writer with 1 year 10 months of experience specifically in B2B SaaS and software development. I specialize in simplifying complex tech topics for business audiences and crafting copy that drives action.
 
-Test Frameworks: TestNG, Maven, Page Object Model (POM)
+My portfolio is enclosed in the attachment that showcases samples of how I turn technical details into compelling narratives.
 
-API Testing using Postman & Rest Assured 
+Are you open to a brief conversation to explore if there is a potential fit? I’d be grateful for the opportunity.
 
-Bug Tracking & Collaboration Tools: Jira, Confluence
-
-Mobile Testing using Android Studio & BrowserStack
-
-Interception & debugging tools: Charles Proxy
-
-Database: MySQL 
-
-Certifications: Manual & Automation Testing (Selenium with Java)
-
-Attached is my updated resume for your review.
-Please consider my profile for relevant openings and do let me know if any more details are required.
-
-Thanks & Regards,
-Sarita Kumari
-7200979238
+Looking forward,
+Chetna
 """
 
 HTML_BODY = """<html>
   <body>
-    <strong><em>
-      <p>Dear Hiring Team,</p>
 
-      <p>I came across that your team is hiring for a QA Engineer role. I would like to express my interest in the same. Please find my profile details below:</p>
+    <p>Hola,</p>
 
-      <ul>
-        <li>Current Role: Manual &amp; Automation Test Engineer</li>
-        <li>Total Experience: 8 years</li>
-        <li>Relevant Experience in QA: 5+ years</li>
-        <li>Current Location: New Delhi</li>
-        <li>Notice Period: Immediate Joiner</li>
-      </ul>
+    <p>
+      I am writing because I am actively looking for my next opportunity to create 
+      impactful and <b>conversion-focused content</b> in the tech space, and I was curious 
+      if your team is currently hiring for a content or <b>copywriting</b> role.
+    </p>
 
-      <p><strong>Skills &amp; Tools:</strong></p>
-      <ul>
-        <li>Manual Testing, Functional Testing, Regression Testing</li>
-        <li>Automation Testing using Selenium WebDriver with Java</li>
-        <li>Test Frameworks: TestNG, Maven, Page Object Model (POM)</li>
-        <li>API Testing using Postman &amp; Rest Assured</li>
-        <li>Bug Tracking &amp; Collaboration Tools: Jira, Confluence</li>
-        <li>Mobile Testing using Android Studio &amp; BrowserStack</li>
-        <li>Interception &amp; debugging tools: Charles Proxy</li>
-        <li>Database: MySQL</li>
-        <li>Certifications: Manual &amp; Automation Testing (Selenium with Java)</li>
-      </ul>
+    <p>If so, here is a quick snapshot of what I'd bring:</p>
 
-      <p>Attached is my updated resume for your review.<br>
-      Please consider my profile for relevant openings and do let me know if any more details are required.</p>
+    <p>
+      I’m Chetna, a <b>technical content writer</b> with 1 year 10 months of experience 
+      specifically in <b>B2B SaaS</b> and <b>software development</b>.  
+      I specialize in <b>simplifying complex tech topics</b> for <b>business audiences</b> 
+      and crafting copy that drives action.
+    </p>
 
-      <p>Thanks &amp; Regards,<br/>Sarita Kumari<br/>7200979238</p>
-    </em></strong>
+    <p>
+      My portfolio is enclosed in the attachment that showcases samples of how I turn 
+      technical details into <b>compelling narratives</b>.
+    </p>
+
+    <p>
+      Are you open to a brief conversation to explore if there is a potential fit?  
+      I’d be grateful for the opportunity.
+    </p>
+
+    <p>Looking forward,<br>Chetna</p>
+
   </body>
 </html>
 """
 
-# Rate limit between emails (seconds)
 SECONDS_BETWEEN_EMAILS = 1.0
-# -----------------------------------------------------------
 
-EMAIL_REGEX = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,7}\b')
+EMAIL_REGEX = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,7}\b")
 
+
+# ---------------------- HELPERS ----------------------
 
 def get_output_csv_name(pdf_path: str) -> str:
     base = os.path.basename(pdf_path)
-    first_word = re.split(r'[_ ]', base)[0]
+    first_word = re.split(r"[_ ]", base)[0]
     return f"{first_word}_{date.today().isoformat()}.csv"
 
 
 def extract_emails_from_pdf(pdf_path: str) -> Set[str]:
-    emails: Set[str] = set()
-    try:
-        with pdfplumber.open(pdf_path) as pdf:
-            for page in pdf.pages:
-                text = page.extract_text()
-                if not text:
+    emails = set()
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            text = page.extract_text()
+            if not text:
+                continue
+            for m in EMAIL_REGEX.findall(text):
+                e = m.strip().lower()
+                if e == ALWAYS_EXCLUDE:
                     continue
-                for m in EMAIL_REGEX.findall(text):
-                    e = m.strip().lower()
-                    if e == ALWAYS_EXCLUDE:
-                        continue
-                    if any(e.endswith(dom.lower()) for dom in EXCLUDED_DOMAINS):
-                        continue
-                    emails.add(e)
-    except Exception as e:
-        print(f"❌ Error reading PDF '{pdf_path}': {e}")
-        raise
+                if any(e.endswith(dom) for dom in EXCLUDED_DOMAINS):
+                    continue
+                emails.add(e)
     return emails
 
 
 def write_emails_to_csv(emails: Set[str], csv_path: str):
-    try:
-        with open(csv_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f)
-            writer.writerow(["Email"])
-            for e in sorted(emails):
-                writer.writerow([e])
-    except Exception as e:
-        print(f"❌ Failed to write CSV '{csv_path}': {e}")
-        raise
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Email"])
+        for e in sorted(emails):
+            writer.writerow([e])
 
 
-def build_message(from_addr: str, to_addr: str, subject: str, plain: str, html: str, attachment_path: str) -> EmailMessage:
+def load_sent_emails() -> Set[str]:
+    if not os.path.exists(SENT_FILE):
+        return set()
+    with open(SENT_FILE, "r", encoding="utf-8") as f:
+        return {line.strip().lower() for line in f if line.strip()}
+
+
+def save_sent_email(email: str):
+    with open(SENT_FILE, "a", encoding="utf-8") as f:
+        f.write(email + "\n")
+
+
+# ---------------------- EMAIL BUILDER ----------------------
+
+def build_message(from_addr, to_addr, subject, plain, html, attachment_path, mode):
     msg = EmailMessage()
     msg["From"] = from_addr
     msg["To"] = to_addr
     msg["Subject"] = subject
-    msg.set_content(plain)
-    msg.add_alternative(html, subtype="html")
 
-    if not os.path.isfile(attachment_path):
-        raise FileNotFoundError(f"Attachment not found: {attachment_path}")
+    if mode.lower() == "plain":
+        msg.set_content(plain)
+    else:
+        msg.set_content(plain)
+        msg.add_alternative(html, subtype="html")
 
     ctype, _ = mimetypes.guess_type(attachment_path)
     ctype = ctype or "application/octet-stream"
     maintype, subtype = ctype.split("/", 1)
+
     with open(attachment_path, "rb") as af:
-        msg.add_attachment(af.read(), maintype=maintype, subtype=subtype, filename=os.path.basename(attachment_path))
+        msg.add_attachment(
+            af.read(),
+            maintype=maintype,
+            subtype=subtype,
+            filename=os.path.basename(attachment_path),
+        )
 
     return msg
 
 
+# ---------------------- MAIN ----------------------
+
 def main():
-    # Basic validations
+
     if not os.path.isfile(PDF_PATH):
         print(f"❌ PDF not found: {PDF_PATH}")
         sys.exit(1)
+
     if not os.path.isfile(ATTACHMENT_PATH):
         print(f"❌ Attachment not found: {ATTACHMENT_PATH}")
         sys.exit(1)
 
-    # Extract emails
+    # Load previous sent emails
+    already_sent = load_sent_emails()
+    print(f"📌 Already sent: {len(already_sent)} emails tracked.")
+
+    # Extract new emails
     emails = extract_emails_from_pdf(PDF_PATH)
-    if not emails:
-        print("⚠️ No emails found in the PDF. Nothing to send. Exiting without deleting files.")
+
+    # Filter out emails already sent before
+    emails_to_send = [e for e in emails if e not in already_sent]
+
+    print(f"📩 Found {len(emails)} emails in PDF.")
+    print(f"➡ Sending only {len(emails_to_send)} new emails (skipping already contacted).")
+
+    if not emails_to_send:
+        print("⚠️ No new emails to send. Exiting safely.")
         return
 
-    # Write CSV
     csv_name = get_output_csv_name(PDF_PATH)
-    write_emails_to_csv(emails, csv_name)
-    print(f"✅ Extracted {len(emails)} emails -> {csv_name}")
+    write_emails_to_csv(set(emails_to_send), csv_name)
 
-    # Prepare credentials (strip spaces from app-password if any)
     passwd = EMAIL_PASSWORD.replace(" ", "")
 
-    # Connect to SMTP and login
     try:
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=60)
+        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
         server.login(EMAIL_ADDRESS, passwd)
         print("✅ SMTP login successful.")
     except Exception as e:
         print(f"❌ SMTP login failed: {e}")
-        # Don't delete files if login fails; user can fix creds and re-run
         sys.exit(1)
 
-    # Send emails
     sent_count = 0
+
     try:
-        for idx, recipient in enumerate(sorted(emails), start=1):
+        for recipient in emails_to_send:
             try:
-                msg = build_message(EMAIL_ADDRESS, recipient, EMAIL_SUBJECT, PLAIN_BODY, HTML_BODY, ATTACHMENT_PATH)
+                msg = build_message(
+                    EMAIL_ADDRESS,
+                    recipient,
+                    EMAIL_SUBJECT,
+                    PLAIN_BODY,
+                    HTML_BODY,
+                    ATTACHMENT_PATH,
+                    EMAIL_MODE,
+                )
                 server.send_message(msg)
                 sent_count += 1
-                print(f"✅ [{sent_count}] Sent to: {recipient}")
-            except Exception as send_err:
-                print(f"❌ Failed to send to {recipient}: {send_err}")
-            time.sleep(SECONDS_BETWEEN_EMAILS)
-    finally:
-        try:
-            server.quit()
-        except Exception:
-            pass
+                print(f"✅ Sent to: {recipient}")
 
-    # After attempting sends, delete both the original PDF and the generated CSV
-    deleted_any = False
+                # Save to sent-file so next time script won't re-send
+                save_sent_email(recipient)
+
+            except Exception as err:
+                print(f"❌ Failed sending to {recipient}: {err}")
+
+            time.sleep(SECONDS_BETWEEN_EMAILS)
+
+    finally:
+        server.quit()
+
+    # Delete PDF + CSV
     for p in (PDF_PATH, csv_name):
-        try:
-            if os.path.exists(p):
+        if os.path.exists(p):
+            try:
                 os.remove(p)
                 print(f"🗑️ Deleted: {p}")
-                deleted_any = True
-        except Exception as e:
-            print(f"⚠️ Could not delete {p}: {e}")
+            except:
+                pass
 
-    print(f"Done. Emails attempted: {len(emails)}, Successfully sent (attempted without exception): {sent_count}.")
-    if not deleted_any:
-        print("Note: No files were deleted (maybe missing permissions).")
-    return
+    print(f"\n🎉 DONE — Sent: {sent_count} new emails.\n")
 
 
 if __name__ == "__main__":
