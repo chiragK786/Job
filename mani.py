@@ -8,7 +8,7 @@ from email.message import EmailMessage
 import mimetypes
 
 # --- Configuration ---
-pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (67).pdf"
+pdf_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (62).pdf"
 excluded_domains = ['@squareboat.com', '@hudle.in','@infosys.com']
 emails = set()
 
@@ -52,7 +52,7 @@ except Exception as e:
 # Change these to your credentials and recipient  # Use Gmail App Password (not your regular password)
 EMAIL_ADDRESS = 'chiragkhanduja786@gmail.com'
 EMAIL_PASSWORD = 'lnyo jrcb niia ksha'
-RECIPIENT_EMAIL = 'jyotsnasingh855@gmail.com'
+RECIPIENT_EMAIL = 'Manikatyagi1720@gmail.com'
 
 subject = "HR email"
 body = "Please find attached the extracted email list CSV."

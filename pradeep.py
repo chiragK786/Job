@@ -52,7 +52,7 @@ except Exception as e:
 # Change these to your credentials and recipient  # Use Gmail App Password (not your regular password)
 EMAIL_ADDRESS = 'chiragkhanduja786@gmail.com'
 EMAIL_PASSWORD = 'lnyo jrcb niia ksha'
-RECIPIENT_EMAIL = 'jyotsnasingh855@gmail.com'
+RECIPIENT_EMAIL = 'jonwalvandita@gmail.com'
 
 subject = "HR email"
 body = "Please find attached the extracted email list CSV."
