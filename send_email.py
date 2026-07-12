@@ -11,11 +11,14 @@ csv_path = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/email_list.csv
 data = pd.read_csv(csv_path)
 
 # Gmail credentials
-EMAIL_ADDRESS = 'chiragkhanduja786@gmail.com'
-EMAIL_PASSWORD = 'ibbe sacy xfxu olfe'  # App Password
+
+EMAIL_ADDRESS = "chiragkhanduja786@gmail.com"
+EMAIL_PASSWORD = "lnyo jrcb niia ksha"
+
+# App Password
 
 # Attachment file (resume)
-attachment_path = '/Users/chiragkhanduja/PycharmProjects/PythonProject11/Chirag_Khanduja_Sr_QA_SDET_AI_Resume_Latest.pdf'
+attachment_path = '/Users/chiragkhanduja/PycharmProjects/PythonProject11/Chirag_Khanduja_Sr_QA_Engineer_SDET_AI_TestEngineer.pdf'
 if not os.path.isfile(attachment_path):
     raise FileNotFoundError(f"Attachment not found: {attachment_path}")
 

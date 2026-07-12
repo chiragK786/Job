@@ -29,24 +29,25 @@ from typing import Set, List, Dict
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (24).pdf",  # ← update with your leads PDF path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Hyderabad (40).pdf",  # ← update with your leads PDF path
 ]
 
 ATTACHMENT_PATH = (
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Aakriti_Saini_QA.pdf"  # ← update with your resume path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Aakriti_Jain.pdf"  # ← update with your resume path
 )
 
-EMAIL_ADDRESS  = "saini.aakriti29@gmail.com"   # ← your Gmail address
-EMAIL_PASSWORD = "ocsh ynga aaru bjso"         # ← Gmail App Password (Google Account → Security → App Passwords)
+EMAIL_ADDRESS  = "aakritij.official@gmail.com"       # ← your Gmail address
+EMAIL_PASSWORD = "bceo rety imyw gbrd"        # ← Gmail App Password (Google Account → Security → App Passwords)
 
-BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")   # ← update base dir
-SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_a.csv"
-LOG_FILE           = BASE_DIR / "email_lo_a.csv"
-PREVIEW_CSV        = BASE_DIR / "preview_recipients_A.csv"
-APP_LOG_FILE       = BASE_DIR / "app_a.log"
+BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")    # ← update base dir
+SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_J.csv"
+LOG_FILE           = BASE_DIR / "email_log_j.csv"
+PREVIEW_CSV        = BASE_DIR / "preview_recipients_j.csv"
+APP_LOG_FILE       = BASE_DIR / "app_j.log"
 
 EXCLUDED_DOMAINS: Set[str] = {
-    "squareboat.com"
+    "squareboat.com", "hudle.in", "infosys.com",
+    "cgi.com", "rayosys.com", "cognizant.com",
 }
 
 EXCLUDED_EMAILS: Set[str] = {"info@jobcurator.in"}
@@ -71,98 +72,99 @@ WARMUP_DELAY       = (8, 15)
 #  EMAIL CONTENT
 # ─────────────────────────────────────────────
 EMAIL_SUBJECT = (
-    "QA Engineer — 3.5 Years | Manual, API & Database Testing | FinTech, E-Commerce, SaaS | Gurugram"
+    "Product Designer / UI-UX Lead — 7+ Years | SaaS, B2C, B2B, Mobile | Open to Opportunities"
 )
 
 EMAIL_BODY = """\
 <p>Dear Hiring Manager,</p>
 
 <p>
-I am writing to express my interest in a <strong>QA Engineer</strong> /
-<strong>Software Test Engineer</strong> opportunity at your organization.
-With <strong>3.5+ years of experience</strong> in end-to-end quality assurance, I bring
-hands-on expertise in <strong>Manual Testing</strong>, <strong>API Testing</strong>,
-<strong>Database Testing</strong>, and <strong>Defect Lifecycle Management</strong> across
-<strong>FinTech</strong>, <strong>E-Commerce</strong>, <strong>MarTech</strong>,
-<strong>MusicTech</strong>, <strong>Travel</strong>, and <strong>HRTech</strong> domains.
+I hope you are doing well. I am reaching out to express my interest in
+<strong>Product Design</strong> and <strong>UI/UX Leadership</strong> opportunities at your
+organization. With <strong>7+ years of experience</strong> in end-to-end product design, I have
+led design initiatives across <strong>B2C</strong>, <strong>B2B</strong>, and
+<strong>SaaS</strong> products — spanning <strong>mobile apps</strong>,
+<strong>dashboards</strong>, and <strong>responsive web platforms</strong>.
 </p>
 
-<p><strong>Here is a snapshot of my profile:</strong></p>
+<p><strong>Brands and organizations I have worked with include:</strong></p>
+<p style="margin: 0 0 1rem; padding-left: 1rem; color: #444;">
+Dr. Reddy's Laboratories &nbsp;·&nbsp; Blue Tokai &nbsp;·&nbsp; Nalanda Learning
+&nbsp;·&nbsp; Pushowl &nbsp;·&nbsp; Hudle Sports &nbsp;·&nbsp; Awfis &nbsp;·&nbsp;
+Grayporter &nbsp;·&nbsp; A91 Partners &nbsp;·&nbsp; Jamboree Education
+&nbsp;·&nbsp; Edunext &nbsp;·&nbsp; IBM (Mercedes-Benz R&amp;D)
+</p>
+
+<p><strong>Here is a snapshot of what I bring to the role:</strong></p>
 <ul>
   <li>
-    <strong>Manual &amp; Functional Testing:</strong> Extensive experience executing
-    <strong>Functional</strong>, <strong>Regression</strong>, <strong>Smoke</strong>,
-    <strong>Sanity</strong>, <strong>Integration</strong>, <strong>UAT</strong>, and
-    <strong>Cross-Browser Testing</strong> across web and mobile applications, ensuring
-    high-quality, on-time product releases.
+    <strong>UX Strategy &amp; Product Thinking:</strong> Extensive experience translating
+    complex business requirements into intuitive, user-centered design solutions with a
+    strong focus on <strong>information architecture</strong>, <strong>user flows</strong>,
+    and <strong>interaction design</strong>.
   </li>
   <li>
-    <strong>API Testing:</strong> Proficient in <strong>REST API Testing</strong> using
-    <strong>Postman</strong> and <strong>Swagger</strong> — validating request/response
-    payloads, <strong>HTTP status codes</strong>, authentication flows, endpoint behavior,
-    and pre/post-scripts across environments.
+    <strong>Design Systems:</strong> Built and maintained scalable
+    <strong>design systems</strong> that improve consistency, accelerate development
+    handoff, and align cross-functional teams.
   </li>
   <li>
-    <strong>Database Testing:</strong> Hands-on experience with backend data validation
-    using <strong>SQL</strong> (MySQL, DBeaver) and <strong>NoSQL</strong> (MongoDB,
-    Studio3T) — verifying data integrity, consistency, and accuracy across complex
-    application workflows.
+    <strong>AI-Assisted Design Workflows:</strong> Actively integrating
+    <strong>AI-assisted workflows</strong> into the design process to improve efficiency
+    and prototype fidelity.
   </li>
   <li>
-    <strong>Test Management &amp; STLC:</strong> Skilled in end-to-end
-    <strong>STLC</strong> and <strong>SDLC</strong> — from test planning and
-    <strong>test case design</strong> (300+ test cases) through execution, defect
-    reporting, regression sign-off, and release validation.
+    <strong>Mobile &amp; Web Product Design:</strong> Delivered polished, high-fidelity
+    <strong>UI/UX designs</strong> for <strong>iOS</strong>, <strong>Android</strong>,
+    and responsive web across diverse industries including edtech, healthtech,
+    fintech, and consumer apps.
   </li>
   <li>
-    <strong>Defect &amp; Project Tracking:</strong> Experienced with
-    <strong>Jira</strong>, <strong>Asana</strong>, <strong>Taiga</strong>, and
-    <strong>Trello</strong> for defect lifecycle management, sprint coordination,
-    and requirements traceability.
+    <strong>Cross-Functional Collaboration:</strong> Proven ability to work closely with
+    <strong>product managers</strong>, <strong>engineers</strong>, and
+    <strong>business stakeholders</strong> to drive design maturity and ship
+    user-focused products at scale.
   </li>
   <li>
-    <strong>Log Analysis &amp; Debugging:</strong> Proficient with
-    <strong>AWS CloudWatch</strong>, <strong>Android Studio</strong>, and
-    <strong>Chrome DevTools</strong> for application log analysis, crash investigation,
-    and root-cause analysis.
-  </li>
-  <li>
-    <strong>Agile / Scrum:</strong> Active contributor in
-    <strong>Agile</strong> and <strong>Scrum</strong> environments — sprint planning,
-    daily standups, backlog grooming, and retrospectives.
-  </li>
-  <li>
-    <strong>Client Communication &amp; Leadership:</strong> Gathered requirements through
-    direct client calls, mentored junior QA team members on test case design standards
-    and defect documentation best practices.
+    <strong>Design Leadership:</strong> Led product and design initiatives at
+    <strong>Squareboat</strong>, owning the full design lifecycle from discovery and
+    wireframing through to final delivery and QA handoff.
   </li>
 </ul>
 
-<p><strong>Domain experience spans:</strong>
-FinTech (NOWNOW — Nigeria &amp; Angola), Travel (ZAPS, Joyus Trips, Anvayins),
-MusicTech (SyncMama — AI-powered, 400K+ tracks), E-Commerce (Orikam Healthcare),
-HRTech (Navigator), and Recruitment / ATS platforms.
+<p>
+I am particularly drawn to organizations that value <strong>strong product thinking</strong>,
+<strong>design maturity</strong>, and a culture where design has a meaningful seat at the table.
 </p>
 
 <p>
-I am currently based in <strong>Gurugram, Haryana</strong> and am open to discussing
-relevant opportunities at your organization.
+I have attached my resume for your reference. My portfolio (selected work) is available here:<br>
+<a href="https://basalt-newsboy-98f.notion.site/Aakriti-Jain-2fe3fa8a7371803f8dbee298d32ec70c"
+   style="color: #0066cc;">
+  🔗 Portfolio — Aakriti Jain
+</a>
 </p>
 
 <p>
-I have attached my updated resume for your consideration and would welcome a brief call
-to discuss how my experience aligns with your team's requirements.
+I have also contributed to several additional products and case studies not yet publicly live —
+I would be happy to walk through them during a conversation if relevant.
 </p>
 
-<p>Thank you for your time. I look forward to hearing from you.</p>
+<p>
+I would truly appreciate the opportunity to connect and explore any suitable openings within
+your team. Thank you for your time, and I look forward to hearing from you.
+</p>
 
 <p>
 Warm regards,<br>
-<strong>Aakriti Saini</strong><br>
-Software QA Engineer<br>
-+91-9802129491<br>
-<a href="https://www.linkedin.com/in/aakriti-saini-01mar1998"
+<strong>Aakriti Jain</strong><br>
+Product Designer | UI/UX Lead<br>
+8766347359<br>
+<a href="https://www.linkedin.com/in/aakriti-jain-designer/"
    style="color: #0066cc;">LinkedIn Profile</a>
+&nbsp;·&nbsp;
+<a href="https://basalt-newsboy-98f.notion.site/Aakriti-Jain-2fe3fa8a7371803f8dbee298d32ec70c"
+   style="color: #0066cc;">Portfolio</a>
 </p>
 """
 

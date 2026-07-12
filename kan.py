@@ -3,9 +3,9 @@
 OPTIMISED MULTI-PDF EMAIL SENDER v2
 - 200+ emails/day without Gmail block
 - Smart batching: 40 emails per SMTP session
-- Long session breaks (10-20 min) between batches
+- Long session breaks (20-35 min) between batches
 - Faster per-email delay (3-7 sec)
-- Hourly rate limiter (max 55/hour)
+- Hourly rate limiter (max 35/hour)
 - Warm-up mode for new accounts
 - Resumes automatically after breaks
 - All original features retained
@@ -29,24 +29,53 @@ from typing import Set, List, Dict
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (24).pdf",  # ← update with your leads PDF path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (6).pdf",
 ]
 
 ATTACHMENT_PATH = (
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Aakriti_Saini_QA.pdf"  # ← update with your resume path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
+    "Kanishkakohli_Resume (2).pdf"
 )
 
-EMAIL_ADDRESS  = "saini.aakriti29@gmail.com"   # ← your Gmail address
-EMAIL_PASSWORD = "ocsh ynga aaru bjso"         # ← Gmail App Password (Google Account → Security → App Passwords)
+EMAIL_ADDRESS  = "kanishkakohli4@gmail.com"
+EMAIL_PASSWORD = "vyof doas bgra mbvh"
 
-BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")   # ← update base dir
-SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_a.csv"
-LOG_FILE           = BASE_DIR / "email_lo_a.csv"
-PREVIEW_CSV        = BASE_DIR / "preview_recipients_A.csv"
-APP_LOG_FILE       = BASE_DIR / "app_a.log"
+BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")
+SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_k.csv"
+LOG_FILE           = BASE_DIR / "email_log_k.csv"
+PREVIEW_CSV        = BASE_DIR / "preview_recipients_k.csv"
+APP_LOG_FILE       = BASE_DIR / "app_k.log"
 
 EXCLUDED_DOMAINS: Set[str] = {
-    "squareboat.com"
+    # ── original ──────────────────────────────
+    "squareboat.com",
+    "hudle.in",
+    "infosys.com",
+    "cgi.com",
+    "rayosys.com",
+    "cognizant.com",
+    # ── new additions ─────────────────────────
+    "herovired.com",
+    "raftlabs.co",
+    "grappus.com",
+    "primathon.in",
+    "squareops.com",
+    "wizzybox.com",
+    "bonami.in",
+    "locofast.com",
+    "legistify.com",
+    "pushowl.com",
+    "idreamcareer.com",
+    "venturasecurities.com",
+    "scuderia.in",
+    "questt.com",
+    "ongrid.in",
+    "tradingwithvivek.com",
+    "earthclock.in",
+    "dronamaps.com",
+    "sparkeighteen.com",
+    "embglobal.com",
+    "dotpe.in",
 }
 
 EXCLUDED_EMAILS: Set[str] = {"info@jobcurator.in"}
@@ -60,7 +89,7 @@ PER_EMAIL_DELAY    = (3, 7)
 DOMAIN_BURST_SIZE  = 2
 DOMAIN_BURST_PAUSE = (15, 30)
 BATCH_SIZE         = 40
-SESSION_BREAK      = (600, 1200)   # 10–20 min
+SESSION_BREAK      = (600, 1200)   # 20–35 min
 MAX_PER_HOUR       = 55
 DAILY_CAP          = 250
 WARMUP_MODE        = False
@@ -71,98 +100,66 @@ WARMUP_DELAY       = (8, 15)
 #  EMAIL CONTENT
 # ─────────────────────────────────────────────
 EMAIL_SUBJECT = (
-    "QA Engineer — 3.5 Years | Manual, API & Database Testing | FinTech, E-Commerce, SaaS | Gurugram"
+    "Exploring HR Opportunities | Sr. HR Executive – 4 Years Experience"
 )
 
 EMAIL_BODY = """\
 <p>Dear Hiring Manager,</p>
 
 <p>
-I am writing to express my interest in a <strong>QA Engineer</strong> /
-<strong>Software Test Engineer</strong> opportunity at your organization.
-With <strong>3.5+ years of experience</strong> in end-to-end quality assurance, I bring
-hands-on expertise in <strong>Manual Testing</strong>, <strong>API Testing</strong>,
-<strong>Database Testing</strong>, and <strong>Defect Lifecycle Management</strong> across
-<strong>FinTech</strong>, <strong>E-Commerce</strong>, <strong>MarTech</strong>,
-<strong>MusicTech</strong>, <strong>Travel</strong>, and <strong>HRTech</strong> domains.
+I am writing to express my strong interest in an HR opportunity within your organization.
+With <strong>close to 4 years</strong> of hands-on experience across core HR functions, I am
+confident in my ability to contribute meaningfully to people operations, employee engagement,
+and strategic HR initiatives.
 </p>
 
-<p><strong>Here is a snapshot of my profile:</strong></p>
+<p><strong>Here is a brief overview of what I bring to the role:</strong></p>
 <ul>
   <li>
-    <strong>Manual &amp; Functional Testing:</strong> Extensive experience executing
-    <strong>Functional</strong>, <strong>Regression</strong>, <strong>Smoke</strong>,
-    <strong>Sanity</strong>, <strong>Integration</strong>, <strong>UAT</strong>, and
-    <strong>Cross-Browser Testing</strong> across web and mobile applications, ensuring
-    high-quality, on-time product releases.
+    <strong>HR Operations:</strong> Extensive experience managing end-to-end people processes
+    in fast-paced environments, ensuring smooth and compliant day-to-day HR functioning.
   </li>
   <li>
-    <strong>API Testing:</strong> Proficient in <strong>REST API Testing</strong> using
-    <strong>Postman</strong> and <strong>Swagger</strong> — validating request/response
-    payloads, <strong>HTTP status codes</strong>, authentication flows, endpoint behavior,
-    and pre/post-scripts across environments.
+    <strong>Employee Engagement &amp; Performance Management:</strong> Proven track record of
+    driving engagement initiatives and supporting performance cycles that foster a motivated
+    and high-performing workforce.
   </li>
   <li>
-    <strong>Database Testing:</strong> Hands-on experience with backend data validation
-    using <strong>SQL</strong> (MySQL, DBeaver) and <strong>NoSQL</strong> (MongoDB,
-    Studio3T) — verifying data integrity, consistency, and accuracy across complex
-    application workflows.
+    <strong>Stakeholder &amp; Resource Management:</strong> Skilled at collaborating with
+    cross-functional teams and managing resources effectively to meet evolving business
+    requirements.
   </li>
   <li>
-    <strong>Test Management &amp; STLC:</strong> Skilled in end-to-end
-    <strong>STLC</strong> and <strong>SDLC</strong> — from test planning and
-    <strong>test case design</strong> (300+ test cases) through execution, defect
-    reporting, regression sign-off, and release validation.
+    <strong>Client &amp; Vendor Coordination:</strong> Hands-on experience liaising with
+    external clients and vendors to support organizational goals and maintain productive
+    partnerships.
   </li>
   <li>
-    <strong>Defect &amp; Project Tracking:</strong> Experienced with
-    <strong>Jira</strong>, <strong>Asana</strong>, <strong>Taiga</strong>, and
-    <strong>Trello</strong> for defect lifecycle management, sprint coordination,
-    and requirements traceability.
-  </li>
-  <li>
-    <strong>Log Analysis &amp; Debugging:</strong> Proficient with
-    <strong>AWS CloudWatch</strong>, <strong>Android Studio</strong>, and
-    <strong>Chrome DevTools</strong> for application log analysis, crash investigation,
-    and root-cause analysis.
-  </li>
-  <li>
-    <strong>Agile / Scrum:</strong> Active contributor in
-    <strong>Agile</strong> and <strong>Scrum</strong> environments — sprint planning,
-    daily standups, backlog grooming, and retrospectives.
-  </li>
-  <li>
-    <strong>Client Communication &amp; Leadership:</strong> Gathered requirements through
-    direct client calls, mentored junior QA team members on test case design standards
-    and defect documentation best practices.
+    <strong>Communication &amp; Problem-Solving:</strong> Strong interpersonal and
+    coordination skills with the ability to navigate complex situations and deliver
+    people-centric solutions.
   </li>
 </ul>
 
-<p><strong>Domain experience spans:</strong>
-FinTech (NOWNOW — Nigeria &amp; Angola), Travel (ZAPS, Joyus Trips, Anvayins),
-MusicTech (SyncMama — AI-powered, 400K+ tracks), E-Commerce (Orikam Healthcare),
-HRTech (Navigator), and Recruitment / ATS platforms.
+<p>
+I am currently looking for opportunities where I can grow further in strategic HR roles. I
+am open to positions across Pan India locations and am eager to bring my experience to an
+organization that values people, culture, and continuous growth.
 </p>
 
 <p>
-I am currently based in <strong>Gurugram, Haryana</strong> and am open to discussing
-relevant opportunities at your organization.
+I have attached my resume for your consideration. I would love the opportunity to connect
+for a brief conversation to explore how my background aligns with your team's needs.
 </p>
 
-<p>
-I have attached my updated resume for your consideration and would welcome a brief call
-to discuss how my experience aligns with your team's requirements.
-</p>
-
-<p>Thank you for your time. I look forward to hearing from you.</p>
+<p>Thank you for your time and consideration. I look forward to hearing from you.</p>
 
 <p>
-Warm regards,<br>
-<strong>Aakriti Saini</strong><br>
-Software QA Engineer<br>
-+91-9802129491<br>
-<a href="https://www.linkedin.com/in/aakriti-saini-01mar1998"
-   style="color: #0066cc;">LinkedIn Profile</a>
+<strong>Best regards,</strong><br>
+Kanishka Kohli<br>
+Sr. HR Executive | HR Operations &amp; People Management<br>
++91 9999926371<br>
+<a href="https://www.linkedin.com/in/kanishka-kohli2308/">linkedin.com/in/kanishka-kohli2308</a>
 </p>
 """
 
@@ -256,8 +253,23 @@ def update_daily_log(count: int) -> None:
 # ─────────────────────────────────────────────
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,7}")
 
+def is_excluded(email: str) -> bool:
+    """
+    Returns True if the email should be skipped.
+    Checks both the full email address and its domain against
+    EXCLUDED_EMAILS and EXCLUDED_DOMAINS respectively.
+    """
+    email = email.lower().strip()
+    if email in EXCLUDED_EMAILS:
+        return True
+    domain = email.split("@")[-1]
+    if domain in EXCLUDED_DOMAINS:
+        return True
+    return False
+
 def extract_emails_from_pdfs(pdf_paths: List[str]) -> Dict[str, int]:
     counts: Dict[str, int] = {}
+    excluded_count = 0
     for path_str in pdf_paths:
         path = Path(path_str)
         if not path.exists():
@@ -269,13 +281,13 @@ def extract_emails_from_pdfs(pdf_paths: List[str]) -> Dict[str, int]:
                 text = page.extract_text() or ""
                 for match in EMAIL_RE.findall(text):
                     email = match.lower().strip()
-                    domain = email.split("@")[-1]
-                    if domain in EXCLUDED_DOMAINS:
-                        continue
-                    if email in EXCLUDED_EMAILS:
+                    if is_excluded(email):
+                        excluded_count += 1
+                        log.debug("⛔ Excluded: %s", email)
                         continue
                     counts[email] = counts.get(email, 0) + 1
-    log.info("Unique emails found across all PDFs: %d", len(counts))
+    log.info("Unique emails found: %d  |  Excluded (domain/email filter): %d",
+             len(counts), excluded_count)
     return counts
 
 # ─────────────────────────────────────────────
@@ -370,6 +382,10 @@ def main() -> None:
     log.info("📅 Daily cap: %d | Sent today: %d | Remaining: %d",
              effective_daily_cap, already_today, remaining_cap)
 
+    # Log excluded domains so user can verify at startup
+    log.info("⛔ Excluded domains (%d): %s", len(EXCLUDED_DOMAINS),
+             ", ".join(sorted(EXCLUDED_DOMAINS)))
+
     all_emails  = extract_emails_from_pdfs(PDF_PATHS)
     sent_before = load_sent_emails()
     send_list   = sorted(e for e in all_emails if e not in sent_before)
@@ -412,6 +428,13 @@ def main() -> None:
         task = progress.add_task("send", total=total)
 
     for i, to_email in enumerate(send_list):
+
+        # Safety net: skip excluded emails even if they somehow slipped through
+        if is_excluded(to_email):
+            log.warning("⛔ Skipping excluded email at send time: %s", to_email)
+            if RICH:
+                progress.update(task, advance=1)
+            continue
 
         if i > 0 and i % BATCH_SIZE == 0:
             if RICH:

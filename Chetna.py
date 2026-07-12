@@ -14,7 +14,7 @@ from typing import Set
 
 # ---------------------- CONFIG ----------------------
 
-PDF_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (67).pdf"
+PDF_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (83).pdf"
 ATTACHMENT_PATH = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/ChetnaBansal_Resume_.pdf"
 
 EXCLUDED_DOMAINS = ["@squareboat.com"]

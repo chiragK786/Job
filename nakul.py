@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-OPTIMISED MULTI-PDF EMAIL SENDER v2
+OPTIMISED MULTI-PDF EMAIL SENDER v2  —  Nakul Kohli (UI/UX Designer)
 - 200+ emails/day without Gmail block
 - Smart batching: 40 emails per SMTP session
-- Long session breaks (10-20 min) between batches
+- Long session breaks (20-35 min) between batches
 - Faster per-email delay (3-7 sec)
 - Hourly rate limiter (max 55/hour)
 - Warm-up mode for new accounts
 - Resumes automatically after breaks
-- All original features retained
+- No domain exclusions
 """
 
 import re
@@ -21,6 +21,10 @@ import smtplib
 import logging
 import pdfplumber
 from email.message import EmailMessage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
 from datetime import date, datetime
 from pathlib import Path
 from typing import Set, List, Dict
@@ -29,26 +33,25 @@ from typing import Set, List, Dict
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (24).pdf",  # ← update with your leads PDF path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Hyderabad (39).pdf",
 ]
 
 ATTACHMENT_PATH = (
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Aakriti_Saini_QA.pdf"  # ← update with your resume path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
+    "Nakul Kohli UI-UX Resume.pdf"
 )
 
-EMAIL_ADDRESS  = "saini.aakriti29@gmail.com"   # ← your Gmail address
-EMAIL_PASSWORD = "ocsh ynga aaru bjso"         # ← Gmail App Password (Google Account → Security → App Passwords)
+EMAIL_ADDRESS  = "nakulkohli5@gmail.com"
+EMAIL_PASSWORD = "tfmd asna tauw tioz"
 
-BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")   # ← update base dir
-SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_a.csv"
-LOG_FILE           = BASE_DIR / "email_lo_a.csv"
-PREVIEW_CSV        = BASE_DIR / "preview_recipients_A.csv"
-APP_LOG_FILE       = BASE_DIR / "app_a.log"
+BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")
+SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_nakul.csv"
+LOG_FILE           = BASE_DIR / "email_log_nakul.csv"
+PREVIEW_CSV        = BASE_DIR / "preview_recipients_nakul.csv"
+APP_LOG_FILE       = BASE_DIR / "app_nakul.log"
 
-EXCLUDED_DOMAINS: Set[str] = {
-    "squareboat.com"
-}
-
+# No domain or email exclusions for Nakul
+EXCLUDED_DOMAINS: Set[str] = set()
 EXCLUDED_EMAILS: Set[str] = {"info@jobcurator.in"}
 
 DRY_RUN = False
@@ -60,7 +63,7 @@ PER_EMAIL_DELAY    = (3, 7)
 DOMAIN_BURST_SIZE  = 2
 DOMAIN_BURST_PAUSE = (15, 30)
 BATCH_SIZE         = 40
-SESSION_BREAK      = (600, 1200)   # 10–20 min
+SESSION_BREAK      = (600, 1200)   # 20–35 min
 MAX_PER_HOUR       = 55
 DAILY_CAP          = 250
 WARMUP_MODE        = False
@@ -71,99 +74,84 @@ WARMUP_DELAY       = (8, 15)
 #  EMAIL CONTENT
 # ─────────────────────────────────────────────
 EMAIL_SUBJECT = (
-    "QA Engineer — 3.5 Years | Manual, API & Database Testing | FinTech, E-Commerce, SaaS | Gurugram"
+    "Exploring Product Design Opportunities | UI/UX Designer"
 )
 
+EMAIL_BODY_PLAIN = """\
+Dear Hiring Manager,
+
+Hope you're doing well!
+
+I'm Nakul, a UI/UX Designer with a year of experience at Squareboat - a product engineering
+company based in Gurugram. I've shipped end-to-end designs across four live products in
+sports tech, B2B healthcare, travel, and agency branding, owning the full cycle from UX
+research and wireframing to high-fidelity UI, design systems, and developer handoff.
+
+What I bring:
+- Scalable design systems and component libraries built from scratch in Figma
+- End-to-end UI/UX across consumer apps, SaaS platforms, and enterprise web applications
+- Strong visual craft - motion design, micro-interactions, typography, and responsive layouts
+- Cross-functional collaboration with PMs and engineers in Agile sprints
+
+I'm open to full-time UI/UX or Product Designer roles across India - on-site, hybrid, or remote.
+
+Resume attached. Portfolio and case studies on Behance: https://www.behance.net/nakulkohli
+
+Happy to jump on a quick call at your convenience.
+
+Best regards,
+Nakul Kohli
++91 98111 15224 | nakulkohli5@gmail.com
+linkedin.com/in/nakul-kohli-856493314
+"""
+
 EMAIL_BODY = """\
+<div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.6;color:#000000;">
+
 <p>Dear Hiring Manager,</p>
 
+<p>Hope you're doing well!</p>
+
 <p>
-I am writing to express my interest in a <strong>QA Engineer</strong> /
-<strong>Software Test Engineer</strong> opportunity at your organization.
-With <strong>3.5+ years of experience</strong> in end-to-end quality assurance, I bring
-hands-on expertise in <strong>Manual Testing</strong>, <strong>API Testing</strong>,
-<strong>Database Testing</strong>, and <strong>Defect Lifecycle Management</strong> across
-<strong>FinTech</strong>, <strong>E-Commerce</strong>, <strong>MarTech</strong>,
-<strong>MusicTech</strong>, <strong>Travel</strong>, and <strong>HRTech</strong> domains.
+I'm Nakul, a UI/UX Designer with a year of experience at Squareboat &mdash; a product engineering
+company based in Gurugram. I've shipped end-to-end designs across four live products in
+sports tech, B2B healthcare, travel, and agency branding, owning the full cycle from UX
+research and wireframing to high-fidelity UI, design systems, and developer handoff.
 </p>
 
-<p><strong>Here is a snapshot of my profile:</strong></p>
-<ul>
-  <li>
-    <strong>Manual &amp; Functional Testing:</strong> Extensive experience executing
-    <strong>Functional</strong>, <strong>Regression</strong>, <strong>Smoke</strong>,
-    <strong>Sanity</strong>, <strong>Integration</strong>, <strong>UAT</strong>, and
-    <strong>Cross-Browser Testing</strong> across web and mobile applications, ensuring
-    high-quality, on-time product releases.
-  </li>
-  <li>
-    <strong>API Testing:</strong> Proficient in <strong>REST API Testing</strong> using
-    <strong>Postman</strong> and <strong>Swagger</strong> — validating request/response
-    payloads, <strong>HTTP status codes</strong>, authentication flows, endpoint behavior,
-    and pre/post-scripts across environments.
-  </li>
-  <li>
-    <strong>Database Testing:</strong> Hands-on experience with backend data validation
-    using <strong>SQL</strong> (MySQL, DBeaver) and <strong>NoSQL</strong> (MongoDB,
-    Studio3T) — verifying data integrity, consistency, and accuracy across complex
-    application workflows.
-  </li>
-  <li>
-    <strong>Test Management &amp; STLC:</strong> Skilled in end-to-end
-    <strong>STLC</strong> and <strong>SDLC</strong> — from test planning and
-    <strong>test case design</strong> (300+ test cases) through execution, defect
-    reporting, regression sign-off, and release validation.
-  </li>
-  <li>
-    <strong>Defect &amp; Project Tracking:</strong> Experienced with
-    <strong>Jira</strong>, <strong>Asana</strong>, <strong>Taiga</strong>, and
-    <strong>Trello</strong> for defect lifecycle management, sprint coordination,
-    and requirements traceability.
-  </li>
-  <li>
-    <strong>Log Analysis &amp; Debugging:</strong> Proficient with
-    <strong>AWS CloudWatch</strong>, <strong>Android Studio</strong>, and
-    <strong>Chrome DevTools</strong> for application log analysis, crash investigation,
-    and root-cause analysis.
-  </li>
-  <li>
-    <strong>Agile / Scrum:</strong> Active contributor in
-    <strong>Agile</strong> and <strong>Scrum</strong> environments — sprint planning,
-    daily standups, backlog grooming, and retrospectives.
-  </li>
-  <li>
-    <strong>Client Communication &amp; Leadership:</strong> Gathered requirements through
-    direct client calls, mentored junior QA team members on test case design standards
-    and defect documentation best practices.
-  </li>
-</ul>
-
-<p><strong>Domain experience spans:</strong>
-FinTech (NOWNOW — Nigeria &amp; Angola), Travel (ZAPS, Joyus Trips, Anvayins),
-MusicTech (SyncMama — AI-powered, 400K+ tracks), E-Commerce (Orikam Healthcare),
-HRTech (Navigator), and Recruitment / ATS platforms.
+<p><u>What I bring:</u></p>
+<p style="margin:0 0 4px 0;">
+&bull; <strong>Scalable design systems</strong> and <strong>component libraries built from scratch</strong> in <strong>Figma</strong>
+</p>
+<p style="margin:0 0 4px 0;">
+&bull; <strong>End-to-end UI/UX</strong> across consumer apps, <strong>SaaS platforms</strong>, and enterprise web applications
+</p>
+<p style="margin:0 0 4px 0;">
+&bull; <strong>Strong visual craft</strong> &mdash; motion design, micro-interactions, typography, and responsive layouts
+</p>
+<p style="margin:0 0 16px 0;">
+&bull; <strong>Cross-functional collaboration</strong> with PMs and engineers in Agile sprints
 </p>
 
 <p>
-I am currently based in <strong>Gurugram, Haryana</strong> and am open to discussing
-relevant opportunities at your organization.
+I'm open to full-time UI/UX or Product Designer roles across India &mdash; on-site, hybrid, or remote.
 </p>
 
 <p>
-I have attached my updated resume for your consideration and would welcome a brief call
-to discuss how my experience aligns with your team's requirements.
+Resume attached. Portfolio and case studies on Behance:
+<a href="https://www.behance.net/nakulkohli">https://www.behance.net/nakulkohli</a>
 </p>
 
-<p>Thank you for your time. I look forward to hearing from you.</p>
+<p>Happy to jump on a quick call at your convenience.</p>
 
 <p>
-Warm regards,<br>
-<strong>Aakriti Saini</strong><br>
-Software QA Engineer<br>
-+91-9802129491<br>
-<a href="https://www.linkedin.com/in/aakriti-saini-01mar1998"
-   style="color: #0066cc;">LinkedIn Profile</a>
+<strong>Best regards,</strong><br>
+Nakul Kohli<br>
++91 98111 15224 | <a href="mailto:nakulkohli5@gmail.com">nakulkohli5@gmail.com</a><br>
+<a href="https://www.linkedin.com/in/nakul-kohli-856493314/">linkedin.com/in/nakul-kohli-856493314</a>
 </p>
+
+</div>
 """
 
 # ─────────────────────────────────────────────
@@ -171,7 +159,7 @@ Software QA Engineer<br>
 # ─────────────────────────────────────────────
 def setup_logging() -> logging.Logger:
     APP_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
-    logger = logging.getLogger("email_sender")
+    logger = logging.getLogger("email_sender_nakul")
     logger.setLevel(logging.DEBUG)
     fmt = logging.Formatter("%(asctime)s  %(levelname)-8s  %(message)s", "%Y-%m-%d %H:%M:%S")
     fh = logging.FileHandler(APP_LOG_FILE)
@@ -256,8 +244,22 @@ def update_daily_log(count: int) -> None:
 # ─────────────────────────────────────────────
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,7}")
 
+def is_excluded(email: str) -> bool:
+    """
+    Returns True if the email should be skipped.
+    For Nakul's script, both sets are empty — no exclusions.
+    """
+    email = email.lower().strip()
+    if email in EXCLUDED_EMAILS:
+        return True
+    domain = email.split("@")[-1]
+    if domain in EXCLUDED_DOMAINS:
+        return True
+    return False
+
 def extract_emails_from_pdfs(pdf_paths: List[str]) -> Dict[str, int]:
     counts: Dict[str, int] = {}
+    excluded_count = 0
     for path_str in pdf_paths:
         path = Path(path_str)
         if not path.exists():
@@ -269,28 +271,40 @@ def extract_emails_from_pdfs(pdf_paths: List[str]) -> Dict[str, int]:
                 text = page.extract_text() or ""
                 for match in EMAIL_RE.findall(text):
                     email = match.lower().strip()
-                    domain = email.split("@")[-1]
-                    if domain in EXCLUDED_DOMAINS:
-                        continue
-                    if email in EXCLUDED_EMAILS:
+                    if is_excluded(email):
+                        excluded_count += 1
+                        log.debug("⛔ Excluded: %s", email)
                         continue
                     counts[email] = counts.get(email, 0) + 1
-    log.info("Unique emails found across all PDFs: %d", len(counts))
+    log.info("Unique emails found: %d  |  Excluded: %d", len(counts), excluded_count)
     return counts
 
 # ─────────────────────────────────────────────
 #  SMTP HELPERS
 # ─────────────────────────────────────────────
 def build_message(to_email: str, attachment_data: bytes,
-                  attach_mime: str, attach_name: str) -> EmailMessage:
-    msg = EmailMessage()
-    msg["From"]    = EMAIL_ADDRESS
-    msg["To"]      = to_email
-    msg["Subject"] = EMAIL_SUBJECT
-    msg.add_alternative(EMAIL_BODY, subtype="html")
-    maintype, subtype = attach_mime.split("/", 1)
-    msg.add_attachment(attachment_data, maintype=maintype,
-                       subtype=subtype, filename=attach_name)
+                  attach_mime: str, attach_name: str) -> MIMEMultipart:
+    # Outer container: mixed (body + attachment)
+    msg = MIMEMultipart("mixed")
+    msg["From"]       = f"Nakul Kohli <{EMAIL_ADDRESS}>"
+    msg["To"]         = to_email
+    msg["Subject"]    = EMAIL_SUBJECT
+    msg["Precedence"] = "Personal"   # signals 1-to-1, not bulk
+
+    # Inner container: alternative (plain text + html)
+    # Gmail picks HTML to render; plain text helps inbox scoring
+    body_part = MIMEMultipart("alternative")
+    body_part.attach(MIMEText(EMAIL_BODY_PLAIN, "plain", "utf-8"))
+    body_part.attach(MIMEText(EMAIL_BODY,       "html",  "utf-8"))
+    msg.attach(body_part)
+
+    # Attachment
+    part = MIMEBase(*attach_mime.split("/", 1))
+    part.set_payload(attachment_data)
+    encoders.encode_base64(part)
+    part.add_header("Content-Disposition", "attachment", filename=attach_name)
+    msg.attach(part)
+
     return msg
 
 def connect_smtp() -> smtplib.SMTP_SSL:
@@ -370,6 +384,8 @@ def main() -> None:
     log.info("📅 Daily cap: %d | Sent today: %d | Remaining: %d",
              effective_daily_cap, already_today, remaining_cap)
 
+    log.info("✅ No domain exclusions active — all emails will be processed.")
+
     all_emails  = extract_emails_from_pdfs(PDF_PATHS)
     sent_before = load_sent_emails()
     send_list   = sorted(e for e in all_emails if e not in sent_before)
@@ -413,6 +429,13 @@ def main() -> None:
 
     for i, to_email in enumerate(send_list):
 
+        # Safety net: skip excluded emails even if they somehow slipped through
+        if is_excluded(to_email):
+            log.warning("⛔ Skipping excluded email at send time: %s", to_email)
+            if RICH:
+                progress.update(task, advance=1)
+            continue
+
         if i > 0 and i % BATCH_SIZE == 0:
             if RICH:
                 progress.stop()
@@ -446,7 +469,7 @@ def main() -> None:
 
         msg = build_message(to_email, attach_data, attach_mime, attach_name)
         try:
-            server.send_message(msg)
+            server.sendmail(EMAIL_ADDRESS, to_email, msg.as_string())
             sent_count += 1
             rate_limiter.record()
             mark_sent(to_email)
@@ -457,7 +480,7 @@ def main() -> None:
             log.warning("🔌 Server disconnected — reconnecting…")
             try:
                 server = connect_smtp()
-                server.send_message(msg)
+                server.sendmail(EMAIL_ADDRESS, to_email, msg.as_string())
                 sent_count += 1
                 rate_limiter.record()
                 mark_sent(to_email)

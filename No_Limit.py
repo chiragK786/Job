@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
-OPTIMISED MULTI-PDF EMAIL SENDER v3
+OPTIMISED MULTI-PDF EMAIL SENDER v4
+- Dual Gmail account with auto-fallback on limit/block
+- Reply-To set to secondary account
 - Port 587 (STARTTLS) primary, 465 (SSL) fallback
 - 30-second connection timeout
 - Auto-retry connect up to 3 times
-- 200+ emails/day without Gmail block
-- Smart batching: 40 emails per SMTP session
+- Smart batching: 50 emails per SMTP session
 - Long session breaks (20-35 min) between batches
-- Faster per-email delay (3-7 sec)
-- Hourly rate limiter (max 55/hour)
 - Warm-up mode for new accounts
 - Resumes automatically after breaks
-- All original features retained
+- IMAP bounce detection: skips "Address not found" emails
 """
 
 import re
@@ -21,27 +20,34 @@ import time
 import random
 import mimetypes
 import smtplib
+imaplib = __import__("imaplib")
+import email as email_lib
 import logging
 import pdfplumber
 from email.message import EmailMessage
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
-from typing import Set, List, Dict, Union
+from typing import Set, List, Dict, Union, Tuple
 
 # ─────────────────────────────────────────────
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/Downloads/NCR_Noida_Delhi_Gurgaon (90).pdf",
+    "/Users/chiragkhanduja/Downloads/TestingJobs_FullList (2).pdf"
 ]
 
 ATTACHMENT_PATH = (
     "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
-    "Chirag_Khanduja_QA_Resume_AI_SDET.pdf"
+    "Chirag_Khanduja_SDET_QA_AI_Tester.pdf"
 )
 
-EMAIL_ADDRESS  = "chiragkhanduja786@gmail.com"
-EMAIL_PASSWORD = "ivci swwm gwfx btku"
+# ── Accounts — primary first, fallback second ──
+ACCOUNTS = [
+    {"email": "chiragkhanduja786@gmail.com",  "password": "ivci swwm gwfx btku"},
+    {"email": "chiragkhanduja034@gmail.com",  "password": "htda ohsb jgnx mabb"},
+]
+
+REPLY_TO = "chiragkhanduja786@gmail.com"
 
 BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")
 SENT_EMAILS_FILE   = BASE_DIR / "sent_emails.csv"
@@ -60,9 +66,9 @@ DRY_RUN = False
 # ─────────────────────────────────────────────
 #  SMTP CONNECTION SETTINGS
 # ─────────────────────────────────────────────
-SMTP_TIMEOUT        = 30          # seconds per connection attempt
-SMTP_MAX_RETRIES    = 3           # how many times to retry on failure
-SMTP_RETRY_WAIT     = (10, 20)    # seconds to wait between retries
+SMTP_TIMEOUT     = 30
+SMTP_MAX_RETRIES = 3
+SMTP_RETRY_WAIT  = (10, 20)
 
 # ─────────────────────────────────────────────
 #  ANTI-BLOCK / RATE LIMITING
@@ -72,10 +78,7 @@ DOMAIN_BURST_SIZE  = 2
 DOMAIN_BURST_PAUSE = (15, 30)
 BATCH_SIZE         = 50
 SESSION_BREAK      = (600, 1200)   # 20–35 min between batches
-MAX_PER_HOUR       = 65
-DAILY_CAP          = 250
 WARMUP_MODE        = False
-WARMUP_DAILY_CAP   = 50
 WARMUP_DELAY       = (8, 15)
 
 # ─────────────────────────────────────────────
@@ -161,30 +164,6 @@ def setup_logging() -> logging.Logger:
 log = setup_logging()
 
 # ─────────────────────────────────────────────
-#  HOURLY RATE LIMITER
-# ─────────────────────────────────────────────
-class HourlyRateLimiter:
-    def __init__(self, max_per_hour: int):
-        self.max_per_hour = max_per_hour
-        self.timestamps: List[float] = []
-
-    def wait_if_needed(self) -> None:
-        now = time.time()
-        self.timestamps = [t for t in self.timestamps if now - t < 3600]
-        if len(self.timestamps) >= self.max_per_hour:
-            oldest = self.timestamps[0]
-            wait_secs = 3600 - (now - oldest) + 5
-            log.info(
-                "⏳ Hourly limit (%d/hr) reached. Waiting %.0f minutes…",
-                self.max_per_hour, wait_secs / 60
-            )
-            time.sleep(wait_secs)
-            self.timestamps = []
-
-    def record(self) -> None:
-        self.timestamps.append(time.time())
-
-# ─────────────────────────────────────────────
 #  SENT-EMAIL TRACKING
 # ─────────────────────────────────────────────
 def load_sent_emails() -> Set[str]:
@@ -197,17 +176,6 @@ def mark_sent(email: str) -> None:
     SENT_EMAILS_FILE.parent.mkdir(parents=True, exist_ok=True)
     with SENT_EMAILS_FILE.open("a", newline="") as f:
         csv.writer(f).writerow([email])
-
-def get_today_sent_count() -> int:
-    today = date.today().isoformat()
-    if not LOG_FILE.exists():
-        return 0
-    with LOG_FILE.open(newline="") as f:
-        rows = list(csv.reader(f))
-    for row in rows[1:]:
-        if row and row[0] == today:
-            return int(row[1])
-    return 0
 
 def update_daily_log(count: int) -> None:
     today = date.today().isoformat()
@@ -231,8 +199,25 @@ def update_daily_log(count: int) -> None:
 # ─────────────────────────────────────────────
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,7}")
 
+def is_valid_email(email: str) -> bool:
+    """Sanity checks to reject malformed emails like -anshu@domain.com"""
+    try:
+        local, domain = email.rsplit("@", 1)
+    except ValueError:
+        return False
+    if local.startswith(("-", ".", "_", "+")) or local.endswith(("-", ".", "_", "+")):
+        return False
+    if ".." in email:
+        return False
+    if len(local) < 1:
+        return False
+    if "." not in domain or domain.startswith("-") or domain.endswith("-"):
+        return False
+    return True
+
 def extract_emails_from_pdfs(pdf_paths: List[str]) -> Dict[str, int]:
     counts: Dict[str, int] = {}
+    skipped = 0
     for path_str in pdf_paths:
         path = Path(path_str)
         if not path.exists():
@@ -244,24 +229,120 @@ def extract_emails_from_pdfs(pdf_paths: List[str]) -> Dict[str, int]:
                 text = page.extract_text() or ""
                 for match in EMAIL_RE.findall(text):
                     email = match.lower().strip()
+                    if not is_valid_email(email):
+                        log.debug("Skipped invalid email: %s", email)
+                        skipped += 1
+                        continue
                     domain = email.split("@")[-1]
                     if domain in EXCLUDED_DOMAINS:
                         continue
                     if email in EXCLUDED_EMAILS:
                         continue
                     counts[email] = counts.get(email, 0) + 1
-    log.info("Unique emails found across all PDFs: %d", len(counts))
+    log.info("Unique valid emails found: %d  |  Skipped invalid: %d", len(counts), skipped)
     return counts
+
+
+# ─────────────────────────────────────────────
+#  BOUNCE DETECTION (IMAP)
+# ─────────────────────────────────────────────
+BOUNCE_SENDERS = {
+    "mailer-daemon@googlemail.com",
+    "mailer-daemon@gmail.com",
+    "postmaster@gmail.com",
+}
+BOUNCE_SUBJECTS = [
+    "address not found",
+    "delivery status notification",
+    "undelivered mail returned",
+    "mail delivery failed",
+    "failure notice",
+    "returned mail",
+]
+
+def fetch_bounced_emails(account: dict) -> Set[str]:
+    """
+    Connect to Gmail IMAP, scan inbox for bounce/NDR emails,
+    extract the original recipient addresses and return them.
+    """
+    bounced: Set[str] = set()
+    EMAIL_IN_BODY = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,7}")
+    try:
+        log.info("📬 Checking inbox for bounces via IMAP (%s)…", account["email"])
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+        mail.login(account["email"], account["password"])
+        mail.select("inbox")
+
+        # Search for emails from mailer-daemon
+        for sender in BOUNCE_SENDERS:
+            _, data = mail.search(None, f'FROM "{sender}"')
+            ids = data[0].split()
+            for num in ids:
+                _, msg_data = mail.fetch(num, "(RFC822)")
+                raw = msg_data[0][1]
+                msg = email_lib.message_from_bytes(raw)
+                subject = (msg.get("Subject") or "").lower()
+
+                # Only process if subject looks like a bounce
+                if not any(kw in subject for kw in BOUNCE_SUBJECTS):
+                    continue
+
+                # Extract emails from body
+                body = ""
+                if msg.is_multipart():
+                    for part in msg.walk():
+                        ct = part.get_content_type()
+                        if ct in ("text/plain", "text/html"):
+                            try:
+                                body += part.get_payload(decode=True).decode(errors="ignore")
+                            except Exception:
+                                pass
+                else:
+                    try:
+                        body = msg.get_payload(decode=True).decode(errors="ignore")
+                    except Exception:
+                        pass
+
+                found = EMAIL_IN_BODY.findall(body)
+                for addr in found:
+                    addr = addr.lower().strip()
+                    # Skip daemon/system addresses
+                    if any(d in addr for d in ["mailer-daemon", "googlemail", "gmail.com", "google.com"]):
+                        continue
+                    bounced.add(addr)
+
+        mail.logout()
+        log.info("📭 Bounce check done — %d bounced address(es) found.", len(bounced))
+    except Exception as exc:
+        log.warning("⚠️  IMAP bounce check failed (non-critical): %s", exc)
+    return bounced
+
+def mark_bounced(emails: Set[str]) -> None:
+    """Add bounced emails to sent list so they are never retried."""
+    if not emails:
+        return
+    existing = load_sent_emails()
+    new_bounced = emails - existing
+    if not new_bounced:
+        return
+    SENT_EMAILS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with SENT_EMAILS_FILE.open("a", newline="") as f:
+        writer = csv.writer(f)
+        for addr in new_bounced:
+            writer.writerow([addr])
+    log.info("🚫 Marked %d bounced email(s) as do-not-send.", len(new_bounced))
 
 # ─────────────────────────────────────────────
 #  SMTP HELPERS
 # ─────────────────────────────────────────────
-def build_message(to_email: str, attachment_data: bytes,
+def build_message(to_email: str, from_email: str,
+                  attachment_data: bytes,
                   attach_mime: str, attach_name: str) -> EmailMessage:
     msg = EmailMessage()
-    msg["From"]    = EMAIL_ADDRESS
-    msg["To"]      = to_email
-    msg["Subject"] = EMAIL_SUBJECT
+    msg["From"]     = from_email
+    msg["To"]       = to_email
+    msg["Reply-To"] = REPLY_TO
+    msg["Subject"]  = EMAIL_SUBJECT
     msg.add_alternative(EMAIL_BODY, subtype="html")
     maintype, subtype = attach_mime.split("/", 1)
     msg.add_attachment(attachment_data, maintype=maintype,
@@ -269,58 +350,60 @@ def build_message(to_email: str, attachment_data: bytes,
     return msg
 
 
-def _try_starttls(timeout: int) -> smtplib.SMTP:
-    """Connect via port 587 with STARTTLS."""
+def _try_starttls(email: str, password: str, timeout: int) -> smtplib.SMTP:
     server = smtplib.SMTP("smtp.gmail.com", 587, timeout=timeout)
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+    server.login(email, password)
     return server
 
 
-def _try_ssl(timeout: int) -> smtplib.SMTP_SSL:
-    """Connect via port 465 with SSL (fallback)."""
+def _try_ssl(email: str, password: str, timeout: int) -> smtplib.SMTP_SSL:
     server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=timeout)
-    server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+    server.login(email, password)
     return server
 
 
-def connect_smtp() -> Union[smtplib.SMTP, smtplib.SMTP_SSL]:
-    """
-    Try STARTTLS (port 587) first, fall back to SSL (port 465).
-    Retries up to SMTP_MAX_RETRIES times with a short pause between attempts.
-    Raises RuntimeError if all attempts fail.
-    """
+def connect_smtp(account: dict) -> Union[smtplib.SMTP, smtplib.SMTP_SSL]:
+    """Connect using the given account dict {email, password}."""
+    email, password = account["email"], account["password"]
     for attempt in range(1, SMTP_MAX_RETRIES + 1):
-        # ── Try STARTTLS first ──────────────────────────────────────────
         try:
-            server = _try_starttls(SMTP_TIMEOUT)
-            log.info("✅ SMTP connected via port 587 (STARTTLS) — attempt %d", attempt)
+            server = _try_starttls(email, password, SMTP_TIMEOUT)
+            log.info("✅ Connected via 587 (STARTTLS) as %s — attempt %d", email, attempt)
             return server
         except (TimeoutError, OSError, smtplib.SMTPException) as exc:
-            log.warning("⚠️  Port 587 failed (attempt %d/%d): %s", attempt, SMTP_MAX_RETRIES, exc)
+            log.warning("⚠️  Port 587 failed (%s, attempt %d/%d): %s", email, attempt, SMTP_MAX_RETRIES, exc)
 
-        # ── Fall back to SSL ────────────────────────────────────────────
         try:
-            server = _try_ssl(SMTP_TIMEOUT)
-            log.info("✅ SMTP connected via port 465 (SSL) — attempt %d", attempt)
+            server = _try_ssl(email, password, SMTP_TIMEOUT)
+            log.info("✅ Connected via 465 (SSL) as %s — attempt %d", email, attempt)
             return server
         except (TimeoutError, OSError, smtplib.SMTPException) as exc:
-            log.warning("⚠️  Port 465 failed (attempt %d/%d): %s", attempt, SMTP_MAX_RETRIES, exc)
+            log.warning("⚠️  Port 465 failed (%s, attempt %d/%d): %s", email, attempt, SMTP_MAX_RETRIES, exc)
 
         if attempt < SMTP_MAX_RETRIES:
             wait = random.uniform(*SMTP_RETRY_WAIT)
-            log.info("🔄 Retrying SMTP in %.0f seconds…", wait)
+            log.info("🔄 Retrying in %.0f seconds…", wait)
             time.sleep(wait)
 
-    raise RuntimeError(
-        "❌ Could not connect to Gmail SMTP after %d attempts on ports 587 and 465.\n"
-        "   • Check your internet connection / firewall / VPN.\n"
-        "   • Try: nc -zv smtp.gmail.com 587  (in Terminal) to verify port access.\n"
-        "   • Switching to a mobile hotspot often resolves ISP-level blocks."
-        % SMTP_MAX_RETRIES
-    )
+    raise RuntimeError(f"❌ Could not connect with account: {email}")
+
+
+def connect_smtp_with_fallback(current_index: int) -> Tuple[Union[smtplib.SMTP, smtplib.SMTP_SSL], int]:
+    """
+    Try to connect starting from current_index.
+    Returns (server, account_index_used).
+    Raises RuntimeError if all accounts exhausted.
+    """
+    for idx in range(current_index, len(ACCOUNTS)):
+        try:
+            server = connect_smtp(ACCOUNTS[idx])
+            return server, idx
+        except RuntimeError:
+            log.warning("⚠️  Account %s exhausted, trying next…", ACCOUNTS[idx]["email"])
+    raise RuntimeError("❌ All Gmail accounts exhausted. No more fallback available.")
 
 # ─────────────────────────────────────────────
 #  PROGRESS BAR
@@ -379,26 +462,21 @@ def main() -> None:
     if not attach_path.exists():
         raise FileNotFoundError(f"Resume not found: {attach_path}")
 
-    effective_daily_cap   = WARMUP_DAILY_CAP if WARMUP_MODE else DAILY_CAP
-    effective_email_delay = WARMUP_DELAY      if WARMUP_MODE else PER_EMAIL_DELAY
+    # ── Bounce detection: mark bad addresses before sending ────────
+    for acc in ACCOUNTS:
+        bounced = fetch_bounced_emails(acc)
+        mark_bounced(bounced)
+
+    effective_email_delay = WARMUP_DELAY if WARMUP_MODE else PER_EMAIL_DELAY
 
     if WARMUP_MODE:
-        log.info("🔥 WARM-UP MODE active — max %d emails today, slower delays", WARMUP_DAILY_CAP)
-
-    already_today = get_today_sent_count()
-    remaining_cap = effective_daily_cap - already_today
-    if remaining_cap <= 0:
-        log.info("📅 Daily cap of %d already reached today. Run again tomorrow.", effective_daily_cap)
-        return
-    log.info("📅 Daily cap: %d | Sent today: %d | Remaining: %d",
-             effective_daily_cap, already_today, remaining_cap)
+        log.info("🔥 WARM-UP MODE active — slower delays")
 
     all_emails  = extract_emails_from_pdfs(PDF_PATHS)
     sent_before = load_sent_emails()
     send_list   = sorted(e for e in all_emails if e not in sent_before)
-    send_list   = send_list[:remaining_cap]
 
-    log.info("Already sent (all time): %d  |  New to send today: %d",
+    log.info("Already sent (all time): %d  |  New to send: %d",
              len(sent_before), len(send_list))
 
     if not send_list:
@@ -419,15 +497,16 @@ def main() -> None:
     attach_mime = mimetypes.guess_type(str(attach_path))[0] or "application/octet-stream"
     attach_name = attach_path.name
 
-    total         = len(send_list)
-    sent_count    = 0
+    total        = len(send_list)
+    sent_count   = 0
     domain_count: Dict[str, int] = {}
-    rate_limiter  = HourlyRateLimiter(MAX_PER_HOUR)
 
-    log.info("🚀 Starting send: %d emails | Batch size: %d | Max/hour: %d",
-             total, BATCH_SIZE, MAX_PER_HOUR)
-
-    server = connect_smtp()
+    # Start with primary account (index 0)
+    account_idx = 0
+    server, account_idx = connect_smtp_with_fallback(account_idx)
+    current_email = ACCOUNTS[account_idx]["email"]
+    log.info("🚀 Starting send: %d emails | Batch: %d | Account: %s",
+             total, BATCH_SIZE, current_email)
 
     if RICH:
         progress = make_progress()
@@ -460,39 +539,62 @@ def main() -> None:
                 remaining = pause - elapsed
                 if remaining > 0:
                     log.info("⏰ Resuming in %.0f minutes…", remaining / 60)
-            server = connect_smtp()
+            server, account_idx = connect_smtp_with_fallback(account_idx)
+            current_email = ACCOUNTS[account_idx]["email"]
             if RICH:
                 progress = make_progress()
                 progress.start()
                 task = progress.add_task("send", total=total)
 
-        rate_limiter.wait_if_needed()
-
-        msg = build_message(to_email, attach_data, attach_mime, attach_name)
+        msg = build_message(to_email, current_email, attach_data, attach_mime, attach_name)
         try:
             server.send_message(msg)
             sent_count += 1
-            rate_limiter.record()
             mark_sent(to_email)
-            log.info("✔ [%d/%d] Sent → %s", sent_count, total, to_email)
+            log.info("✔ [%d/%d] Sent → %s  (via %s)", sent_count, total, to_email, current_email)
 
         except smtplib.SMTPRecipientsRefused:
             log.warning("✘ Refused: %s", to_email)
 
         except smtplib.SMTPServerDisconnected:
-            log.warning("🔌 Server disconnected — reconnecting…")
+            log.warning("🔌 Disconnected — reconnecting…")
             try:
-                server = connect_smtp()
+                server, account_idx = connect_smtp_with_fallback(account_idx)
+                current_email = ACCOUNTS[account_idx]["email"]
+                msg = build_message(to_email, current_email, attach_data, attach_mime, attach_name)
                 server.send_message(msg)
                 sent_count += 1
-                rate_limiter.record()
                 mark_sent(to_email)
-                log.info("✔ [%d/%d] Sent (retry) → %s", sent_count, total, to_email)
+                log.info("✔ [%d/%d] Sent (retry) → %s  (via %s)", sent_count, total, to_email, current_email)
             except Exception as exc:
                 log.error("✘ Retry failed for %s: %s", to_email, exc)
 
         except smtplib.SMTPException as exc:
-            log.error("✘ SMTP error for %s: %s", to_email, exc)
+            err_str = str(exc).lower()
+            # Detect limit-related errors and switch account immediately
+            if any(k in err_str for k in ("daily limit", "quota", "too many", "temporarily", "suspended", "rate")):
+                log.warning("🚫 Account %s hit a limit: %s — switching account…", current_email, exc)
+                try:
+                    server.quit()
+                except Exception:
+                    pass
+                account_idx += 1   # move to next account
+                try:
+                    server, account_idx = connect_smtp_with_fallback(account_idx)
+                    current_email = ACCOUNTS[account_idx]["email"]
+                    log.info("🔀 Switched to account: %s", current_email)
+                    msg = build_message(to_email, current_email, attach_data, attach_mime, attach_name)
+                    server.send_message(msg)
+                    sent_count += 1
+                    mark_sent(to_email)
+                    log.info("✔ [%d/%d] Sent (switched) → %s  (via %s)", sent_count, total, to_email, current_email)
+                except RuntimeError:
+                    log.error("❌ All accounts exhausted. Stopping.")
+                    break
+                except Exception as exc2:
+                    log.error("✘ Failed after switch for %s: %s", to_email, exc2)
+            else:
+                log.error("✘ SMTP error for %s: %s", to_email, exc)
 
         except Exception as exc:
             log.error("✘ Unexpected error for %s: %s", to_email, exc)
@@ -521,7 +623,7 @@ def main() -> None:
         pass
 
     update_daily_log(sent_count)
-    log.info("🎉 Done — %d/%d emails sent today.", sent_count, total)
+    log.info("🎉 Done — %d/%d emails sent.", sent_count, total)
     log.info("📊 Total sent all time: %d", len(load_sent_emails()))
 
     delete_pdfs(PDF_PATHS, sent_count, total)

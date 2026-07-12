@@ -3,9 +3,9 @@
 OPTIMISED MULTI-PDF EMAIL SENDER v2
 - 200+ emails/day without Gmail block
 - Smart batching: 40 emails per SMTP session
-- Long session breaks (10-20 min) between batches
+- Long session breaks (20-35 min) between batches
 - Faster per-email delay (3-7 sec)
-- Hourly rate limiter (max 55/hour)
+- Hourly rate limiter (max 35/hour)
 - Warm-up mode for new accounts
 - Resumes automatically after breaks
 - All original features retained
@@ -29,24 +29,25 @@ from typing import Set, List, Dict
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (24).pdf",  # ← update with your leads PDF path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/NCR_Noida_Delhi_Gurgaon (17).pdf",
 ]
 
 ATTACHMENT_PATH = (
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Aakriti_Saini_QA.pdf"  # ← update with your resume path
+    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Sarita Kumari_Senior QA Engineer.pdf"
 )
 
-EMAIL_ADDRESS  = "saini.aakriti29@gmail.com"   # ← your Gmail address
-EMAIL_PASSWORD = "ocsh ynga aaru bjso"         # ← Gmail App Password (Google Account → Security → App Passwords)
+EMAIL_ADDRESS  = "saritac0111@gmail.com"
+EMAIL_PASSWORD = "zack jchz kxag mxwp"
 
-BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")   # ← update base dir
-SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_a.csv"
-LOG_FILE           = BASE_DIR / "email_lo_a.csv"
-PREVIEW_CSV        = BASE_DIR / "preview_recipients_A.csv"
-APP_LOG_FILE       = BASE_DIR / "app_a.log"
+BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")
+SENT_EMAILS_FILE   = BASE_DIR / "sent_emails_s.csv"
+LOG_FILE           = BASE_DIR / "email_log_s.csv"
+PREVIEW_CSV        = BASE_DIR / "preview_recipients_s.csv"
+APP_LOG_FILE       = BASE_DIR / "app_s.log"
 
 EXCLUDED_DOMAINS: Set[str] = {
-    "squareboat.com"
+    "squareboat.com", "hudle.in", "infosys.com",
+    "cgi.com", "rayosys.com", "cognizant.com",
 }
 
 EXCLUDED_EMAILS: Set[str] = {"info@jobcurator.in"}
@@ -71,98 +72,82 @@ WARMUP_DELAY       = (8, 15)
 #  EMAIL CONTENT
 # ─────────────────────────────────────────────
 EMAIL_SUBJECT = (
-    "QA Engineer — 3.5 Years | Manual, API & Database Testing | FinTech, E-Commerce, SaaS | Gurugram"
+    "QA Engineer — 8.5 Years Experience | Selenium, Java, API Testing | Immediate Joiner"
 )
 
 EMAIL_BODY = """\
 <p>Dear Hiring Manager,</p>
 
 <p>
-I am writing to express my interest in a <strong>QA Engineer</strong> /
-<strong>Software Test Engineer</strong> opportunity at your organization.
-With <strong>3.5+ years of experience</strong> in end-to-end quality assurance, I bring
-hands-on expertise in <strong>Manual Testing</strong>, <strong>API Testing</strong>,
-<strong>Database Testing</strong>, and <strong>Defect Lifecycle Management</strong> across
-<strong>FinTech</strong>, <strong>E-Commerce</strong>, <strong>MarTech</strong>,
-<strong>MusicTech</strong>, <strong>Travel</strong>, and <strong>HRTech</strong> domains.
+I am writing to express my interest in a <strong>QA Engineer</strong> opportunity at your
+organization. With <strong>8.5 years of total experience</strong>, including
+<strong>6+ years in Quality Assurance</strong>, I bring a strong blend of
+<strong>Manual Testing</strong> and <strong>Test Automation</strong> expertise that drives
+measurable improvements in software quality and release confidence.
 </p>
 
 <p><strong>Here is a snapshot of my profile:</strong></p>
 <ul>
   <li>
-    <strong>Manual &amp; Functional Testing:</strong> Extensive experience executing
-    <strong>Functional</strong>, <strong>Regression</strong>, <strong>Smoke</strong>,
-    <strong>Sanity</strong>, <strong>Integration</strong>, <strong>UAT</strong>, and
-    <strong>Cross-Browser Testing</strong> across web and mobile applications, ensuring
-    high-quality, on-time product releases.
+    <strong>Automation Testing:</strong> Hands-on experience with
+    <strong>Selenium WebDriver with Java</strong>, using frameworks such as
+    <strong>TestNG</strong>, <strong>Maven</strong>, and
+    <strong>Page Object Model (POM)</strong> to build maintainable, scalable test suites.
   </li>
   <li>
-    <strong>API Testing:</strong> Proficient in <strong>REST API Testing</strong> using
-    <strong>Postman</strong> and <strong>Swagger</strong> — validating request/response
-    payloads, <strong>HTTP status codes</strong>, authentication flows, endpoint behavior,
-    and pre/post-scripts across environments.
+    <strong>API Testing:</strong> Proficient in <strong>REST API testing</strong>
+    using <strong>Postman</strong> and <strong>Rest Assured</strong> for end-to-end
+    service validation and integration checks.
   </li>
   <li>
-    <strong>Database Testing:</strong> Hands-on experience with backend data validation
-    using <strong>SQL</strong> (MySQL, DBeaver) and <strong>NoSQL</strong> (MongoDB,
-    Studio3T) — verifying data integrity, consistency, and accuracy across complex
-    application workflows.
+    <strong>Manual &amp; Functional Testing:</strong> Deep expertise in
+    <strong>Functional Testing</strong>, <strong>Regression Testing</strong>, and
+    managing complete test cycles from requirement analysis to sign-off.
   </li>
   <li>
-    <strong>Test Management &amp; STLC:</strong> Skilled in end-to-end
-    <strong>STLC</strong> and <strong>SDLC</strong> — from test planning and
-    <strong>test case design</strong> (300+ test cases) through execution, defect
-    reporting, regression sign-off, and release validation.
+    <strong>Mobile Testing:</strong> Experienced in mobile application testing using
+    <strong>Android Studio</strong> and <strong>BrowserStack</strong> for
+    cross-platform and cross-browser validation.
   </li>
   <li>
-    <strong>Defect &amp; Project Tracking:</strong> Experienced with
-    <strong>Jira</strong>, <strong>Asana</strong>, <strong>Taiga</strong>, and
-    <strong>Trello</strong> for defect lifecycle management, sprint coordination,
-    and requirements traceability.
+    <strong>Bug Tracking &amp; Collaboration:</strong> Skilled in <strong>Jira</strong>
+    and <strong>Confluence</strong> for defect lifecycle management and cross-functional
+    team collaboration.
   </li>
   <li>
-    <strong>Log Analysis &amp; Debugging:</strong> Proficient with
-    <strong>AWS CloudWatch</strong>, <strong>Android Studio</strong>, and
-    <strong>Chrome DevTools</strong> for application log analysis, crash investigation,
-    and root-cause analysis.
+    <strong>Debugging &amp; Network Analysis:</strong> Proficient with
+    <strong>Charles Proxy</strong> for request interception, traffic analysis,
+    and root-cause investigation of defects.
   </li>
   <li>
-    <strong>Agile / Scrum:</strong> Active contributor in
-    <strong>Agile</strong> and <strong>Scrum</strong> environments — sprint planning,
-    daily standups, backlog grooming, and retrospectives.
-  </li>
-  <li>
-    <strong>Client Communication &amp; Leadership:</strong> Gathered requirements through
-    direct client calls, mentored junior QA team members on test case design standards
-    and defect documentation best practices.
+    <strong>Database Testing:</strong> Working knowledge of <strong>MySQL</strong>
+    for backend validation, data integrity checks, and query-based testing.
   </li>
 </ul>
 
-<p><strong>Domain experience spans:</strong>
-FinTech (NOWNOW — Nigeria &amp; Angola), Travel (ZAPS, Joyus Trips, Anvayins),
-MusicTech (SyncMama — AI-powered, 400K+ tracks), E-Commerce (Orikam Healthcare),
-HRTech (Navigator), and Recruitment / ATS platforms.
+<p>
+I hold a certification in <strong>Manual &amp; Automation Testing (Selenium with Java)</strong>
+and have a consistent track record of improving defect detection rates, reducing manual testing
+effort, and collaborating effectively with developers, product managers, and stakeholders.
 </p>
 
 <p>
-I am currently based in <strong>Gurugram, Haryana</strong> and am open to discussing
-relevant opportunities at your organization.
+I am currently based in <strong>New Delhi</strong> and am available as an
+<strong>Immediate Joiner</strong>.
 </p>
 
 <p>
-I have attached my updated resume for your consideration and would welcome a brief call
-to discuss how my experience aligns with your team's requirements.
+I have attached my updated resume for your consideration. I would welcome a brief call to
+discuss how my experience aligns with your team's needs.
 </p>
 
 <p>Thank you for your time. I look forward to hearing from you.</p>
 
 <p>
 Warm regards,<br>
-<strong>Aakriti Saini</strong><br>
-Software QA Engineer<br>
-+91-9802129491<br>
-<a href="https://www.linkedin.com/in/aakriti-saini-01mar1998"
-   style="color: #0066cc;">LinkedIn Profile</a>
+<strong>Sarita Kumari</strong><br>
+QA Engineer | Manual &amp; Automation Testing<br>
+7200979238
 </p>
 """
 

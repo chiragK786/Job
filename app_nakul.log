@@ -1,0 +1,905 @@
+2026-05-15 13:26:13  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-15 13:26:13  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-15 13:26:13  INFO      Reading PDF: TestingJobs_FullList (11).pdf
+2026-05-15 13:26:33  INFO      Unique emails found: 253  |  Excluded: 0
+2026-05-15 13:26:33  INFO      Already sent (all time): 0  |  New to send today: 250
+2026-05-15 13:26:33  INFO      🚀 Starting send: 250 emails | Batch size: 40 | Max/hour: 55
+2026-05-15 13:26:35  INFO      ✅ SMTP connected
+2026-05-15 13:27:00  INFO      ✔ [1/250] Sent → -ramesh@talentsmart.co.in
+2026-05-15 13:27:31  INFO      ✔ [2/250] Sent → -sravani.vommi@sonata-software.com
+2026-05-15 13:27:59  INFO      ✔ [3/250] Sent → a_zeba.begg@airtel.com
+2026-05-15 13:35:10  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-15 13:35:10  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-15 13:35:10  INFO      Reading PDF: TestingJobs_FullList (10).pdf
+2026-05-15 13:36:09  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-15 13:36:09  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-15 13:36:09  INFO      Reading PDF: TestingJobs_FullList (10).pdf
+2026-05-15 13:36:38  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-15 13:36:38  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-15 13:36:38  INFO      Reading PDF: TestingJobs_FullList (10).pdf
+2026-05-15 13:37:00  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-15 13:37:00  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-15 13:37:00  INFO      Reading PDF: TestingJobs_FullList (11).pdf
+2026-05-15 13:37:24  INFO      Unique emails found: 253  |  Excluded: 0
+2026-05-15 13:37:24  INFO      Already sent (all time): 3  |  New to send today: 250
+2026-05-15 13:37:24  INFO      🚀 Starting send: 250 emails | Batch size: 40 | Max/hour: 55
+2026-05-15 13:37:25  INFO      ✅ SMTP connected
+2026-05-15 13:37:50  INFO      ✔ [1/250] Sent → aakash.v@techedge-solution.com
+2026-05-15 13:38:20  INFO      ✔ [2/250] Sent → aarthi.p@domniclewis.com
+2026-05-15 13:38:49  INFO      ✔ [3/250] Sent → aayushi.poothia@apptadinc.com
+2026-05-15 13:39:21  INFO      ✔ [4/250] Sent → abdul@prosapiens.in
+2026-05-15 13:39:50  INFO      ✔ [5/250] Sent → abhishek@jigya.com
+2026-05-15 13:40:19  INFO      ✔ [6/250] Sent → admin@pixigoinnovation.com
+2026-05-15 13:40:50  INFO      ✔ [7/250] Sent → akanksha.anishaglobalsevices11@gmail.com
+2026-05-15 13:41:19  INFO      ✔ [8/250] Sent → akash.sahu@equestever.com
+2026-05-15 13:41:48  INFO      ✔ [9/250] Sent → akila@avtechsoftwareservices.co.in
+2026-05-15 13:42:19  INFO      ✔ [10/250] Sent → alina.zaman@girikon.com
+2026-05-15 13:42:51  INFO      ✔ [11/250] Sent → amishac@gkhrconsulting.com
+2026-05-15 13:43:23  INFO      ✔ [12/250] Sent → amrutar.paturde@emcure.com
+2026-05-15 13:43:51  INFO      ✔ [13/250] Sent → angel@epiqindia.com
+2026-05-15 13:44:21  INFO      ✔ [14/250] Sent → anil.kumar@sourceresources.co
+2026-05-15 13:44:49  INFO      ✔ [15/250] Sent → ankur.kakran@infojiniconsulting.com
+2026-05-15 13:45:18  INFO      ✔ [16/250] Sent → anoushka@tsit.co.in
+2026-05-15 13:45:48  INFO      ✔ [17/250] Sent → anusha.d@spartechnologyservices.com
+2026-05-15 13:46:17  INFO      ✔ [18/250] Sent → apacrec04@itconnectus.com
+2026-05-15 13:46:48  INFO      ✔ [19/250] Sent → apacrec10@itconnectus.com
+2026-05-15 13:46:48  DEBUG     Domain burst pause (itconnectus.com): 21.9s
+2026-05-15 13:47:38  INFO      ✔ [20/250] Sent → ashmitap@futuresoftindia.com
+2026-05-15 13:48:07  INFO      ✔ [21/250] Sent → asra@rmvworkforce.com
+2026-05-15 13:48:37  INFO      ✔ [22/250] Sent → ayesha@xavemcloud.com
+2026-05-15 13:49:05  INFO      ✔ [23/250] Sent → baddula.sreekanth@ltm.com
+2026-05-15 13:49:35  INFO      ✔ [24/250] Sent → bhagavathi.sharma@quest-global.com
+2026-05-15 13:50:06  INFO      ✔ [25/250] Sent → bhagavathi@avtechsoftwareservices.co.in
+2026-05-15 13:50:06  DEBUG     Domain burst pause (avtechsoftwareservices.co.in): 18.5s
+2026-05-15 13:50:54  INFO      ✔ [26/250] Sent → bhanuchandar@skaps.co.in
+2026-05-15 13:51:23  INFO      ✔ [27/250] Sent → bharath.c@techedge-solution.com
+2026-05-15 13:51:23  DEBUG     Domain burst pause (techedge-solution.com): 27.1s
+2026-05-15 13:52:21  INFO      ✔ [28/250] Sent → bharathi@aimplusstaffing.com
+2026-05-15 13:52:52  INFO      ✔ [29/250] Sent → business@mm-consultancy.net
+2026-05-15 13:53:20  INFO      ✔ [30/250] Sent → bussa.sirisha@mphasis.com
+2026-05-15 13:53:48  INFO      ✔ [31/250] Sent → bvineth@asofttek.com
+2026-05-15 13:54:17  INFO      ✔ [32/250] Sent → career@opensenselabs.com
+2026-05-15 13:54:45  INFO      ✔ [33/250] Sent → career@refercircle.in
+2026-05-15 13:55:14  INFO      ✔ [34/250] Sent → careers@vishleshan.net
+2026-05-15 13:55:44  INFO      ✔ [35/250] Sent → carolin.j@vdartinc.com
+2026-05-15 13:56:15  INFO      ✔ [36/250] Sent → chandani@maplecloudtechnologies.com
+2026-05-15 13:56:42  INFO      ✔ [37/250] Sent → chinnadurai.p@infotics.co
+2026-05-15 13:57:10  INFO      ✔ [38/250] Sent → chitra.sharma@talentola.com
+2026-05-15 13:57:41  INFO      ✔ [39/250] Sent → connect@indivize.com
+2026-05-15 13:58:10  INFO      ✔ [40/250] Sent → contact@talent3.com
+2026-05-15 13:58:16  INFO      ☕ Batch 1/7 complete (40 sent). Session break: 11 minutes…
+2026-05-15 14:03:16  INFO      ⏰ Resuming in 6 minutes…
+2026-05-15 14:08:16  INFO      ⏰ Resuming in 1 minutes…
+2026-05-15 14:09:03  INFO      ✅ SMTP connected
+2026-05-15 14:09:28  INFO      ✔ [41/250] Sent → csa.namrata8081@gmail.com
+2026-05-15 14:09:28  DEBUG     Domain burst pause (gmail.com): 21.3s
+2026-05-15 14:10:19  INFO      ✔ [42/250] Sent → danish@adescaretech.com
+2026-05-15 14:10:50  INFO      ✔ [43/250] Sent → deepu.r@spartechnologyservices.com
+2026-05-15 14:10:50  DEBUG     Domain burst pause (spartechnologyservices.com): 21.7s
+2026-05-15 14:11:41  INFO      ✔ [44/250] Sent → details.faisal@pmcsservices.com
+2026-05-15 14:12:12  INFO      ✔ [45/250] Sent → devakumar.d@smartitframe.com
+2026-05-15 14:12:40  INFO      ✔ [46/250] Sent → devika@ielektron.com
+2026-05-15 14:13:07  INFO      ✔ [47/250] Sent → dharshini.v@vdartinc.com
+2026-05-15 14:13:07  DEBUG     Domain burst pause (vdartinc.com): 17.3s
+2026-05-15 14:13:54  INFO      ✔ [48/250] Sent → dilraj.kaur@programming.com
+2026-05-15 14:14:23  INFO      ✔ [49/250] Sent → divya@flexingit.in
+2026-05-15 14:14:53  INFO      ✔ [50/250] Sent → divya@humanectere.com
+2026-05-15 14:15:23  INFO      ✔ [51/250] Sent → divyag@edurungroup.in
+2026-05-15 14:15:51  INFO      ✔ [52/250] Sent → divyanshi.raghaw@innovationm.com
+2026-05-15 14:16:22  INFO      ✔ [53/250] Sent → doddipalli.bhanuja@compunnel.com
+2026-05-15 14:16:50  INFO      ✔ [54/250] Sent → elluri.bhavani@millionmindsinfo.com
+2026-05-15 14:17:18  INFO      ✔ [55/250] Sent → email.hanseena@costaffglobal.in
+2026-05-15 14:17:22  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 21 minutes…
+2026-05-15 14:37:55  ERROR     ✘ SMTP error for evoke@evokehr.com: (451, b'4.4.2 Timeout - closing connection.\n4.4.2  For more information, go to\n4.4.2  https://support.google.com/a/answer/3221692 98e67ed59e1d1-369517aa6f8sm2486047a91.11 - gsmtp', 'nakulkohli5@gmail.com')
+2026-05-15 14:38:01  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-15 14:38:03  INFO      ✅ SMTP connected
+2026-05-15 14:38:28  INFO      ✔ [56/250] Sent (retry) → faizan@unisongroup.com
+2026-05-15 14:38:59  INFO      ✔ [57/250] Sent → fathima.nowwin@gmail.com
+2026-05-15 14:39:30  INFO      ✔ [58/250] Sent → gandhimathi@annulartechnologies.com
+2026-05-15 14:40:01  INFO      ✔ [59/250] Sent → gayathri.murahari@quadrantitservices.com
+2026-05-15 14:40:33  INFO      ✔ [60/250] Sent → gayathri@psrtek.com
+2026-05-15 14:41:04  INFO      ✔ [61/250] Sent → gayathri@smartitframe.com
+2026-05-15 14:41:04  DEBUG     Domain burst pause (smartitframe.com): 18.1s
+2026-05-15 14:41:53  INFO      ✔ [62/250] Sent → giridhar.g@tekwissen.in
+2026-05-15 14:42:23  INFO      ✔ [63/250] Sent → girijadevi.g@thomasmount.com
+2026-05-15 14:42:52  INFO      ✔ [64/250] Sent → gorika.singh@aqmtechnologies.com
+2026-05-15 14:43:22  INFO      ✔ [65/250] Sent → harini.s@metaforgeit.com
+2026-05-15 14:43:52  INFO      ✔ [66/250] Sent → harry@goldenpicktech.com
+2026-05-15 14:44:21  INFO      ✔ [67/250] Sent → harshpathare.convictionhr@gmail.com
+2026-05-15 14:44:21  DEBUG     Domain burst pause (gmail.com): 26.4s
+2026-05-15 14:45:16  INFO      ✔ [68/250] Sent → hello@dqodify.com
+2026-05-15 14:45:45  INFO      ✔ [69/250] Sent → himanshu.shekharotta@wipro.com
+2026-05-15 14:46:13  INFO      ✔ [70/250] Sent → hr.tas@theaischool.co
+2026-05-15 14:46:43  INFO      ✔ [71/250] Sent → hr2@krysalisco.com
+2026-05-15 14:47:15  INFO      ✔ [72/250] Sent → hr@accudataanalytics.com
+2026-05-15 14:47:45  INFO      ✔ [73/250] Sent → hr@anytimerupee.com
+2026-05-15 14:48:15  INFO      ✔ [74/250] Sent → hr@arokee.com
+2026-05-15 14:48:44  INFO      ✔ [75/250] Sent → hr@bharatjagriti.com
+2026-05-15 14:49:13  INFO      ✔ [76/250] Sent → hr@bloomitsolutions.com
+2026-05-15 14:49:41  INFO      ✔ [77/250] Sent → hr@devnagri.com
+2026-05-15 14:50:12  INFO      ✔ [78/250] Sent → hr@estafftech.com
+2026-05-15 14:50:44  INFO      ✔ [79/250] Sent → hr@hiraksolutions.com
+2026-05-15 14:50:50  INFO      ☕ Batch 2/7 complete (79 sent). Session break: 17 minutes…
+2026-05-15 14:55:50  INFO      ⏰ Resuming in 12 minutes…
+2026-05-15 15:00:50  INFO      ⏰ Resuming in 7 minutes…
+2026-05-15 15:05:50  INFO      ⏰ Resuming in 2 minutes…
+2026-05-15 15:08:08  INFO      ✅ SMTP connected
+2026-05-15 15:08:34  INFO      ✔ [80/250] Sent → hr@ingenific.com
+2026-05-15 15:09:04  INFO      ✔ [81/250] Sent → hr@logicodesoftware.com
+2026-05-15 15:09:35  INFO      ✔ [82/250] Sent → hr@prologicfirst.com
+2026-05-15 15:10:04  INFO      ✔ [83/250] Sent → hr@raptbot.com
+2026-05-15 15:10:33  INFO      ✔ [84/250] Sent → hr@refillhealth.com
+2026-05-15 15:11:05  INFO      ✔ [85/250] Sent → hr@refurbedge.com
+2026-05-15 15:11:33  INFO      ✔ [86/250] Sent → hr@siitechnologies.co.uk
+2026-05-15 15:12:02  INFO      ✔ [87/250] Sent → hr@smart-minds.co.in
+2026-05-15 15:12:32  INFO      ✔ [88/250] Sent → hr@techaivv.com
+2026-05-15 15:13:02  INFO      ✔ [89/250] Sent → hr@techior.com
+2026-05-15 15:13:32  INFO      ✔ [90/250] Sent → hr@visdinsolutions.com
+2026-05-15 15:14:01  INFO      ✔ [91/250] Sent → hr@whistle-stopper.com
+2026-05-15 15:14:31  INFO      ✔ [92/250] Sent → hr@zfunds.in
+2026-05-15 15:15:02  INFO      ✔ [93/250] Sent → hre@pioneercadsolution.com
+2026-05-15 15:15:32  INFO      ✔ [94/250] Sent → info@ddaitech.com
+2026-05-15 15:16:03  INFO      ✔ [95/250] Sent → info@future4global.com
+2026-05-15 15:16:34  INFO      ✔ [96/250] Sent → info@jobcurator.in
+2026-05-15 15:17:02  INFO      ✔ [97/250] Sent → info@sankalptechnologyservices.com
+2026-05-15 15:17:34  INFO      ✔ [98/250] Sent → info@vertexitconsultancy.com
+2026-05-15 15:18:05  INFO      ✔ [99/250] Sent → ishita.sharma@peopleintegra.com
+2026-05-15 15:18:33  INFO      ✔ [100/250] Sent → ismita.ghosh@webart.technol
+2026-05-15 15:19:03  INFO      ✔ [101/250] Sent → jayanthi03@infosys.com
+2026-05-15 15:19:32  INFO      ✔ [102/250] Sent → jemima.j@edureka.co
+2026-05-15 15:20:00  INFO      ✔ [103/250] Sent → jenifer.n@liveconnections.in
+2026-05-15 15:20:31  INFO      ✔ [104/250] Sent → jigeorge@teksystems.com
+2026-05-15 15:21:01  INFO      ✔ [105/250] Sent → jigya.dubey@covetus.com
+2026-05-15 15:21:31  INFO      ✔ [106/250] Sent → jobs@gtcsys.com
+2026-05-15 15:22:00  INFO      ✔ [107/250] Sent → juned.turak@gotatva.com
+2026-05-15 15:22:28  INFO      ✔ [108/250] Sent → jyothi@tquanta.com
+2026-05-15 15:22:58  INFO      ✔ [109/250] Sent → jyoti.hr@inspityitsolutions.com
+2026-05-15 15:23:30  INFO      ✔ [110/250] Sent → jyoti.sharma@quesscorp.com
+2026-05-15 15:23:37  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 15 minutes…
+2026-05-15 15:38:33  ERROR     ✘ SMTP error for jyoti.singh@peopleintegra.com: (451, b'4.4.2 Timeout - closing connection.\n4.4.2  For more information, go to\n4.4.2  https://support.google.com/a/answer/3221692 d2e1a72fcca58-83f19c5c020sm5355783b3a.30 - gsmtp', 'nakulkohli5@gmail.com')
+2026-05-15 15:38:33  DEBUG     Domain burst pause (peopleintegra.com): 23.3s
+2026-05-15 15:39:01  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-15 15:39:02  INFO      ✅ SMTP connected
+2026-05-15 15:39:27  INFO      ✔ [111/250] Sent (retry) → kajal1.kumari@upgrad.com
+2026-05-15 15:39:58  INFO      ✔ [112/250] Sent → kalpesh.kotkar@globant.com
+2026-05-15 15:40:27  INFO      ✔ [113/250] Sent → kamalraj.rajdevkumar1@innovasolutions.com
+2026-05-15 15:40:58  INFO      ✔ [114/250] Sent → karamjeet@unisongroup.com
+2026-05-15 15:40:58  DEBUG     Domain burst pause (unisongroup.com): 26.9s
+2026-05-15 15:41:53  INFO      ✔ [115/250] Sent → karthik@scaresservices.com
+2026-05-15 15:42:24  INFO      ✔ [116/250] Sent → keerthi.v@testyantra.co.uk
+2026-05-15 15:42:53  INFO      ✔ [117/250] Sent → kevin.j@emeasurematics.com
+2026-05-15 15:43:23  INFO      ✔ [118/250] Sent → khushi.singh@appzlogic.com
+2026-05-15 15:43:28  INFO      ☕ Batch 3/7 complete (118 sent). Session break: 13 minutes…
+2026-05-15 15:48:28  INFO      ⏰ Resuming in 8 minutes…
+2026-05-15 15:53:28  INFO      ⏰ Resuming in 3 minutes…
+2026-05-15 15:56:44  INFO      ✅ SMTP connected
+2026-05-15 15:57:10  INFO      ✔ [119/250] Sent → kiruthika.devi@infotics.co
+2026-05-15 15:57:10  DEBUG     Domain burst pause (infotics.co): 18.4s
+2026-05-15 15:57:57  INFO      ✔ [120/250] Sent → kshama.raj@blueocean.systems
+2026-05-15 15:58:25  INFO      ✔ [121/250] Sent → kundan.singh@inkitsolutions.com
+2026-05-15 15:58:55  INFO      ✔ [122/250] Sent → lakshmi.a@immidart.com
+2026-05-15 15:59:27  INFO      ✔ [123/250] Sent → lalitha@nexusprofessionals.in
+2026-05-15 15:59:58  INFO      ✔ [124/250] Sent → leena.karri@launchcg.com
+2026-05-15 16:00:32  INFO      ✔ [125/250] Sent → lkumari@vyzeinc.com
+2026-05-15 16:01:02  INFO      ✔ [126/250] Sent → m.sharanya@enspirit.co
+2026-05-15 16:01:32  INFO      ✔ [127/250] Sent → madhavi.singh@ethxsoftcon.com
+2026-05-15 16:02:01  INFO      ✔ [128/250] Sent → mahendra@i-fusioninc.com
+2026-05-15 16:02:30  INFO      ✔ [129/250] Sent → mahima.handysolver@gmail.com
+2026-05-15 16:02:59  INFO      ✔ [130/250] Sent → manikandan@servicecare.in
+2026-05-15 16:03:27  INFO      ✔ [131/250] Sent → manisha.ravuri@automus.com
+2026-05-15 16:03:58  INFO      ✔ [132/250] Sent → megha.ns@eastencher.com
+2026-05-15 16:04:30  INFO      ✔ [133/250] Sent → meghna@gracehire.com
+2026-05-15 16:05:03  INFO      ✔ [134/250] Sent → meshach@liveconnections.in
+2026-05-15 16:05:04  DEBUG     Domain burst pause (liveconnections.in): 22.2s
+2026-05-15 16:05:56  INFO      ✔ [135/250] Sent → mgbeg@yorksolutions.net
+2026-05-15 16:06:27  INFO      ✔ [136/250] Sent → milinda.rao@workast.com.mx
+2026-05-15 16:06:56  INFO      ✔ [137/250] Sent → mohit.kumar@firstmeridianglobal.com
+2026-05-15 16:07:26  INFO      ✔ [138/250] Sent → monika.m@aarchsol.com
+2026-05-15 16:07:55  INFO      ✔ [139/250] Sent → monika.swain@infotics.co
+2026-05-15 16:08:23  INFO      ✔ [140/250] Sent → monika.tyagi@igiusa.com
+2026-05-15 16:08:52  INFO      ✔ [141/250] Sent → mudit.goswami@infogain.com
+2026-05-15 16:09:20  INFO      ✔ [142/250] Sent → narkishbanu.m@vdartinc.com
+2026-05-15 16:09:50  INFO      ✔ [143/250] Sent → narmada.k@creenosolutions.com
+2026-05-15 16:10:19  INFO      ✔ [144/250] Sent → neeshi.panchal@digitrixsoftware.com
+2026-05-15 16:10:47  INFO      ✔ [145/250] Sent → neha@vconnectjob.in
+2026-05-15 16:11:16  INFO      ✔ [146/250] Sent → nikhil@anaxontech.com
+2026-05-15 16:11:45  INFO      ✔ [147/250] Sent → niteesha@cabptoidsolutions.com
+2026-05-15 16:12:27  INFO      ✔ [148/250] Sent → nitika.kalra@helixbeat.com
+2026-05-15 16:12:56  INFO      ✔ [149/250] Sent → nitish.kumar@mimiotech.com
+2026-05-15 16:13:26  INFO      ✔ [150/250] Sent → nivethitha.thangaraj@kumaran.com
+2026-05-15 16:13:56  INFO      ✔ [151/250] Sent → operations@skytek-global.com
+2026-05-15 16:14:28  INFO      ✔ [152/250] Sent → pariti.vinay@onzestt.com
+2026-05-15 16:14:57  INFO      ✔ [153/250] Sent → parvez@aiadeptconsulting.com
+2026-05-15 16:15:27  INFO      ✔ [154/250] Sent → pasha@8elementstech.com
+2026-05-15 16:16:24  INFO      ✔ [155/250] Sent → patil.shivani@orcapod.work
+2026-05-15 16:16:55  INFO      ✔ [156/250] Sent → pavankumar.guttula@webpipl.com
+2026-05-15 16:17:24  INFO      ✔ [157/250] Sent → pavitra.reddy@costaffglobal.in
+2026-05-15 16:17:24  DEBUG     Domain burst pause (costaffglobal.in): 20.2s
+2026-05-15 16:18:14  INFO      ✔ [158/250] Sent → pbaghel@vyzeinc.com
+2026-05-15 16:18:14  DEBUG     Domain burst pause (vyzeinc.com): 29.4s
+2026-05-15 16:18:48  INFO      ☕ Batch 4/7 complete (158 sent). Session break: 17 minutes…
+2026-05-15 16:23:48  INFO      ⏰ Resuming in 12 minutes…
+2026-05-15 16:28:48  INFO      ⏰ Resuming in 7 minutes…
+2026-05-15 16:33:48  INFO      ⏰ Resuming in 2 minutes…
+2026-05-15 16:36:07  INFO      ✅ SMTP connected
+2026-05-15 16:36:30  INFO      ✔ [159/250] Sent → peak_hire_solutions@proton.me
+2026-05-15 16:36:59  INFO      ✔ [160/250] Sent → pkalyandharmendra@rezolve.com
+2026-05-15 16:37:27  INFO      ✔ [161/250] Sent → prabhu@americanitsystems.com
+2026-05-15 16:37:55  INFO      ✔ [162/250] Sent → praharsha@intellectt.com
+2026-05-15 16:38:25  INFO      ✔ [163/250] Sent → pranitaganvir@visdinsolutions.com
+2026-05-15 16:38:25  DEBUG     Domain burst pause (visdinsolutions.com): 27.8s
+2026-05-15 16:39:22  INFO      ✔ [164/250] Sent → priya.s@vdartinc.com
+2026-05-15 16:39:22  DEBUG     Domain burst pause (vdartinc.com): 19.5s
+2026-05-15 16:40:12  INFO      ✔ [165/250] Sent → priyanka@hr-hyre.com
+2026-05-15 16:40:39  INFO      ✔ [166/250] Sent → priyanshu.k@careernexta.com
+2026-05-15 16:41:07  INFO      ✔ [167/250] Sent → queentina@vrdella.com
+2026-05-15 16:41:36  INFO      ✔ [168/250] Sent → rahulsharma@flexingit.in
+2026-05-15 16:41:36  DEBUG     Domain burst pause (flexingit.in): 17.4s
+2026-05-15 16:42:21  INFO      ✔ [169/250] Sent → rajashrij@quinnox.com
+2026-05-15 16:42:49  INFO      ✔ [170/250] Sent → rajeshm@kaizentek.com
+2026-05-15 16:43:16  INFO      ✔ [171/250] Sent → rajeshwari.chencha@epps-erp.com
+2026-05-15 16:43:45  INFO      ✔ [172/250] Sent → rajiv.raju@placeelements.com
+2026-05-15 16:44:13  INFO      ✔ [173/250] Sent → raju.dodda@quadranttechnologies.com
+2026-05-15 16:44:17  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 13 minutes…
+2026-05-15 16:57:15  ERROR     ✘ SMTP error for ramya.r@tekwissen.in: (451, b'4.4.2 Timeout - closing connection.\n4.4.2  For more information, go to\n4.4.2  https://support.google.com/a/answer/3221692 41be03b00d2f7-c82bb115c38sm5291681a12.28 - gsmtp', 'nakulkohli5@gmail.com')
+2026-05-15 16:57:15  DEBUG     Domain burst pause (tekwissen.in): 28.0s
+2026-05-15 16:57:50  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-15 16:57:51  INFO      ✅ SMTP connected
+2026-05-15 16:58:15  INFO      ✔ [174/250] Sent (retry) → ranusingh@stratosphere.co.in
+2026-05-15 16:58:42  INFO      ✔ [175/250] Sent → recruit3@goldsikka.com
+2026-05-15 16:59:10  INFO      ✔ [176/250] Sent → revanth.k@socbridgesemi.com
+2026-05-15 16:59:38  INFO      ✔ [177/250] Sent → rimsha@xavemcloud.com
+2026-05-15 16:59:38  DEBUG     Domain burst pause (xavemcloud.com): 24.0s
+2026-05-15 17:00:30  INFO      ✔ [178/250] Sent → rishitha.vasagiri@lancesoft.in
+2026-05-15 17:00:59  INFO      ✔ [179/250] Sent → ritu.tripathi@diverselynx.in
+2026-05-15 17:01:26  INFO      ✔ [180/250] Sent → riya.satyala@robotinsighttech.com
+2026-05-15 17:01:53  INFO      ✔ [181/250] Sent → rizwan.a@xlysi.com
+2026-05-15 17:02:23  INFO      ✔ [182/250] Sent → rohan.tandon@fiserv.com
+2026-05-15 17:02:52  INFO      ✔ [183/250] Sent → rohini.gk@quest-global.com
+2026-05-15 17:02:52  DEBUG     Domain burst pause (quest-global.com): 24.7s
+2026-05-15 17:03:43  INFO      ✔ [184/250] Sent → roshani.more@jobscapital.in
+2026-05-15 17:04:10  INFO      ✔ [185/250] Sent → roshnee.patankar@covetus.com
+2026-05-15 17:04:10  DEBUG     Domain burst pause (covetus.com): 17.8s
+2026-05-15 17:04:58  INFO      ✔ [186/250] Sent → ruhita.thakur@hdfcbank.com
+2026-05-15 17:05:27  INFO      ✔ [187/250] Sent → sagarpal@covetus.com
+2026-05-15 17:05:54  INFO      ✔ [188/250] Sent → saloni@consultingkrew.in
+2026-05-15 17:06:22  INFO      ✔ [189/250] Sent → sam.gosh@peoplentech.com
+2026-05-15 17:06:51  INFO      ✔ [190/250] Sent → sam@dataformix.com
+2026-05-15 17:07:21  INFO      ✔ [191/250] Sent → sameer@firstphoenicssolutions.com
+2026-05-15 17:07:50  INFO      ✔ [192/250] Sent → sameermd02703@gmail.com
+2026-05-15 17:07:50  DEBUG     Domain burst pause (gmail.com): 23.2s
+2026-05-15 17:08:42  INFO      ✔ [193/250] Sent → sameern@hrinputs.com
+2026-05-15 17:09:11  INFO      ✔ [194/250] Sent → sandhya@hr-hyre.com
+2026-05-15 17:09:11  DEBUG     Domain burst pause (hr-hyre.com): 22.6s
+2026-05-15 17:10:01  INFO      ✔ [195/250] Sent → sandhya@softpathtech.com
+2026-05-15 17:10:32  INFO      ✔ [196/250] Sent → sandhya@technixonline.com
+2026-05-15 17:10:59  INFO      ✔ [197/250] Sent → sangita@harjai.com
+2026-05-15 17:11:02  INFO      ☕ Batch 5/7 complete (197 sent). Session break: 15 minutes…
+2026-05-15 17:16:03  INFO      ⏰ Resuming in 10 minutes…
+2026-05-15 17:21:03  INFO      ⏰ Resuming in 5 minutes…
+2026-05-15 17:25:43  INFO      ✅ SMTP connected
+2026-05-15 17:26:07  INFO      ✔ [198/250] Sent → sanjana.sharma@walkingtree.tech
+2026-05-15 17:26:35  INFO      ✔ [199/250] Sent → sarankumar.r@smartitframe.com
+2026-05-15 17:27:04  INFO      ✔ [200/250] Sent → sarath@vaanvee.com
+2026-05-15 17:27:32  INFO      ✔ [201/250] Sent → sayali@savanitechsolutions.com
+2026-05-15 17:28:00  INFO      ✔ [202/250] Sent → shaikmohammed.h@twsol.com
+2026-05-15 17:28:28  INFO      ✔ [203/250] Sent → shailly.s@techaivv.com
+2026-05-15 17:28:28  DEBUG     Domain burst pause (techaivv.com): 23.3s
+2026-05-15 17:29:17  INFO      ✔ [204/250] Sent → shamangi.thakur@successpact.com
+2026-05-15 17:29:47  INFO      ✔ [205/250] Sent → shanti.sharma@harjai.com
+2026-05-15 17:29:47  DEBUG     Domain burst pause (harjai.com): 26.7s
+2026-05-15 17:30:43  INFO      ✔ [206/250] Sent → sharan.pk@univisiontechnocon.com
+2026-05-15 17:31:11  INFO      ✔ [207/250] Sent → shikha@vconnectjob.in
+2026-05-15 17:31:11  DEBUG     Domain burst pause (vconnectjob.in): 19.5s
+2026-05-15 17:32:01  INFO      ✔ [208/250] Sent → shraddha.soni@netweb.biz
+2026-05-15 17:32:30  INFO      ✔ [209/250] Sent → shravani@renaissanceconsulting.com.au
+2026-05-15 17:32:58  INFO      ✔ [210/250] Sent → shreyas.gaikwad@mckinleyrice.co
+2026-05-15 17:33:25  INFO      ✔ [211/250] Sent → shruti.arya@kk-talents.com
+2026-05-15 17:33:55  INFO      ✔ [212/250] Sent → shruti.jawade@programming.com
+2026-05-15 17:33:55  DEBUG     Domain burst pause (programming.com): 22.7s
+2026-05-15 17:34:47  INFO      ✔ [213/250] Sent → shruti.vasava@deltassi.in
+2026-05-15 17:35:16  INFO      ✔ [214/250] Sent → shruti@amysoftech.in
+2026-05-15 17:35:42  INFO      ✔ [215/250] Sent → sinha.soumya@net2source.co.in
+2026-05-15 17:36:09  INFO      ✔ [216/250] Sent → smitha.cs@qualitrix.com
+2026-05-15 17:36:38  INFO      ✔ [217/250] Sent → snehal.dhende@qualitykiosk.com
+2026-05-15 17:37:07  INFO      ✔ [218/250] Sent → sonika.balasubramanian@sacha.global
+2026-05-15 17:37:36  INFO      ✔ [219/250] Sent → sony.g@tekprosol.com
+2026-05-15 17:38:07  INFO      ✔ [220/250] Sent → sourav.tyagi@vintellic.com
+2026-05-15 17:38:35  INFO      ✔ [221/250] Sent → sreekanth@burgeonits.net
+2026-05-15 17:39:03  INFO      ✔ [222/250] Sent → srushti.bombe@ltm.com
+2026-05-15 17:39:03  DEBUG     Domain burst pause (ltm.com): 25.6s
+2026-05-15 17:39:57  INFO      ✔ [223/250] Sent → subashri@warriortechsolution.com
+2026-05-15 17:40:27  INFO      ✔ [224/250] Sent → subhash@servicecare.in
+2026-05-15 17:40:27  DEBUG     Domain burst pause (servicecare.in): 19.9s
+2026-05-15 17:41:16  INFO      ✔ [225/250] Sent → suma.n@thoughtwavesoft.com
+2026-05-15 17:41:45  INFO      ✔ [226/250] Sent → surabhi@adlerqa.in
+2026-05-15 17:42:15  INFO      ✔ [227/250] Sent → swagatika.hota@infotics.co
+2026-05-15 17:42:15  DEBUG     Domain burst pause (infotics.co): 28.4s
+2026-05-15 17:43:11  INFO      ✔ [228/250] Sent → sweta.sahu@odiware.com
+2026-05-15 17:43:18  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 15 minutes…
+2026-05-18 08:06:35  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-18 08:06:35  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-18 08:06:35  INFO      Reading PDF: TestingJobs_FullList (12).pdf
+2026-05-18 08:06:35  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:35  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:35  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:35  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:35  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:35  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:35  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:36  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:37  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:38  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:39  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:45  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:46  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:47  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:48  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:49  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:50  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:50  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:50  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:50  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:50  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:50  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:51  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:52  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:53  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:53  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:53  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:53  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:53  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:53  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:56  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-18 08:06:59  INFO      Unique emails found: 313  |  Excluded: 246
+2026-05-18 08:06:59  INFO      Already sent (all time): 231  |  New to send today: 250
+2026-05-18 08:06:59  INFO      🚀 Starting send: 250 emails | Batch size: 40 | Max/hour: 55
+2026-05-18 08:07:01  INFO      ✅ SMTP connected
+2026-05-18 08:07:25  INFO      ✔ [1/250] Sent → 2227developer@gmail.com
+2026-05-18 08:07:56  INFO      ✔ [2/250] Sent → aarushi.agarwal@tdnewton.com
+2026-05-18 08:08:25  INFO      ✔ [3/250] Sent → abhishek.pandey@hipathtech.com
+2026-05-18 08:08:54  INFO      ✔ [4/250] Sent → abhisheksingh.epochfolio@gmail.com
+2026-05-18 08:08:54  DEBUG     Domain burst pause (gmail.com): 21.0s
+2026-05-18 08:09:44  INFO      ✔ [5/250] Sent → adityap@scaleneworks.com
+2026-05-18 08:10:13  INFO      ✔ [6/250] Sent → ajay@iitsolutionsinc.com
+2026-05-18 08:10:42  INFO      ✔ [7/250] Sent → akanksha.ch@cspiredigital.in
+2026-05-18 08:11:11  INFO      ✔ [8/250] Sent → akanksha.mishra@techior.com
+2026-05-18 08:11:39  INFO      ✔ [9/250] Sent → alex@spotter.ai
+2026-05-18 08:12:10  INFO      ✔ [10/250] Sent → almasum.gazi@quesscorp.com
+2026-05-18 08:12:38  INFO      ✔ [11/250] Sent → amruta@makeyourway.in
+2026-05-18 08:13:06  INFO      ✔ [12/250] Sent → anand.kumarpandey@hcltech.com
+2026-05-18 08:13:34  INFO      ✔ [13/250] Sent → anil.kumar@sabioinfotech.com
+2026-05-18 08:30:02  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-18 09:28:47  ERROR     ✘ Retry failed for anishaydv07@gmail.com: Connection unexpectedly closed: [Errno 54] Connection reset by peer
+2026-05-18 09:28:51  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-18 09:29:02  INFO      ✅ SMTP connected
+2026-05-18 09:29:27  INFO      ✔ [14/250] Sent (retry) → anita.bachhar@digicomm.org
+2026-05-18 09:29:56  INFO      ✔ [15/250] Sent → anjaliconverse22@gmail.com
+2026-05-18 09:29:56  DEBUG     Domain burst pause (gmail.com): 27.8s
+2026-05-18 09:30:53  INFO      ✔ [16/250] Sent → anju@net2source.co.in
+2026-05-18 09:31:23  INFO      ✔ [17/250] Sent → ankita.baruah@xopuntech.com
+2026-05-18 09:31:50  INFO      ✔ [18/250] Sent → annesa@mewartechservices.com
+2026-05-18 09:32:22  INFO      ✔ [19/250] Sent → anuradha.c@chirokhealth.com
+2026-05-18 09:32:50  INFO      ✔ [20/250] Sent → anurag.maheshwari@eisenvault.com
+2026-05-18 09:33:19  INFO      ✔ [21/250] Sent → anusha@pearlhire.in
+2026-05-18 09:33:48  INFO      ✔ [22/250] Sent → anusha_c@tekwissen.in
+2026-05-18 09:34:17  INFO      ✔ [23/250] Sent → apoorva@nexusprofessionals.in
+2026-05-18 09:34:47  INFO      ✔ [24/250] Sent → apushpa@4labsinc.com
+2026-05-18 09:35:17  INFO      ✔ [25/250] Sent → arathi@nileconnect.co.in
+2026-05-18 09:35:45  INFO      ✔ [26/250] Sent → aravind.t@jaastechnologies.com
+2026-05-18 09:36:13  INFO      ✔ [27/250] Sent → arindam.das@magicedtech.com
+2026-05-18 09:36:42  INFO      ✔ [28/250] Sent → arunam@vilwaatech.com
+2026-05-18 09:37:12  INFO      ✔ [29/250] Sent → ashasri.guthula@steponestepahead.com
+2026-05-18 09:37:42  INFO      ✔ [30/250] Sent → avninder.singh@peopleintegra.com
+2026-05-18 09:38:12  INFO      ✔ [31/250] Sent → badvel.anusha@csm.tech
+2026-05-18 09:38:43  INFO      ✔ [32/250] Sent → basant@zylonpartner.com
+2026-05-18 09:39:14  INFO      ✔ [33/250] Sent → bhanu@pontoonglobal.com
+2026-05-18 09:39:43  INFO      ✔ [34/250] Sent → bharath.k@adaminfotech.com
+2026-05-18 09:40:15  INFO      ✔ [35/250] Sent → bhuvanesh@brillius.com
+2026-05-18 09:40:42  INFO      ✔ [36/250] Sent → bhuvnesh.kumar@crossdoor.in
+2026-05-18 09:41:12  INFO      ✔ [37/250] Sent → career@conscent.ai
+2026-05-18 09:41:43  INFO      ✔ [38/250] Sent → career@programming.com
+2026-05-18 09:42:12  INFO      ✔ [39/250] Sent → careers.india@ncs.com.sg
+2026-05-18 09:42:18  INFO      ☕ Batch 1/7 complete (39 sent). Session break: 13 minutes…
+2026-05-18 09:47:18  INFO      ⏰ Resuming in 8 minutes…
+2026-05-18 09:52:18  INFO      ⏰ Resuming in 3 minutes…
+2026-05-18 09:55:24  INFO      ✅ SMTP connected
+2026-05-18 09:55:50  INFO      ✔ [40/250] Sent → careers@caregenix.solutio
+2026-05-18 09:56:19  INFO      ✔ [41/250] Sent → careers@hyniva.com
+2026-05-18 09:56:50  INFO      ✔ [42/250] Sent → chaitanya.sahaya@qzigma.com
+2026-05-18 09:57:20  INFO      ✔ [43/250] Sent → chaitanyak@futuresoftindia.com
+2026-05-18 09:57:51  INFO      ✔ [44/250] Sent → chandramohan@velkinz.in
+2026-05-18 09:58:19  INFO      ✔ [45/250] Sent → chandrika.recruiter.iclivia@gmail.com
+2026-05-18 09:58:50  INFO      ✔ [46/250] Sent → chandrika@sevenhillsgrouptech.com
+2026-05-18 09:59:20  INFO      ✔ [47/250] Sent → chethan.ds@onzestt.com
+2026-05-18 09:59:49  INFO      ✔ [48/250] Sent → chethan.sn@zispl.com
+2026-05-18 10:00:20  INFO      ✔ [49/250] Sent → ckeshoju@encore-c.com
+2026-05-18 10:00:49  INFO      ✔ [50/250] Sent → contact@moforceglobal.com
+2026-05-18 10:01:19  INFO      ✔ [51/250] Sent → dahalesupriya0407@gmail.com
+2026-05-18 10:01:19  DEBUG     Domain burst pause (gmail.com): 25.2s
+2026-05-18 10:02:15  INFO      ✔ [52/250] Sent → damla@ydcpro.com
+2026-05-18 10:02:46  INFO      ✔ [53/250] Sent → daniinfogine@gmail.com
+2026-05-18 10:03:14  INFO      ✔ [54/250] Sent → devayani.r@kamlaxglobal.com
+2026-05-18 10:03:42  INFO      ✔ [55/250] Sent → dharmaa@huconinnovations.com
+2026-05-18 10:04:13  INFO      ✔ [56/250] Sent → dibyashree.s@eslabs.net
+2026-05-18 10:04:40  INFO      ✔ [57/250] Sent → dinesh.punjabi@latentbridge.com
+2026-05-18 10:05:11  INFO      ✔ [58/250] Sent → divya.g@kotasoftware.com
+2026-05-18 10:05:39  INFO      ✔ [59/250] Sent → divya@avtechsoftwareservices.co.in
+2026-05-18 10:06:11  INFO      ✔ [60/250] Sent → divya@calyc.com
+2026-05-18 10:06:38  INFO      ✔ [61/250] Sent → divyas@scgcareer.in
+2026-05-18 10:07:06  INFO      ✔ [62/250] Sent → falak.gosain@programming.com
+2026-05-18 10:07:06  DEBUG     Domain burst pause (programming.com): 15.3s
+2026-05-18 10:07:50  INFO      ✔ [63/250] Sent → fastmanpowersolution@gmail.com
+2026-05-18 10:07:50  DEBUG     Domain burst pause (gmail.com): 28.8s
+2026-05-18 10:08:49  INFO      ✔ [64/250] Sent → fathimanisha.hr@talentcarpet.com
+2026-05-18 10:09:18  INFO      ✔ [65/250] Sent → frank@workcog.com
+2026-05-18 10:09:48  INFO      ✔ [66/250] Sent → g.mounika@avontechnologies.com
+2026-05-18 10:10:16  INFO      ✔ [67/250] Sent → g.nandini@avontechnologies.com
+2026-05-18 10:10:16  DEBUG     Domain burst pause (avontechnologies.com): 19.0s
+2026-05-18 10:11:05  INFO      ✔ [68/250] Sent → gautham.c@caritorsolutions.in
+2026-05-18 10:11:11  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 18 minutes…
+2026-05-18 10:29:32  ERROR     ✘ SMTP error for gavin.jeff@rkubeinc.com: (451, b'4.4.2 Timeout - closing connection.\n4.4.2  For more information, go to\n4.4.2  https://support.google.com/a/answer/3221692 d9443c01a7336-2bd5c0600c3sm130883245ad.29 - gsmtp', 'nakulkohli5@gmail.com')
+2026-05-18 10:29:37  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-18 10:29:39  INFO      ✅ SMTP connected
+2026-05-18 10:30:04  INFO      ✔ [69/250] Sent (retry) → gunasekaran.moorthy@banfico.com
+2026-05-18 10:30:33  INFO      ✔ [70/250] Sent → gupta.muskan@net2source.co.in
+2026-05-18 10:30:33  DEBUG     Domain burst pause (net2source.co.in): 17.3s
+2026-05-18 10:31:22  INFO      ✔ [71/250] Sent → hanzla.akhtar@trbitix.com
+2026-05-18 10:31:51  INFO      ✔ [72/250] Sent → harichandana.v@artech.com
+2026-05-18 10:32:22  INFO      ✔ [73/250] Sent → harshika.k@lancesoft.in
+2026-05-18 10:32:50  INFO      ✔ [74/250] Sent → harshita.motiramani@truemeds.in
+2026-05-18 10:33:20  INFO      ✔ [75/250] Sent → head@spenterprises.cloud
+2026-05-18 10:33:49  INFO      ✔ [76/250] Sent → helpdesk@hersecondinnings.com
+2026-05-18 10:34:17  INFO      ✔ [77/250] Sent → hemanth.p@3itechglobal.com
+2026-05-18 10:34:45  INFO      ✔ [78/250] Sent → himanshu.agrawal@cgi.com
+2026-05-18 10:34:50  INFO      ☕ Batch 2/7 complete (78 sent). Session break: 11 minutes…
+2026-05-18 10:39:50  INFO      ⏰ Resuming in 6 minutes…
+2026-05-18 10:44:50  INFO      ⏰ Resuming in 1 minutes…
+2026-05-18 10:45:53  INFO      ✅ SMTP connected
+2026-05-18 10:46:18  INFO      ✔ [79/250] Sent → hr.teambcoder@gmail.com
+2026-05-18 10:46:48  INFO      ✔ [80/250] Sent → hr@a2zyouthsolution.com
+2026-05-18 10:47:20  INFO      ✔ [81/250] Sent → hr@eisenvault.com
+2026-05-18 10:47:20  DEBUG     Domain burst pause (eisenvault.com): 26.1s
+2026-05-18 10:48:17  INFO      ✔ [82/250] Sent → hr@hirecamp.in
+2026-05-18 10:48:44  INFO      ✔ [83/250] Sent → hr@magnify360solutions.com
+2026-05-18 10:49:12  INFO      ✔ [84/250] Sent → hr@nexusprofessionals.in
+2026-05-18 10:49:12  DEBUG     Domain burst pause (nexusprofessionals.in): 21.7s
+2026-05-18 10:50:03  INFO      ✔ [85/250] Sent → hr@nxeevtechnologies.com
+2026-05-18 10:50:31  INFO      ✔ [86/250] Sent → hr@onsumaye.com
+2026-05-18 10:51:01  INFO      ✔ [87/250] Sent → hr@sidanglobal.com
+2026-05-18 10:51:29  INFO      ✔ [88/250] Sent → hr@yutitech.in
+2026-05-18 10:52:00  INFO      ✔ [89/250] Sent → ibaadat.hrd@cumail.in
+2026-05-18 10:52:30  INFO      ✔ [90/250] Sent → indtag8@psrtek.com
+2026-05-18 10:53:00  INFO      ✔ [91/250] Sent → info@avtechsoftwareservices.co.in
+2026-05-18 10:53:00  DEBUG     Domain burst pause (avtechsoftwareservices.co.in): 21.4s
+2026-05-18 10:53:50  INFO      ✔ [92/250] Sent → info@collabifyjobs.com
+2026-05-18 10:54:21  INFO      ✔ [93/250] Sent → ishika.sharma@talentonlease.com
+2026-05-18 10:54:53  INFO      ✔ [94/250] Sent → ishika@otyms.com
+2026-05-18 10:55:23  INFO      ✔ [95/250] Sent → j.geetanjali@joulestowatts.co
+2026-05-18 10:55:52  INFO      ✔ [96/250] Sent → jagrati@fastrallc.com
+2026-05-18 10:56:23  INFO      ✔ [97/250] Sent → jakeer@absoluting.com
+2026-05-18 10:56:52  INFO      ✔ [98/250] Sent → janani.kannan@novintix.com
+2026-05-18 10:57:21  INFO      ✔ [99/250] Sent → jashwanth.varma@lancesoft.in
+2026-05-18 10:57:21  DEBUG     Domain burst pause (lancesoft.in): 28.1s
+2026-05-18 10:58:17  INFO      ✔ [100/250] Sent → jaswanth@vergilindia.com
+2026-05-18 10:58:44  INFO      ✔ [101/250] Sent → jelin@prophecytechs.com
+2026-05-18 10:59:13  INFO      ✔ [102/250] Sent → jesilina@icoresoftwaresystems.com
+2026-05-18 10:59:42  INFO      ✔ [103/250] Sent → jibin.j@lancesoft.in
+2026-05-18 11:00:10  INFO      ✔ [104/250] Sent → jobs.3@proximagenesis.com
+2026-05-18 11:00:39  INFO      ✔ [105/250] Sent → jobs2@proximagenesis.com
+2026-05-18 11:00:39  DEBUG     Domain burst pause (proximagenesis.com): 18.6s
+2026-05-18 11:01:26  INFO      ✔ [106/250] Sent → jobs@proximagenesis.com
+2026-05-18 11:01:54  INFO      ✔ [107/250] Sent → jobs@techvantagesystems.com
+2026-05-18 11:02:24  INFO      ✔ [108/250] Sent → june@qualmission.com
+2026-05-18 11:02:55  INFO      ✔ [109/250] Sent → jyothi@insighttechus.com
+2026-05-18 11:03:24  INFO      ✔ [110/250] Sent → jyothi@metadatacorp.com
+2026-05-18 11:03:54  INFO      ✔ [111/250] Sent → kalpana.aj@costaffglobal.in
+2026-05-18 11:04:26  INFO      ✔ [112/250] Sent → kamesh.r@gomoder.com
+2026-05-18 11:04:55  INFO      ✔ [113/250] Sent → kanchan.manral@infojiniconsulting.com
+2026-05-18 11:05:23  INFO      ✔ [114/250] Sent → kanchan.tigga@thewitslab.com
+2026-05-18 11:05:54  INFO      ✔ [115/250] Sent → kanika.pant@tdnewton.com
+2026-05-18 11:05:54  DEBUG     Domain burst pause (tdnewton.com): 24.6s
+2026-05-18 11:06:46  INFO      ✔ [116/250] Sent → kavitha_s20@infosys.com
+2026-05-18 11:07:16  INFO      ✔ [117/250] Sent → keerthiga.r@weareams.com
+2026-05-18 11:07:46  INFO      ✔ [118/250] Sent → keerthika@avtechsoftwareservices.co.in
+2026-05-18 11:07:53  INFO      ☕ Batch 3/7 complete (118 sent). Session break: 13 minutes…
+2026-05-18 11:12:53  INFO      ⏰ Resuming in 8 minutes…
+2026-05-18 11:17:53  INFO      ⏰ Resuming in 3 minutes…
+2026-05-18 11:20:47  INFO      ✅ SMTP connected
+2026-05-18 11:21:12  INFO      ✔ [119/250] Sent → khushboovijay.bnh@gmail.com
+2026-05-18 11:21:12  DEBUG     Domain burst pause (gmail.com): 22.0s
+2026-05-18 11:22:03  INFO      ✔ [120/250] Sent → kondamuri.akash@vlinkinfo.com
+2026-05-18 11:22:32  INFO      ✔ [121/250] Sent → koppunaga.madhulatha@orcapod.work
+2026-05-18 11:23:02  INFO      ✔ [122/250] Sent → krishna.thakkar@delphic.in
+2026-05-18 11:23:32  INFO      ✔ [123/250] Sent → kundan.kumar@innobles.com
+2026-05-18 11:23:38  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 7 minutes…
+2026-05-18 11:30:34  INFO      ✔ [124/250] Sent → laksh.nagpal@altezzasys.com
+2026-05-18 11:31:05  INFO      ✔ [125/250] Sent → lakshmi@skygate.co.in
+2026-05-18 11:31:34  INFO      ✔ [126/250] Sent → lalitha@conveytechlabs.com
+2026-05-18 11:32:04  INFO      ✔ [127/250] Sent → latika.shinde@pratititech.com
+2026-05-18 11:32:33  INFO      ✔ [128/250] Sent → lavisha.varyani@devlabsalliance.com
+2026-05-18 11:33:03  INFO      ✔ [129/250] Sent → madhuri@codersbrain.com
+2026-05-18 11:33:33  INFO      ✔ [130/250] Sent → mahak@sourcebae.com
+2026-05-18 11:34:03  INFO      ✔ [131/250] Sent → malika.raina@lancesoft.in
+2026-05-18 11:34:03  DEBUG     Domain burst pause (lancesoft.in): 23.3s
+2026-05-18 11:34:55  INFO      ✔ [132/250] Sent → manasi@intellikart.in
+2026-05-18 11:35:24  INFO      ✔ [133/250] Sent → manikanta.g@tekskills.in
+2026-05-18 11:35:51  INFO      ✔ [134/250] Sent → manimozhi@tmangoes.com
+2026-05-18 11:36:20  INFO      ✔ [135/250] Sent → manjusha@dprsolutionsinc.com
+2026-05-18 11:36:51  INFO      ✔ [136/250] Sent → manohar@meedenlabs.com
+2026-05-18 11:37:22  INFO      ✔ [137/250] Sent → manoj@kamlaxglobal.com
+2026-05-18 11:37:22  DEBUG     Domain burst pause (kamlaxglobal.com): 28.2s
+2026-05-18 11:38:19  INFO      ✔ [138/250] Sent → manvi.shrivas@talentola.com
+2026-05-18 11:38:46  INFO      ✔ [139/250] Sent → marumugam@opteamix.com
+2026-05-18 11:39:17  INFO      ✔ [140/250] Sent → mdasetti@primusglobal.com
+2026-05-18 11:39:47  INFO      ✔ [141/250] Sent → meetali@adlerqa.in
+2026-05-18 11:40:14  INFO      ✔ [142/250] Sent → mohit@algaeservices.co.in
+2026-05-18 11:40:43  INFO      ✔ [143/250] Sent → namrata.rai@steponestepahead.com
+2026-05-18 11:40:43  DEBUG     Domain burst pause (steponestepahead.com): 22.8s
+2026-05-18 11:41:34  INFO      ✔ [144/250] Sent → neelam.raste@steponestepahead.com
+2026-05-18 11:42:01  INFO      ✔ [145/250] Sent → neeraj@iflowglobal.com
+2026-05-18 11:42:27  INFO      ✔ [146/250] Sent → neha.arya@centricconsulting.com
+2026-05-18 11:42:56  INFO      ✔ [147/250] Sent → neha@adescaretech.com
+2026-05-18 11:43:22  INFO      ✔ [148/250] Sent → nehad@selectsourceintl.com
+2026-05-18 11:43:51  INFO      ✔ [149/250] Sent → neshma.prodduturu@lancesoft.in
+2026-05-18 11:44:18  INFO      ✔ [150/250] Sent → niharika.b@techno-facts.com
+2026-05-18 11:44:45  INFO      ✔ [151/250] Sent → nikhil.k@sgnglobaltech.com
+2026-05-18 11:45:13  INFO      ✔ [152/250] Sent → nikky.sharma@benthonlabs.com
+2026-05-18 11:45:39  INFO      ✔ [153/250] Sent → nilu@cloudeagle.ai
+2026-05-18 11:46:06  INFO      ✔ [154/250] Sent → nirant.tech@gmail.com
+2026-05-18 11:46:35  INFO      ✔ [155/250] Sent → nirmala@medrectechnologies.com
+2026-05-18 11:47:04  INFO      ✔ [156/250] Sent → nischal.sharma@comviva.com
+2026-05-18 11:47:31  INFO      ✔ [157/250] Sent → nisha.solanki@nexuslink.com
+2026-05-18 11:47:59  INFO      ✔ [158/250] Sent → nivetha@avtechsoftwareservices.co.in
+2026-05-18 11:47:59  DEBUG     Domain burst pause (avtechsoftwareservices.co.in): 22.4s
+2026-05-18 11:48:25  INFO      ☕ Batch 4/7 complete (158 sent). Session break: 16 minutes…
+2026-05-18 11:53:25  INFO      ⏰ Resuming in 11 minutes…
+2026-05-18 11:58:25  INFO      ⏰ Resuming in 6 minutes…
+2026-05-18 12:03:25  INFO      ⏰ Resuming in 1 minutes…
+2026-05-18 12:04:41  INFO      ✅ SMTP connected
+2026-05-18 12:05:05  INFO      ✔ [159/250] Sent → official@talenque.com
+2026-05-18 12:05:36  INFO      ✔ [160/250] Sent → pa.kadheejamol@beinex.ai
+2026-05-18 12:06:06  INFO      ✔ [161/250] Sent → pallavi@nexusprofessionals.in
+2026-05-18 12:06:33  INFO      ✔ [162/250] Sent → pankaj.dugar@knightlearningsolutions.in
+2026-05-18 12:07:03  INFO      ✔ [163/250] Sent → pavithra.s@enterrecruitment.com
+2026-05-18 12:07:31  INFO      ✔ [164/250] Sent → pjmishra@primusglobal.com
+2026-05-18 12:07:31  DEBUG     Domain burst pause (primusglobal.com): 15.6s
+2026-05-18 12:08:17  INFO      ✔ [165/250] Sent → pradakshina.upadhaya@dexian.com
+2026-05-18 12:08:48  INFO      ✔ [166/250] Sent → pragna.bharathi@infogine.com
+2026-05-18 12:09:17  INFO      ✔ [167/250] Sent → pragya.k@thesecondoffice.co
+2026-05-18 12:09:45  INFO      ✔ [168/250] Sent → prakruthi@cloudsolv.in
+2026-05-18 12:10:15  INFO      ✔ [169/250] Sent → pranav.p@vrinsoft.com
+2026-05-18 12:10:45  INFO      ✔ [170/250] Sent → pranjal.pandey@impactqa.com
+2026-05-18 12:11:14  INFO      ✔ [171/250] Sent → prashanth@soyosoft.com
+2026-05-18 12:11:43  INFO      ✔ [172/250] Sent → pravallika@ashratech.com
+2026-05-18 12:12:13  INFO      ✔ [173/250] Sent → preethi@longfinch.com
+2026-05-18 12:12:41  INFO      ✔ [174/250] Sent → priyacmakeb@gmail.com
+2026-05-18 12:12:41  DEBUG     Domain burst pause (gmail.com): 27.4s
+2026-05-18 12:13:37  INFO      ✔ [175/250] Sent → priyanka.sinha@summitconsulting.in
+2026-05-18 12:14:06  INFO      ✔ [176/250] Sent → priyanshu.epochfolio@gmail.com
+2026-05-18 12:14:37  INFO      ✔ [177/250] Sent → rabecca.p@twsol.com
+2026-05-18 12:15:06  INFO      ✔ [178/250] Sent → rahul@jconnect.in
+2026-05-18 12:15:12  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 15 minutes…
+2026-05-18 12:33:10  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-18 12:33:15  INFO      ✅ SMTP connected
+2026-05-18 12:33:38  INFO      ✔ [179/250] Sent (retry) → rahulbosereferral@outlook.com
+2026-05-18 12:34:06  INFO      ✔ [180/250] Sent → rajnandinil@multiversity.co.in
+2026-05-18 12:34:35  INFO      ✔ [181/250] Sent → ranipriya.m@cyanous.com
+2026-05-18 12:35:01  INFO      ✔ [182/250] Sent → ranjani.n@wizzybox.com
+2026-05-18 12:35:31  INFO      ✔ [183/250] Sent → ranjith@quantumpulse.ltd
+2026-05-18 12:35:58  INFO      ✔ [184/250] Sent → ratandeepindora@gmail.com
+2026-05-18 12:35:58  DEBUG     Domain burst pause (gmail.com): 28.8s
+2026-05-18 12:36:57  INFO      ✔ [185/250] Sent → recruiter4@orcanexgen.com
+2026-05-18 12:37:27  INFO      ✔ [186/250] Sent → recruitment@atdrive.com
+2026-05-18 12:37:53  INFO      ✔ [187/250] Sent → recruitments@vernost.com
+2026-05-18 12:38:21  INFO      ✔ [188/250] Sent → remya.rajan@people-click.com
+2026-05-18 12:38:48  INFO      ✔ [189/250] Sent → resume@fiddleleafsolutions.com
+2026-05-18 12:39:17  INFO      ✔ [190/250] Sent → resume@hastree.com
+2026-05-18 12:39:43  INFO      ✔ [191/250] Sent → resumes@qagenic.com
+2026-05-18 12:40:11  INFO      ✔ [192/250] Sent → rince.reji@nityo.com
+2026-05-18 12:40:41  INFO      ✔ [193/250] Sent → rishitha.m@techno-facts.com
+2026-05-18 12:40:41  DEBUG     Domain burst pause (techno-facts.com): 18.2s
+2026-05-18 12:41:28  INFO      ✔ [194/250] Sent → ritika.gupta@mwidm.com
+2026-05-18 12:41:58  INFO      ✔ [195/250] Sent → riya.chaurasia@programming.com
+2026-05-18 12:42:24  INFO      ✔ [196/250] Sent → riya.hiwarale@alphacom.in
+2026-05-18 12:42:53  INFO      ✔ [197/250] Sent → riya.purohit@gammaedge.io
+2026-05-18 12:43:22  INFO      ✔ [198/250] Sent → rkondamudi@primusglobal.com
+2026-05-18 12:43:28  INFO      ☕ Batch 5/7 complete (198 sent). Session break: 15 minutes…
+2026-05-18 12:48:29  INFO      ⏰ Resuming in 10 minutes…
+2026-05-19 09:19:57  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-19 09:19:57  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-19 09:19:57  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon (54).pdf
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:57  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:58  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:19:59  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:20:00  INFO      Unique emails found: 49  |  Excluded: 37
+2026-05-19 09:20:00  INFO      Already sent (all time): 429  |  New to send today: 44
+2026-05-19 09:20:00  INFO      🚀 Starting send: 44 emails | Batch size: 40 | Max/hour: 55
+2026-05-19 09:29:40  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-19 09:29:40  INFO      ✅ No domain exclusions active — all emails will be processed.
+2026-05-19 09:29:40  INFO      Reading PDF: Hyderabad (39).pdf
+2026-05-19 09:29:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:40  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:41  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:42  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:43  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:44  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-05-19 09:29:44  INFO      Unique emails found: 52  |  Excluded: 33
+2026-05-19 09:29:44  INFO      Already sent (all time): 429  |  New to send today: 38
+2026-05-19 09:29:44  INFO      🚀 Starting send: 38 emails | Batch size: 40 | Max/hour: 55

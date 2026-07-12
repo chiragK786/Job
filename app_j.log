@@ -1,0 +1,772 @@
+2026-05-28 08:30:01  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-28 08:30:01  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon (53).pdf
+2026-05-28 08:30:02  INFO      Unique emails found across all PDFs: 44
+2026-05-28 08:30:02  INFO      Already sent (all time): 0  |  New to send today: 44
+2026-05-28 08:30:02  INFO      🚀 Starting send: 44 emails | Batch size: 40 | Max/hour: 55
+2026-05-28 08:30:05  INFO      ✅ SMTP connected
+2026-05-28 08:30:24  INFO      ✔ [1/44] Sent → anjali.singh@devlabstechnology.com
+2026-05-28 08:30:47  INFO      ✔ [2/44] Sent → anjali@perfect.venture
+2026-05-28 08:31:11  INFO      ✔ [3/44] Sent → anshul.pandey@quesscorp.com
+2026-05-28 08:31:32  INFO      ✔ [4/44] Sent → antara@perfect.venture
+2026-05-28 08:31:32  DEBUG     Domain burst pause (perfect.venture): 15.5s
+2026-05-28 08:32:09  INFO      ✔ [5/44] Sent → anushka.wfm@gmail.com
+2026-05-28 08:32:32  INFO      ✔ [6/44] Sent → ashutoshsoni301@gmail.com
+2026-05-28 08:32:32  DEBUG     Domain burst pause (gmail.com): 25.6s
+2026-05-28 08:33:22  INFO      ✔ [7/44] Sent → asirohi@marquistech.com
+2026-05-28 08:33:42  INFO      ✔ [8/44] Sent → barsha.pattnaik@srijanspectrum.com
+2026-05-28 08:34:02  INFO      ✔ [9/44] Sent → chandan.kumar@protivitiglobal.in
+2026-05-28 08:34:23  INFO      ✔ [10/44] Sent → chandanac@unifytech.com
+2026-05-28 08:34:44  INFO      ✔ [11/44] Sent → disha.bajpai@bharuwasolutions.com
+2026-05-28 08:35:07  INFO      ✔ [12/44] Sent → harsha.tiwari@codersbrain.com
+2026-05-28 08:35:29  INFO      ✔ [13/44] Sent → hr@digitalpaani.com
+2026-05-28 08:35:49  INFO      ✔ [14/44] Sent → info@rinfinite.com
+2026-05-28 08:36:13  INFO      ✔ [15/44] Sent → jasmeen.kaur@aptohr.com
+2026-05-28 08:36:34  INFO      ✔ [16/44] Sent → kanchan.manral@infojiniconsulting.com
+2026-05-28 08:36:55  INFO      ✔ [17/44] Sent → kirti@consultingkrew.in
+2026-05-28 08:37:16  INFO      ✔ [18/44] Sent → kishan.kumar@almonds.ai
+2026-05-28 08:37:39  INFO      ✔ [19/44] Sent → komal.tomar@devlabstechnology.com
+2026-05-28 08:37:39  DEBUG     Domain burst pause (devlabstechnology.com): 25.7s
+2026-05-28 08:38:27  INFO      ✔ [20/44] Sent → n.kashyap@cloudvandexa.com
+2026-05-28 08:38:47  INFO      ✔ [21/44] Sent → neha.saxena1@wipro.com
+2026-05-28 08:39:10  INFO      ✔ [22/44] Sent → nikita.dash@zelevate.io
+2026-05-28 08:39:32  INFO      ✔ [23/44] Sent → prabhdeep.kaur@programming.com
+2026-05-28 08:39:55  INFO      ✔ [24/44] Sent → prachi.vyas@parahittech.com
+2026-05-28 08:40:17  INFO      ✔ [25/44] Sent → prashant.hada@delphic.in
+2026-05-28 08:40:39  INFO      ✔ [26/44] Sent → pratibha.upadhyay@prismhrc.com
+2026-05-28 08:41:02  INFO      ✔ [27/44] Sent → praveena.madankumar@ust.com
+2026-05-28 08:41:24  INFO      ✔ [28/44] Sent → prem.kumar@sbnri.com
+2026-05-28 08:41:45  INFO      ✔ [29/44] Sent → priti@dashhire.co
+2026-05-28 08:42:07  INFO      ✔ [30/44] Sent → saloni.oberoi@simplifyingskills.com
+2026-05-28 08:42:28  INFO      ✔ [31/44] Sent → shaishta.wfmconsultancy@gmail.com
+2026-05-28 08:42:48  INFO      ✔ [32/44] Sent → shakshi_tomar@creativefrenzy.in
+2026-05-28 08:43:12  INFO      ✔ [33/44] Sent → sharashathi.vig@corrohealth.com
+2026-05-28 08:43:32  INFO      ✔ [34/44] Sent → shilpa.chaudhary@appinventiv.com
+2026-05-28 08:43:52  INFO      ✔ [35/44] Sent → shireesha.b@martinettechnologies.com
+2026-05-28 08:44:13  INFO      ✔ [36/44] Sent → smitha.cs@qualitrix.com
+2026-05-28 08:44:36  INFO      ✔ [37/44] Sent → snehal.dhende@qualitykiosk.com
+2026-05-28 08:44:58  INFO      ✔ [38/44] Sent → sonal@skyleaf.global
+2026-05-28 08:45:20  INFO      ✔ [39/44] Sent → sonali@consultingkrew.in
+2026-05-28 08:45:20  DEBUG     Domain burst pause (consultingkrew.in): 19.1s
+2026-05-28 08:46:03  INFO      ✔ [40/44] Sent → sumitha@spc-services.net
+2026-05-28 08:46:10  INFO      ☕ Batch 1/2 complete (40 sent). Session break: 15 minutes…
+2026-05-28 08:51:10  INFO      ⏰ Resuming in 10 minutes…
+2026-05-28 08:56:10  INFO      ⏰ Resuming in 5 minutes…
+2026-05-28 09:00:55  INFO      ✅ SMTP connected
+2026-05-28 09:01:12  INFO      ✔ [41/44] Sent → sushma.bazaz@xceedance.com
+2026-05-28 09:01:33  INFO      ✔ [42/44] Sent → udayasri.m@martinettechnologies.com
+2026-05-28 09:01:33  DEBUG     Domain burst pause (martinettechnologies.com): 20.6s
+2026-05-28 09:02:16  INFO      ✔ [43/44] Sent → umang@anprax.com
+2026-05-28 09:02:39  INFO      ✔ [44/44] Sent → yashika@vitric.in
+2026-05-28 09:02:43  INFO      🎉 Done — 44/44 emails sent today.
+2026-05-28 09:02:43  INFO      📊 Total sent all time: 44
+2026-05-28 09:02:43  INFO      All emails sent. Deleting source PDF(s)…
+2026-05-28 09:02:43  INFO      🗑  Deleted PDF: NCR_Noida_Delhi_Gurgaon (53).pdf
+2026-05-28 09:19:23  INFO      📅 Daily cap: 250 | Sent today: 44 | Remaining: 206
+2026-05-28 09:19:23  INFO      Reading PDF: Pune Mumbai (24).pdf
+2026-05-28 09:19:25  INFO      Unique emails found across all PDFs: 41
+2026-05-28 09:19:25  INFO      Already sent (all time): 44  |  New to send today: 41
+2026-05-28 09:19:25  INFO      🚀 Starting send: 41 emails | Batch size: 40 | Max/hour: 55
+2026-05-28 09:19:26  INFO      ✅ SMTP connected
+2026-05-28 09:19:43  INFO      ✔ [1/41] Sent → adithya.kanaveni@euclidinnovations.com
+2026-05-28 09:20:06  INFO      ✔ [2/41] Sent → aditi.s@techmantraglobal.com
+2026-05-28 09:20:28  INFO      ✔ [3/41] Sent → afsana.bloch@ahoitech.in
+2026-05-28 09:20:49  INFO      ✔ [4/41] Sent → akshara.das@tcs.com
+2026-05-28 09:21:11  INFO      ✔ [5/41] Sent → anamikak@magnor.in
+2026-05-28 09:21:32  INFO      ✔ [6/41] Sent → apurva@ambiencehr.com
+2026-05-28 09:21:54  INFO      ✔ [7/41] Sent → belinda.soans@aqmtechnologies.com
+2026-05-28 09:22:14  INFO      ✔ [8/41] Sent → brajesh@delbangindia.com
+2026-05-28 09:22:38  INFO      ✔ [9/41] Sent → careers@vervesquare.com
+2026-05-28 09:23:01  INFO      ✔ [10/41] Sent → damanpreet.kaur@programming.com
+2026-05-28 09:23:22  INFO      ✔ [11/41] Sent → digitaltj051@gmail.com
+2026-05-28 09:23:41  INFO      ✔ [12/41] Sent → farhan@techstosuit.com
+2026-05-28 09:24:02  INFO      ✔ [13/41] Sent → gagandeep.singh@zfindia.com
+2026-05-28 09:24:23  INFO      ✔ [14/41] Sent → gorika.singh@aqmtechnologies.com
+2026-05-28 09:24:23  DEBUG     Domain burst pause (aqmtechnologies.com): 17.4s
+2026-05-28 09:25:01  INFO      ✔ [15/41] Sent → helan.asha@axiavera.com
+2026-05-28 09:25:22  INFO      ✔ [16/41] Sent → hr@leonstride.com
+2026-05-28 09:25:45  INFO      ✔ [17/41] Sent → jenifer.n@liveconnections.in
+2026-05-28 09:26:06  INFO      ✔ [18/41] Sent → karthikboppy36918@gmail.com
+2026-05-28 09:26:06  DEBUG     Domain burst pause (gmail.com): 28.1s
+2026-05-28 09:26:55  INFO      ✔ [19/41] Sent → kboppy@saventech.com
+2026-05-28 09:27:16  INFO      ✔ [20/41] Sent → khushi.shah@gmmodular.com
+2026-05-28 09:27:38  INFO      ✔ [21/41] Sent → kirti@mpowerelyte.com
+2026-05-28 09:28:01  INFO      ✔ [22/41] Sent → krishna.thakkar@delphic.in
+2026-05-28 09:28:22  INFO      ✔ [23/41] Sent → krithika.m@alpconsulting.in
+2026-05-28 09:28:45  INFO      ✔ [24/41] Sent → madhuri@chavinsan.com
+2026-05-28 09:29:04  INFO      ✔ [25/41] Sent → manasa@bloomsolutions.com
+2026-05-28 09:29:26  INFO      ✔ [26/41] Sent → meharaj@krishpar.com
+2026-05-28 09:29:49  INFO      ✔ [27/41] Sent → nitya.pande@softbay.com
+2026-05-28 09:30:12  INFO      ✔ [28/41] Sent → prathamesh@leonstride.com
+2026-05-28 09:30:12  DEBUG     Domain burst pause (leonstride.com): 19.2s
+2026-05-28 09:30:53  INFO      ✔ [29/41] Sent → radhika.kandula@webpipl.com
+2026-05-28 09:31:17  INFO      ✔ [30/41] Sent → ravi@yohrconsultancy.com
+2026-05-28 09:31:40  INFO      ✔ [31/41] Sent → rohini.gk@quest-global.com
+2026-05-28 09:32:00  INFO      ✔ [32/41] Sent → sambedana.p@tekskills.in
+2026-05-28 09:32:20  INFO      ✔ [33/41] Sent → sejal.j@tekitsolution.com
+2026-05-28 09:32:40  INFO      ✔ [34/41] Sent → shilpa@hafman.ca
+2026-05-28 09:33:02  INFO      ✔ [35/41] Sent → shiwali@xpertladr.com
+2026-05-28 09:33:23  INFO      ✔ [36/41] Sent → somu.sasmal@ubique-systems.com
+2026-05-28 09:33:46  INFO      ✔ [37/41] Sent → stuti.gosavi@ampcustech.com
+2026-05-28 09:34:08  INFO      ✔ [38/41] Sent → subodh.mittal@evokehr.com
+2026-05-28 09:34:28  INFO      ✔ [39/41] Sent → swati.k@vadenconsultancy.com
+2026-05-28 09:34:51  INFO      ✔ [40/41] Sent → usha.k@sritechsolutions.com
+2026-05-28 09:34:55  INFO      ☕ Batch 1/2 complete (40 sent). Session break: 19 minutes…
+2026-05-28 09:39:55  INFO      ⏰ Resuming in 14 minutes…
+2026-05-28 09:44:55  INFO      ⏰ Resuming in 9 minutes…
+2026-05-28 09:49:55  INFO      ⏰ Resuming in 4 minutes…
+2026-05-28 09:53:27  INFO      ✅ SMTP connected
+2026-05-28 09:53:45  INFO      ✔ [41/41] Sent → vaishnavi.r@valuesoftinfo.com
+2026-05-28 09:53:51  INFO      🎉 Done — 41/41 emails sent today.
+2026-05-28 09:53:51  INFO      📊 Total sent all time: 85
+2026-05-28 09:53:51  INFO      All emails sent. Deleting source PDF(s)…
+2026-05-28 10:09:41  INFO      📅 Daily cap: 250 | Sent today: 85 | Remaining: 165
+2026-05-28 10:09:41  INFO      Reading PDF: Bangalore_Chennai (41).pdf
+2026-05-28 10:09:45  INFO      Unique emails found across all PDFs: 85
+2026-05-28 10:09:45  INFO      Already sent (all time): 85  |  New to send today: 85
+2026-05-28 10:09:45  INFO      🚀 Starting send: 85 emails | Batch size: 40 | Max/hour: 55
+2026-05-28 10:09:46  INFO      ✅ SMTP connected
+2026-05-28 10:10:04  INFO      ✔ [1/85] Sent → aakriti.singh@isonxperiences.com
+2026-05-28 10:10:28  INFO      ✔ [2/85] Sent → aastha.s@nexionpro.com
+2026-05-28 10:10:52  INFO      ✔ [3/85] Sent → afraz.i@stafi.in
+2026-05-28 10:11:15  INFO      ✔ [4/85] Sent → akash@accessitsol.com
+2026-05-28 10:11:39  INFO      ✔ [5/85] Sent → amit.rastogi@firstphoenicssolutions.com
+2026-05-28 10:12:02  INFO      ✔ [6/85] Sent → amruta.gaikwad@hmwcomm.com
+2026-05-28 10:12:26  INFO      ✔ [7/85] Sent → arathi@nileconnect.co.in
+2026-05-28 10:12:49  INFO      ✔ [8/85] Sent → ashwini.g@bootminds.com
+2026-05-28 10:13:12  INFO      ✔ [9/85] Sent → bhavana@prorsum-tech.com
+2026-05-28 10:13:32  INFO      ✔ [10/85] Sent → bhoomika@onzestt.com
+2026-05-28 10:13:53  INFO      ✔ [11/85] Sent → bhoomika@skygate.co.in
+2026-05-28 10:14:16  INFO      ✔ [12/85] Sent → bhuvaneshwarie@krishpar.com
+2026-05-28 10:14:36  INFO      ✔ [13/85] Sent → careers.in@cogency.net
+2026-05-28 10:14:56  INFO      ✔ [14/85] Sent → careers@blive.co.in
+2026-05-28 10:15:20  INFO      ✔ [15/85] Sent → careers@inmorphis.com
+2026-05-28 10:15:44  INFO      ✔ [16/85] Sent → careers@sstalentadvisor.com
+2026-05-28 10:16:04  INFO      ✔ [17/85] Sent → chandan.chapawat@deltassi.com
+2026-05-28 10:16:28  INFO      ✔ [18/85] Sent → dharshine.vm@jaastechnologies.com
+2026-05-28 10:16:50  INFO      ✔ [19/85] Sent → dinesh.reddy@noesisit.com
+2026-05-28 10:17:11  INFO      ✔ [20/85] Sent → divyapraba@bootminds.com
+2026-05-28 10:17:11  DEBUG     Domain burst pause (bootminds.com): 22.8s
+2026-05-28 10:17:55  INFO      ✔ [21/85] Sent → gr@teksystems.com
+2026-05-28 10:18:18  INFO      ✔ [22/85] Sent → hr-india@now100.com
+2026-05-28 10:18:39  INFO      ✔ [23/85] Sent → hr@orogoo.com
+2026-05-28 10:18:59  INFO      ✔ [24/85] Sent → hr@quarksek.com
+2026-05-28 10:19:21  INFO      ✔ [25/85] Sent → husna_taj@odysseussolutions.com
+2026-05-28 10:19:42  INFO      ✔ [26/85] Sent → info@pricubetech.com
+2026-05-28 10:20:02  INFO      ✔ [27/85] Sent → ishrath.fathima@cielhr.com
+2026-05-28 10:20:22  INFO      ✔ [28/85] Sent → ishwarya.v@aarchsol.com
+2026-05-28 10:20:42  INFO      ✔ [29/85] Sent → jobs@agamininv.com
+2026-05-28 10:21:04  INFO      ✔ [30/85] Sent → kavyasruthi.n@thetritech.ai
+2026-05-28 10:21:27  INFO      ✔ [31/85] Sent → keerthi.v@testynatra.co.uk
+2026-05-28 10:21:48  INFO      ✔ [32/85] Sent → kiran.reddy@navasoftware.com
+2026-05-28 10:22:12  INFO      ✔ [33/85] Sent → kiruthigapriya.y@truetechdigital.com
+2026-05-28 10:22:34  INFO      ✔ [34/85] Sent → kishore.a@xforia.com
+2026-05-28 10:22:57  INFO      ✔ [35/85] Sent → kolli.mani@anrisolutions.com
+2026-05-28 10:23:20  INFO      ✔ [36/85] Sent → krishnaveni.t@tekskills.in
+2026-05-28 10:23:39  INFO      ✔ [37/85] Sent → lavanya@gostack.co.in
+2026-05-28 10:24:02  INFO      ✔ [38/85] Sent → lavanya@tspaus.com
+2026-05-28 10:24:24  INFO      ✔ [39/85] Sent → m.panganamala@manuhindia.com
+2026-05-28 10:24:44  INFO      ✔ [40/85] Sent → manasa@potlatechsolutions.com
+2026-05-28 10:24:51  INFO      ☕ Batch 1/3 complete (40 sent). Session break: 14 minutes…
+2026-05-28 10:29:51  INFO      ⏰ Resuming in 9 minutes…
+2026-05-28 10:34:51  INFO      ⏰ Resuming in 4 minutes…
+2026-05-28 10:38:55  INFO      ✅ SMTP connected
+2026-05-28 10:39:12  INFO      ✔ [41/85] Sent → manaswi.v@clevanoollc.com
+2026-05-28 10:39:36  INFO      ✔ [42/85] Sent → manjula@bluecloudsoftech.com
+2026-05-28 10:39:59  INFO      ✔ [43/85] Sent → mohammad.azeez@costaffglobal.in
+2026-05-28 10:40:20  INFO      ✔ [44/85] Sent → mohit@algaeservices.co.in
+2026-05-28 10:40:42  INFO      ✔ [45/85] Sent → n.anjali11@ehireo.com
+2026-05-28 10:41:05  INFO      ✔ [46/85] Sent → nagesh.bade@reignmarkcs.com
+2026-05-28 10:41:29  INFO      ✔ [47/85] Sent → nasreen.s@hirednext.info
+2026-05-28 10:41:50  INFO      ✔ [48/85] Sent → nikitha.h@primesourcellp.com
+2026-05-28 10:42:13  INFO      ✔ [49/85] Sent → nivethitha@doodleblue.com
+2026-05-28 10:42:33  INFO      ✔ [50/85] Sent → pavan.kumar@onzestt.com
+2026-05-28 10:42:33  DEBUG     Domain burst pause (onzestt.com): 23.7s
+2026-05-28 10:43:16  INFO      ✔ [51/85] Sent → pramoda@galaxyitech.com
+2026-05-28 10:43:40  INFO      ✔ [52/85] Sent → prashant@rulesiq.com
+2026-05-28 10:44:01  INFO      ✔ [53/85] Sent → prashantgupta61@gmail.com
+2026-05-28 10:44:23  INFO      ✔ [54/85] Sent → puja@itexpertssolutions.in
+2026-05-28 10:44:44  INFO      ✔ [55/85] Sent → punnyajain@codestax.ai
+2026-05-28 10:44:50  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 25 minutes…
+2026-05-28 11:10:09  ERROR     ✘ SMTP error for rajeev.p@jconnect.in: (451, b'4.4.2 Timeout - closing connection.\n4.4.2  For more information, go to\n4.4.2  https://support.google.com/a/answer/3221692 98e67ed59e1d1-36b90966615sm630600a91.15 - gsmtp', 'aakritij.official@gmail.com')
+2026-05-28 11:10:13  WARNING   🔌 Server disconnected — reconnecting…
+2026-05-28 11:10:14  INFO      ✅ SMTP connected
+2026-05-28 11:10:32  INFO      ✔ [56/85] Sent (retry) → rashmi.p@orangejobs.in
+2026-05-28 11:10:54  INFO      ✔ [57/85] Sent → rupali@xevyte.com
+2026-05-28 11:11:16  INFO      ✔ [58/85] Sent → ryan@tec-first.com
+2026-05-28 11:11:38  INFO      ✔ [59/85] Sent → saijal.namta@tdnewton.com
+2026-05-28 11:11:59  INFO      ✔ [60/85] Sent → saikumar.anumula@webpipl.com
+2026-05-28 11:12:22  INFO      ✔ [61/85] Sent → sam.moheed@cenergyintl.com
+2026-05-28 11:12:42  INFO      ✔ [62/85] Sent → sheeba.m@nuintech.com
+2026-05-28 11:13:05  INFO      ✔ [63/85] Sent → shikha@tecqubes.com
+2026-05-28 11:13:25  INFO      ✔ [64/85] Sent → shivam@galaxyitech.com
+2026-05-28 11:13:25  DEBUG     Domain burst pause (galaxyitech.com): 25.9s
+2026-05-28 11:14:11  INFO      ✔ [65/85] Sent → shreya.p@sbasetech.net
+2026-05-28 11:14:34  INFO      ✔ [66/85] Sent → shruti.sharma@mwidm.com
+2026-05-28 11:14:55  INFO      ✔ [67/85] Sent → sinchana@worksbot.com
+2026-05-28 11:15:15  INFO      ✔ [68/85] Sent → siri@mempagetech.com
+2026-05-28 11:15:37  INFO      ✔ [69/85] Sent → sirisha.n@sritechsolutions.com
+2026-05-28 11:16:01  INFO      ✔ [70/85] Sent → sjoshi@wipzosystech.com
+2026-05-28 11:16:23  INFO      ✔ [71/85] Sent → sonam_j@elgebra.com
+2026-05-28 11:16:45  INFO      ✔ [72/85] Sent → soniak@priglobal.com
+2026-05-28 11:17:06  INFO      ✔ [73/85] Sent → sourcing@resoftwa.com
+2026-05-28 11:17:28  INFO      ✔ [74/85] Sent → sravya@mpowerelyte.com
+2026-05-28 11:17:51  INFO      ✔ [75/85] Sent → srini@cloudaitech.co.uk
+2026-05-28 11:18:13  INFO      ✔ [76/85] Sent → sriya@potlatechsolutions.com
+2026-05-28 11:18:13  DEBUG     Domain burst pause (potlatechsolutions.com): 26.0s
+2026-05-28 11:19:01  INFO      ✔ [77/85] Sent → ssai@encore-c.com
+2026-05-28 11:19:24  INFO      ✔ [78/85] Sent → sugha.p@bootminds.com
+2026-05-28 11:19:47  INFO      ✔ [79/85] Sent → sumith.mm@ifocussystec.com
+2026-05-28 11:19:52  INFO      ☕ Batch 2/3 complete (79 sent). Session break: 16 minutes…
+2026-05-28 11:24:52  INFO      ⏰ Resuming in 11 minutes…
+2026-05-28 11:29:52  INFO      ⏰ Resuming in 6 minutes…
+2026-05-28 11:34:52  INFO      ⏰ Resuming in 1 minutes…
+2026-05-28 11:36:01  INFO      ✅ SMTP connected
+2026-05-28 11:36:19  INFO      ✔ [80/85] Sent → swati.singh@caltek.us
+2026-05-28 11:36:40  INFO      ✔ [81/85] Sent → vadivel.a@techstargroup.com
+2026-05-28 11:37:02  INFO      ✔ [82/85] Sent → vibhuti.prajapati@truechip.net
+2026-05-28 11:37:25  INFO      ✔ [83/85] Sent → vivekraj.d@stancosolutions.com
+2026-05-28 11:37:49  INFO      ✔ [84/85] Sent → vyshnavi.srimurthi@thetritech.ai
+2026-05-28 11:37:49  DEBUG     Domain burst pause (thetritech.ai): 29.9s
+2026-05-28 11:38:23  INFO      🎉 Done — 84/85 emails sent today.
+2026-05-28 11:38:23  INFO      📊 Total sent all time: 169
+2026-05-28 11:38:23  WARNING   Skipping PDF deletion — only 84/85 emails sent.
+2026-05-29 11:05:38  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-05-29 11:05:38  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon (87).pdf
+2026-05-29 11:05:46  INFO      Unique emails found across all PDFs: 38
+2026-05-29 11:05:46  INFO      Already sent (all time): 169  |  New to send today: 36
+2026-05-29 11:05:46  INFO      🚀 Starting send: 36 emails | Batch size: 40 | Max/hour: 55
+2026-05-29 11:05:51  INFO      ✅ SMTP connected
+2026-05-29 11:06:08  INFO      ✔ [1/36] Sent → ambika.mohanty1@brillio.com
+2026-05-29 11:06:30  INFO      ✔ [2/36] Sent → anusha.bilchod@vncservices.in
+2026-05-29 11:06:51  INFO      ✔ [3/36] Sent → balkrishn.talentoj@gmail.com
+2026-05-29 11:07:13  INFO      ✔ [4/36] Sent → gayathri.m@eniacsys.com
+2026-05-29 11:07:33  INFO      ✔ [5/36] Sent → gayathri@smartitframe.com
+2026-05-29 11:07:56  INFO      ✔ [6/36] Sent → hr.surbhi@starclinch.com
+2026-05-29 11:08:16  INFO      ✔ [7/36] Sent → hr@ambria.in
+2026-05-29 11:08:38  INFO      ✔ [8/36] Sent → hr@wittybrains.com
+2026-05-29 11:09:01  INFO      ✔ [9/36] Sent → isha@code1.dev
+2026-05-29 11:09:22  INFO      ✔ [10/36] Sent → ksharma@harmonydi.com
+2026-05-29 11:09:43  INFO      ✔ [11/36] Sent → kumar.unnati@cloudstakes.com
+2026-05-29 11:10:07  INFO      ✔ [12/36] Sent → lalita@talentoj.com
+2026-05-29 11:10:28  INFO      ✔ [13/36] Sent → mahima.tripathi@uharvest.in
+2026-05-29 11:10:50  INFO      ✔ [14/36] Sent → maneesha@vintellic.com
+2026-05-29 11:11:14  INFO      ✔ [15/36] Sent → nandita.naithani@thriwe.com
+2026-05-29 11:11:35  INFO      ✔ [16/36] Sent → nisha.sharma@ciphersquare.tech
+2026-05-29 11:11:56  INFO      ✔ [17/36] Sent → palak.jain@thoughts2binary.com
+2026-05-29 11:12:19  INFO      ✔ [18/36] Sent → pankajkamboj11@gmail.com
+2026-05-29 11:12:19  DEBUG     Domain burst pause (gmail.com): 27.1s
+2026-05-29 11:13:10  INFO      ✔ [19/36] Sent → payal.verma@opkey.com
+2026-05-29 11:13:30  INFO      ✔ [20/36] Sent → pooja.joshi1@programming.com
+2026-05-29 11:13:53  INFO      ✔ [21/36] Sent → pragya.dwivedi@quesscorp.com
+2026-05-29 11:14:15  INFO      ✔ [22/36] Sent → preetha.m@smartitframe.com
+2026-05-29 11:14:15  DEBUG     Domain burst pause (smartitframe.com): 25.9s
+2026-05-29 11:15:04  INFO      ✔ [23/36] Sent → prudhvi.launchio@gmail.com
+2026-05-29 11:15:25  INFO      ✔ [24/36] Sent → reshma.shaik@creativets.in
+2026-05-29 11:15:46  INFO      ✔ [25/36] Sent → rushikesh.pawar@3scsolution.com
+2026-05-29 11:16:09  INFO      ✔ [26/36] Sent → sahil.dhuran@cocrewconsulting.com
+2026-05-29 11:16:29  INFO      ✔ [27/36] Sent → salomi.gadhiya@cloudstakes.com
+2026-05-29 11:16:29  DEBUG     Domain burst pause (cloudstakes.com): 26.2s
+2026-05-29 11:17:17  INFO      ✔ [28/36] Sent → sanskriti.jay@tapsoft.in
+2026-05-29 11:17:37  INFO      ✔ [29/36] Sent → saritasingh.bharti@paypay-corp.co.jp
+2026-05-29 11:17:58  INFO      ✔ [30/36] Sent → sasthana@helm360.com
+2026-05-29 11:18:20  INFO      ✔ [31/36] Sent → soumya.sapra@ocubeservices.com
+2026-05-29 11:18:43  INFO      ✔ [32/36] Sent → sreekanth@gmail.com
+2026-05-29 11:18:43  DEBUG     Domain burst pause (gmail.com): 26.6s
+2026-05-29 11:19:31  INFO      ✔ [33/36] Sent → surabhi.shah@deliverit.net.in
+2026-05-29 11:19:55  INFO      ✔ [34/36] Sent → tushar.rajput@quesscorp.com
+2026-05-29 11:19:55  DEBUG     Domain burst pause (quesscorp.com): 28.4s
+2026-05-29 11:20:44  INFO      ✔ [35/36] Sent → uma.sharma@centricconsulting.com
+2026-05-29 11:21:07  INFO      ✔ [36/36] Sent → vksri@calibreqa.com
+2026-05-29 11:21:12  INFO      🎉 Done — 36/36 emails sent today.
+2026-05-29 11:21:12  INFO      📊 Total sent all time: 205
+2026-05-29 11:21:12  INFO      All emails sent. Deleting source PDF(s)…
+2026-05-29 11:21:12  INFO      🗑  Deleted PDF: NCR_Noida_Delhi_Gurgaon (87).pdf
+2026-05-29 12:26:49  INFO      📅 Daily cap: 250 | Sent today: 36 | Remaining: 214
+2026-05-29 12:26:49  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon (88).pdf
+2026-05-29 12:26:59  INFO      Unique emails found across all PDFs: 31
+2026-05-29 12:26:59  INFO      Already sent (all time): 205  |  New to send today: 30
+2026-05-29 12:26:59  INFO      🚀 Starting send: 30 emails | Batch size: 40 | Max/hour: 55
+2026-05-29 12:27:00  INFO      ✅ SMTP connected
+2026-05-29 12:27:19  INFO      ✔ [1/30] Sent → amit_kumar10@cms.co.in
+2026-05-29 12:27:42  INFO      ✔ [2/30] Sent → anand.kumarpandey@hcltech.com
+2026-05-29 12:28:06  INFO      ✔ [3/30] Sent → anjali@technology-next.com
+2026-05-29 12:28:29  INFO      ✔ [4/30] Sent → archi.variya@aqmtechnologies.com
+2026-05-29 12:28:49  INFO      ✔ [5/30] Sent → chidvilash_v@hcltech.com
+2026-05-29 12:28:49  DEBUG     Domain burst pause (hcltech.com): 25.1s
+2026-05-29 12:29:35  INFO      ✔ [6/30] Sent → contact.cornerstonesolutions@gmail.com
+2026-05-29 12:29:55  INFO      ✔ [7/30] Sent → diptij@hcltech.com
+2026-05-29 12:30:17  INFO      ✔ [8/30] Sent → in.riya@questhiring.com
+2026-05-29 12:30:39  INFO      ✔ [9/30] Sent → jagriti.sharma@xicom.biz
+2026-05-29 12:31:00  INFO      ✔ [10/30] Sent → jyoti.hr@inspityitsolutions.com
+2026-05-29 12:31:24  INFO      ✔ [11/30] Sent → kandregulajaya.praka@hcltech.com
+2026-05-29 12:31:24  DEBUG     Domain burst pause (hcltech.com): 16.6s
+2026-05-29 12:32:03  INFO      ✔ [12/30] Sent → megha.goyal@devlabstechnology.com
+2026-05-29 12:32:24  INFO      ✔ [13/30] Sent → mrityunjay@questhiring.com
+2026-05-29 12:32:24  DEBUG     Domain burst pause (questhiring.com): 22.7s
+2026-05-29 12:33:09  INFO      ✔ [14/30] Sent → ops@vitimcloud.com
+2026-05-29 12:33:30  INFO      ✔ [15/30] Sent → pooja.sheth@onestack.in
+2026-05-29 12:33:52  INFO      ✔ [16/30] Sent → prapulla.ambale@warpdrivetech.in
+2026-05-29 12:34:13  INFO      ✔ [17/30] Sent → pruthvi.s@mjcglobaltech.com
+2026-05-29 12:34:35  INFO      ✔ [18/30] Sent → ranadeep.m@aforeserve.co.in
+2026-05-29 12:34:57  INFO      ✔ [19/30] Sent → resumes@qagenic.com
+2026-05-29 12:35:18  INFO      ✔ [20/30] Sent → sahil.bindra@testingxperts.com
+2026-05-29 12:35:40  INFO      ✔ [21/30] Sent → sahil@suntecindia.com
+2026-05-29 12:36:03  INFO      ✔ [22/30] Sent → shilpa.n@aforv.com
+2026-05-29 12:36:24  INFO      ✔ [23/30] Sent → shivam.dwivedi@dcminfotech.com
+2026-05-29 12:36:45  INFO      ✔ [24/30] Sent → shiwli.mukherjee@hcltech.com
+2026-05-29 12:37:06  INFO      ✔ [25/30] Sent → shruti.tiwari@invarsys.com
+2026-05-29 12:37:28  INFO      ✔ [26/30] Sent → shrutirokde987@gmail.com
+2026-05-29 12:37:28  DEBUG     Domain burst pause (gmail.com): 27.8s
+2026-05-29 12:38:19  INFO      ✔ [27/30] Sent → sowmyaj@hexaware.com
+2026-05-29 12:38:41  INFO      ✔ [28/30] Sent → support@klyptex.com
+2026-05-29 12:39:04  INFO      ✔ [29/30] Sent → torali@nextcreationsoftware.com
+2026-05-29 12:39:27  INFO      ✔ [30/30] Sent → vidushi.gautam@ibotix.ai
+2026-05-29 12:39:33  INFO      🎉 Done — 30/30 emails sent today.
+2026-05-29 12:39:33  INFO      📊 Total sent all time: 235
+2026-05-29 12:39:33  INFO      All emails sent. Deleting source PDF(s)…
+2026-05-29 13:01:54  INFO      📅 Daily cap: 250 | Sent today: 66 | Remaining: 184
+2026-05-29 13:01:54  INFO      Reading PDF: Hyderabad (40).pdf
+2026-05-29 13:01:58  INFO      Unique emails found across all PDFs: 58
+2026-05-29 13:01:58  INFO      Already sent (all time): 235  |  New to send today: 48
+2026-05-29 13:01:58  INFO      🚀 Starting send: 48 emails | Batch size: 40 | Max/hour: 55
+2026-05-29 13:01:59  INFO      ✅ SMTP connected
+2026-05-29 13:02:16  INFO      ✔ [1/48] Sent → akshaya.varadhan@careernet.in
+2026-05-29 13:02:37  INFO      ✔ [2/48] Sent → ashwinkumarr@virtusa.com
+2026-05-29 13:02:59  INFO      ✔ [3/48] Sent → asritha.peddi@olooptech.com
+2026-05-29 13:03:22  INFO      ✔ [4/48] Sent → avantika@febatech.com
+2026-05-29 13:03:45  INFO      ✔ [5/48] Sent → azrath.k@tachyontech.com
+2026-05-29 13:04:05  INFO      ✔ [6/48] Sent → b.karri@ekipit.ai
+2026-05-29 13:04:29  INFO      ✔ [7/48] Sent → career@vlookupglobal.com
+2026-05-29 13:04:50  INFO      ✔ [8/48] Sent → careers@arnoldconsultants.com
+2026-05-29 13:05:12  INFO      ✔ [9/48] Sent → careers@sysrek.com
+2026-05-29 13:05:35  INFO      ✔ [10/48] Sent → dimple@silverlinktechnologies.com
+2026-05-29 13:05:55  INFO      ✔ [11/48] Sent → divya.vakkalagadda@euclidinnovations.com
+2026-05-29 13:06:18  INFO      ✔ [12/48] Sent → haritha.j@vncservices.in
+2026-05-29 13:06:43  INFO      ✔ [13/48] Sent → hello@zatch.shop
+2026-05-29 13:07:06  INFO      ✔ [14/48] Sent → hr@zaltixsoftsolutions.com
+2026-05-29 13:07:29  INFO      ✔ [15/48] Sent → hrit@caltek.us
+2026-05-29 13:07:52  INFO      ✔ [16/48] Sent → isha.d@bwbsol.com
+2026-05-29 13:08:13  INFO      ✔ [17/48] Sent → jayasree@edurungroup.in
+2026-05-29 13:08:36  INFO      ✔ [18/48] Sent → krishnapriya.k@ansr.com
+2026-05-29 13:08:56  INFO      ✔ [19/48] Sent → lasyapriya.b@versatileitsol.com
+2026-05-29 13:09:16  INFO      ✔ [20/48] Sent → m.godekar@vhspro.net
+2026-05-29 13:09:41  INFO      ✔ [21/48] Sent → madhavi.singh@ethxsoftcon.com
+2026-05-29 13:10:01  INFO      ✔ [22/48] Sent → medha.sharma@adecco.com
+2026-05-29 13:10:22  INFO      ✔ [23/48] Sent → mehak.bansal@programming.com
+2026-05-29 13:10:43  INFO      ✔ [24/48] Sent → meheli.gupta@segertek.com
+2026-05-29 13:11:04  INFO      ✔ [25/48] Sent → mohit.ughade@programming.com
+2026-05-29 13:11:04  DEBUG     Domain burst pause (programming.com): 24.1s
+2026-05-29 13:11:50  INFO      ✔ [26/48] Sent → narsing.r@tachyontech.com
+2026-05-29 13:11:50  DEBUG     Domain burst pause (tachyontech.com): 25.9s
+2026-05-29 13:12:40  INFO      ✔ [27/48] Sent → pavani.m@palni.com
+2026-05-29 13:13:03  INFO      ✔ [28/48] Sent → praveenj@nallas.com
+2026-05-29 13:13:24  INFO      ✔ [29/48] Sent → rajesh.reddappa@jobworld.jobs
+2026-05-29 13:13:44  INFO      ✔ [30/48] Sent → rani.esteru@braceinfotech.com
+2026-05-29 13:14:07  INFO      ✔ [31/48] Sent → rashamdeep.kaur@programmming.com
+2026-05-29 13:14:28  INFO      ✔ [32/48] Sent → ravalika.m@tagletconsulting.com
+2026-05-29 13:14:49  INFO      ✔ [33/48] Sent → rkondamudi@primusglobal.com
+2026-05-29 13:15:12  INFO      ✔ [34/48] Sent → sahithi.totharamudi@jteksoftware.in
+2026-05-29 13:15:34  INFO      ✔ [35/48] Sent → sai_teja@mail.fingrow.in
+2026-05-29 13:15:58  INFO      ✔ [36/48] Sent → saikiran.n@palni.com
+2026-05-29 13:15:58  DEBUG     Domain burst pause (palni.com): 23.9s
+2026-05-29 13:16:44  INFO      ✔ [37/48] Sent → sanjana.sharma@walkingtree.tech
+2026-05-29 13:17:04  INFO      ✔ [38/48] Sent → satyanarayana@crusadetechnologies.com
+2026-05-29 13:17:27  INFO      ✔ [39/48] Sent → shaheen@chipsmart.in
+2026-05-29 13:17:49  INFO      ✔ [40/48] Sent → shekar.cheedella@olooptech.com
+2026-05-29 13:17:49  DEBUG     Domain burst pause (olooptech.com): 27.5s
+2026-05-29 13:18:23  INFO      ☕ Batch 1/2 complete (40 sent). Session break: 18 minutes…
+2026-05-29 13:23:23  INFO      ⏰ Resuming in 13 minutes…
+2026-05-29 13:28:23  INFO      ⏰ Resuming in 8 minutes…
+2026-05-29 13:33:23  INFO      ⏰ Resuming in 3 minutes…
+2026-05-29 13:36:10  INFO      ✅ SMTP connected
+2026-05-29 13:36:29  INFO      ✔ [41/48] Sent → shivani.g@s3staff.com
+2026-05-29 13:36:51  INFO      ✔ [42/48] Sent → shruti.jawade@programming.com
+2026-05-29 13:37:12  INFO      ✔ [43/48] Sent → shweta.gupta@programming.com
+2026-05-29 13:37:12  DEBUG     Domain burst pause (programming.com): 16.1s
+2026-05-29 13:37:50  INFO      ✔ [44/48] Sent → sindhu@krishpar.com
+2026-05-29 13:38:13  INFO      ✔ [45/48] Sent → sudha.rani@ingrainsys.com
+2026-05-29 13:38:34  INFO      ✔ [46/48] Sent → sweta.shah@aksharstaffing.com
+2026-05-29 13:38:57  INFO      ✔ [47/48] Sent → thenmozhi.cm@abacusservice.in
+2026-05-29 13:39:17  INFO      ✔ [48/48] Sent → vijay.john@side.inc
+2026-05-29 13:39:24  INFO      🎉 Done — 48/48 emails sent today.
+2026-05-29 13:39:24  INFO      📊 Total sent all time: 283
+2026-05-29 13:39:24  INFO      All emails sent. Deleting source PDF(s)…
+2026-05-29 13:39:24  INFO      🗑  Deleted PDF: Hyderabad (40).pdf
+2026-06-01 09:30:37  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-06-01 09:30:37  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon (88).pdf
+2026-06-01 09:30:38  INFO      Unique emails found across all PDFs: 31
+2026-06-01 09:30:38  INFO      Already sent (all time): 283  |  New to send today: 30
+2026-06-01 09:30:38  INFO      🚀 Starting send: 30 emails | Batch size: 40 | Max/hour: 55
+2026-06-01 09:30:39  INFO      ✅ SMTP connected
+2026-06-01 09:30:57  INFO      ✔ [1/30] Sent → aniket.patil@aqmtechnologies.com
+2026-06-01 09:31:20  INFO      ✔ [2/30] Sent → ankita.basu@artechinfo.in
+2026-06-01 09:31:42  INFO      ✔ [3/30] Sent → astha@questhiring.com
+2026-06-01 09:32:06  INFO      ✔ [4/30] Sent → career@programming.com
+2026-06-01 09:32:26  INFO      ✔ [5/30] Sent → careers@fortuneconsultancy.org
+2026-06-01 09:32:48  INFO      ✔ [6/30] Sent → chandra@reignmarkcs.com
+2026-06-01 09:33:09  INFO      ✔ [7/30] Sent → chinmayee.sawant@appzlogic.com
+2026-06-01 09:33:32  INFO      ✔ [8/30] Sent → ganga@fortuneconsultancy.org
+2026-06-01 09:33:32  DEBUG     Domain burst pause (fortuneconsultancy.org): 19.6s
+2026-06-01 09:34:13  INFO      ✔ [9/30] Sent → himanshijain@pbpartners.com
+2026-06-01 09:34:37  INFO      ✔ [10/30] Sent → hire@emotifzone.com
+2026-06-01 09:34:59  INFO      ✔ [11/30] Sent → justin@reignmarkcs.com
+2026-06-01 09:34:59  DEBUG     Domain burst pause (reignmarkcs.com): 21.8s
+2026-06-01 09:35:43  INFO      ✔ [12/30] Sent → kashish@spectral.in
+2026-06-01 09:36:04  INFO      ✔ [13/30] Sent → me.sivajyothi@msyssinc.com
+2026-06-01 09:36:27  INFO      ✔ [14/30] Sent → meghna@gracehire.com
+2026-06-01 09:36:49  INFO      ✔ [15/30] Sent → monal.gupta@programming.com
+2026-06-01 09:36:49  DEBUG     Domain burst pause (programming.com): 27.1s
+2026-06-01 09:37:38  INFO      ✔ [16/30] Sent → nikey.singh@cloudcertitude.com
+2026-06-01 09:37:59  INFO      ✔ [17/30] Sent → pranali.d@vrkpower.com
+2026-06-01 09:38:21  INFO      ✔ [18/30] Sent → prashantsharma@pcplusa.com
+2026-06-01 09:38:42  INFO      ✔ [19/30] Sent → preetinder.singh@programming.com
+2026-06-01 09:39:05  INFO      ✔ [20/30] Sent → princy@albireorecruiters.in
+2026-06-01 09:39:28  INFO      ✔ [21/30] Sent → priyankaroy@pbpartners.com
+2026-06-01 09:39:28  DEBUG     Domain burst pause (pbpartners.com): 20.4s
+2026-06-01 09:40:12  INFO      ✔ [22/30] Sent → rashi.m@esol-us.com
+2026-06-01 09:40:33  INFO      ✔ [23/30] Sent → rdanda@reignmarkcs.com
+2026-06-01 09:40:55  INFO      ✔ [24/30] Sent → ruchi.rana@devlabstechnology.com
+2026-06-01 09:41:17  INFO      ✔ [25/30] Sent → sanjana.maddela@proaitcs.com
+2026-06-01 09:41:39  INFO      ✔ [26/30] Sent → satyam.singh@hutingcube.com
+2026-06-01 09:41:59  INFO      ✔ [27/30] Sent → shailaja.vejendla@teamlease.com
+2026-06-01 09:42:22  INFO      ✔ [28/30] Sent → shriya.kapoor@bold.com
+2026-06-01 09:42:46  INFO      ✔ [29/30] Sent → sonali.shraiya@programming.com
+2026-06-01 09:42:46  DEBUG     Domain burst pause (programming.com): 16.5s
+2026-06-01 09:43:24  INFO      ✔ [30/30] Sent → venkat@diversitynexus.net
+2026-06-01 09:43:29  INFO      🎉 Done — 30/30 emails sent today.
+2026-06-01 09:43:29  INFO      📊 Total sent all time: 313
+2026-06-01 09:43:29  INFO      All emails sent. Deleting source PDF(s)…
+2026-06-01 10:20:12  INFO      📅 Daily cap: 250 | Sent today: 30 | Remaining: 220
+2026-06-01 10:20:12  INFO      Reading PDF: Bangalore_Chennai (41).pdf
+2026-06-01 10:20:16  INFO      Unique emails found across all PDFs: 98
+2026-06-01 10:20:16  INFO      Already sent (all time): 313  |  New to send today: 90
+2026-06-01 10:20:16  INFO      🚀 Starting send: 90 emails | Batch size: 40 | Max/hour: 55
+2026-06-01 10:20:18  INFO      ✅ SMTP connected
+2026-06-01 10:20:36  INFO      ✔ [1/90] Sent → aditya@momentocybertech.com
+2026-06-01 10:20:58  INFO      ✔ [2/90] Sent → ajay.wayal@applinfotech.com
+2026-06-01 10:21:18  INFO      ✔ [3/90] Sent → ankita.baruah@xopuntech.com
+2026-06-01 10:21:39  INFO      ✔ [4/90] Sent → anushkapandey.epochfolio@gmail.com
+2026-06-01 10:22:03  INFO      ✔ [5/90] Sent → aparajita.m@mindbrain.co.in
+2026-06-01 10:22:24  INFO      ✔ [6/90] Sent → asst.hcs@mazenetsolution.com
+2026-06-01 10:22:45  INFO      ✔ [7/90] Sent → banika.wazir@programming.com
+2026-06-01 10:23:05  INFO      ✔ [8/90] Sent → bharath.c@techedge-solution.com
+2026-06-01 10:23:26  INFO      ✔ [9/90] Sent → bhawna.g@alphasilicon.com
+2026-06-01 10:23:49  INFO      ✔ [10/90] Sent → bhoomishanmuk5686@gmail.com
+2026-06-01 10:23:49  DEBUG     Domain burst pause (gmail.com): 22.8s
+2026-06-01 10:24:35  INFO      ✔ [11/90] Sent → bhumika.sr@bhuvitechinnovations.com
+2026-06-01 10:24:56  INFO      ✔ [12/90] Sent → career@tristhaglobal.com
+2026-06-01 10:25:16  INFO      ✔ [13/90] Sent → ckeshoju@encore-c.com
+2026-06-01 10:25:39  INFO      ✔ [14/90] Sent → deepika@prophecytechs.com
+2026-06-01 10:26:02  INFO      ✔ [15/90] Sent → devaki.k@sgcsol.com
+2026-06-01 10:26:24  INFO      ✔ [16/90] Sent → dhivya@prophecytechs.com
+2026-06-01 10:26:24  DEBUG     Domain burst pause (prophecytechs.com): 15.2s
+2026-06-01 10:27:01  INFO      ✔ [17/90] Sent → divya.p@sgcsol.com
+2026-06-01 10:27:01  DEBUG     Domain burst pause (sgcsol.com): 27.7s
+2026-06-01 10:27:51  INFO      ✔ [18/90] Sent → durai@aerlync.com
+2026-06-01 10:28:11  INFO      ✔ [19/90] Sent → fatema.bhaisaheb@funictech.com
+2026-06-01 10:28:32  INFO      ✔ [20/90] Sent → fathima.nowwin@gmail.com
+2026-06-01 10:28:56  INFO      ✔ [21/90] Sent → gokul@prophecytechs.com
+2026-06-01 10:29:19  INFO      ✔ [22/90] Sent → hr@clkedge.com
+2026-06-01 10:29:41  INFO      ✔ [23/90] Sent → hr@jnjsys.com
+2026-06-01 10:30:03  INFO      ✔ [24/90] Sent → hr@newavenueworkforce.com
+2026-06-01 10:30:26  INFO      ✔ [25/90] Sent → hr@nextxrindia.com
+2026-06-01 10:30:50  INFO      ✔ [26/90] Sent → hr@xautomations.com
+2026-06-01 10:31:13  INFO      ✔ [27/90] Sent → hrshreevidhya.skylark@gmail.com
+2026-06-01 10:31:13  DEBUG     Domain burst pause (gmail.com): 28.6s
+2026-06-01 10:32:04  INFO      ✔ [28/90] Sent → info@gnovate.in
+2026-06-01 10:32:25  INFO      ✔ [29/90] Sent → jelin@prophecytechs.com
+2026-06-01 10:32:25  DEBUG     Domain burst pause (prophecytechs.com): 19.8s
+2026-06-01 10:33:06  INFO      ✔ [30/90] Sent → jobs@c1exchange.com
+2026-06-01 10:33:28  INFO      ✔ [31/90] Sent → kaamini@krf2techvibe.in
+2026-06-01 10:33:50  INFO      ✔ [32/90] Sent → kashish.nebhnani@mbsglobal.io
+2026-06-01 10:34:14  INFO      ✔ [33/90] Sent → keerthika.ramesh@aqmtechnologies.com
+2026-06-01 10:34:36  INFO      ✔ [34/90] Sent → khushi.j@infowaygroup.com
+2026-06-01 10:35:01  INFO      ✔ [35/90] Sent → kirantheja.narla@dxc.com
+2026-06-01 10:35:23  INFO      ✔ [36/90] Sent → lavanyapraveen18@gmail.com
+2026-06-01 10:35:47  INFO      ✔ [37/90] Sent → lokambika.m@acldigital.com
+2026-06-01 10:36:10  INFO      ✔ [38/90] Sent → manjusha@dprsolutionsinc.com
+2026-06-01 10:36:31  INFO      ✔ [39/90] Sent → mjunaid@teksystems.com
+2026-06-01 10:36:53  INFO      ✔ [40/90] Sent → muskan.s@techmantraglobal.com
+2026-06-01 10:36:57  INFO      ☕ Batch 1/3 complete (40 sent). Session break: 16 minutes…
+2026-06-01 10:41:58  INFO      ⏰ Resuming in 11 minutes…
+2026-06-01 10:46:58  INFO      ⏰ Resuming in 6 minutes…
+2026-06-01 10:51:58  INFO      ⏰ Resuming in 1 minutes…
+2026-06-01 10:52:31  INFO      ✅ SMTP connected
+2026-06-01 10:52:48  INFO      ✔ [41/90] Sent → nagasai.k@tekskills.in
+2026-06-01 10:53:08  INFO      ✔ [42/90] Sent → nandini.venkatesh@3pillarglobal.com
+2026-06-01 10:53:28  INFO      ✔ [43/90] Sent → ops@rdrindia.in
+2026-06-01 10:53:48  INFO      ✔ [44/90] Sent → panimalar.a@srivango.com
+2026-06-01 10:54:10  INFO      ✔ [45/90] Sent → prachi.transcendencee@gmail.com
+2026-06-01 10:54:10  DEBUG     Domain burst pause (gmail.com): 28.4s
+2026-06-01 10:55:00  INFO      ✔ [46/90] Sent → prakash.punj@pamsha.com
+2026-06-01 10:55:23  INFO      ✔ [47/90] Sent → prashanth@intellistaff.in
+2026-06-01 10:55:44  INFO      ✔ [48/90] Sent → raj.agrahari@wowjobs.biz
+2026-06-01 10:56:07  INFO      ✔ [49/90] Sent → rajat.prabhakar@relevancelab.com
+2026-06-01 10:56:27  INFO      ✔ [50/90] Sent → rajeswari.m@bct-consulting.com
+2026-06-01 10:56:47  INFO      ✔ [51/90] Sent → rajeswari@mindbrain.co.in
+2026-06-01 10:56:47  DEBUG     Domain burst pause (mindbrain.co.in): 29.0s
+2026-06-01 10:57:36  INFO      ✔ [52/90] Sent → rajitha@globaldigitalresources.com
+2026-06-01 10:57:55  INFO      ✔ [53/90] Sent → ramanan@zeptoh.com
+2026-06-01 10:58:15  INFO      ✔ [54/90] Sent → ramkumar@lamstacks.com
+2026-06-01 10:58:36  INFO      ✔ [55/90] Sent → rathinam@thirantech.com
+2026-06-01 10:58:41  INFO      ⏳ Hourly limit (55/hr) reached. Waiting 22 minutes…
+2026-06-01 11:20:41  ERROR     ✘ SMTP error for rini.manithra@careernet.in: (451, b'4.4.2 Timeout - closing connection.\n4.4.2  For more information, go to\n4.4.2  https://support.google.com/a/answer/3221692 d2e1a72fcca58-84214cec0d9sm10296138b3a.55 - gsmtp', 'aakritij.official@gmail.com')
+2026-06-01 11:20:45  WARNING   🔌 Server disconnected — reconnecting…
+2026-06-01 11:20:47  INFO      ✅ SMTP connected
+2026-06-01 11:21:04  INFO      ✔ [56/90] Sent (retry) → rishu.s@optimhire.com
+2026-06-01 11:21:24  INFO      ✔ [57/90] Sent → roja@xperthunt.com
+2026-06-01 11:21:47  INFO      ✔ [58/90] Sent → rushan@shaerpnext.com
+2026-06-01 11:22:09  INFO      ✔ [59/90] Sent → sabfatima@teksystems.com
+2026-06-01 11:22:09  DEBUG     Domain burst pause (teksystems.com): 17.0s
+2026-06-01 11:22:48  INFO      ✔ [60/90] Sent → sakthipriya@6sos.com
+2026-06-01 11:23:09  INFO      ✔ [61/90] Sent → samson@cloudious.com
+2026-06-01 11:23:32  INFO      ✔ [62/90] Sent → sanjays@jnjsys.com
+2026-06-01 11:23:32  DEBUG     Domain burst pause (jnjsys.com): 16.0s
+2026-06-01 11:24:09  INFO      ✔ [63/90] Sent → santhoshkumar.r@impacteers.com
+2026-06-01 11:24:32  INFO      ✔ [64/90] Sent → satyam.singh@huntingcube.com
+2026-06-01 11:24:52  INFO      ✔ [65/90] Sent → shambhavi.sharma@dbppl.com
+2026-06-01 11:25:15  INFO      ✔ [66/90] Sent → shruthi@cyberthrusts.com.au
+2026-06-01 11:25:36  INFO      ✔ [67/90] Sent → shubhamn@usil.tech
+2026-06-01 11:25:59  INFO      ✔ [68/90] Sent → siddhi.gupta@altezzasys.com
+2026-06-01 11:26:22  INFO      ✔ [69/90] Sent → siva.saikumar@gbitinc.com
+2026-06-01 11:26:46  INFO      ✔ [70/90] Sent → skygateanuradha@gmail.com
+2026-06-01 11:27:06  INFO      ✔ [71/90] Sent → somanaath@prophecytechs.com
+2026-06-01 11:27:26  INFO      ✔ [72/90] Sent → sowmya.kini@tristhaglobal.com
+2026-06-01 11:27:26  DEBUG     Domain burst pause (tristhaglobal.com): 26.6s
+2026-06-01 11:28:16  INFO      ✔ [73/90] Sent → sowmya.n@mavenberg.com
+2026-06-01 11:28:39  INFO      ✔ [74/90] Sent → spoorthy@eminencetechnosystem.com
+2026-06-01 11:28:59  INFO      ✔ [75/90] Sent → srija.kankati@technnext.com
+2026-06-01 11:29:22  INFO      ✔ [76/90] Sent → srinivasan.k@primesoftinc.com
+2026-06-01 11:29:42  INFO      ✔ [77/90] Sent → srividya.k@sgcsol.com
+2026-06-01 11:30:05  INFO      ✔ [78/90] Sent → sshoaib@horizontal.com
+2026-06-01 11:30:28  INFO      ✔ [79/90] Sent → sudha.sharma@quiddityinfotech.com
+2026-06-01 11:30:33  INFO      ☕ Batch 2/3 complete (79 sent). Session break: 11 minutes…
+2026-06-01 11:35:33  INFO      ⏰ Resuming in 6 minutes…
+2026-06-01 11:40:33  INFO      ⏰ Resuming in 1 minutes…
+2026-06-01 11:41:45  INFO      ✅ SMTP connected
+2026-06-01 11:42:02  INFO      ✔ [80/90] Sent → sunil.jc@watsonite.com
+2026-06-01 11:42:25  INFO      ✔ [81/90] Sent → sushree@mindbrain.co.in
+2026-06-01 11:42:46  INFO      ✔ [82/90] Sent → talentacquisition@cube.global
+2026-06-01 11:43:08  INFO      ✔ [83/90] Sent → tanu.relhan@vrindaglobal.com
+2026-06-01 11:43:31  INFO      ✔ [84/90] Sent → tanushri@infowaygroup.com
+2026-06-01 11:43:31  DEBUG     Domain burst pause (infowaygroup.com): 21.9s
+2026-06-01 11:44:13  INFO      ✔ [85/90] Sent → trapti@healthark.ai
+2026-06-01 11:44:34  INFO      ✔ [86/90] Sent → vaishnavi.a@xevyte.com
+2026-06-01 11:44:55  INFO      ✔ [87/90] Sent → vaishnavi.kularni@programming.com
+2026-06-01 11:44:55  DEBUG     Domain burst pause (programming.com): 25.2s
+2026-06-01 11:50:35  INFO      ✔ [88/90] Sent → vaishnavi.rajendran@hireginie.com
+2026-06-01 11:50:57  INFO      ✔ [89/90] Sent → yesvanthini@sanengineeringsolutions.com
+2026-06-01 11:51:02  INFO      🎉 Done — 89/90 emails sent today.
+2026-06-01 11:51:02  INFO      📊 Total sent all time: 402
+2026-06-01 11:51:02  WARNING   Skipping PDF deletion — only 89/90 emails sent.
+2026-06-02 09:12:18  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-06-02 09:12:18  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon (88).pdf
+2026-06-02 09:12:19  INFO      Unique emails found across all PDFs: 24
+2026-06-02 09:12:19  INFO      Already sent (all time): 402  |  New to send today: 23
+2026-06-02 09:12:19  INFO      🚀 Starting send: 23 emails | Batch size: 40 | Max/hour: 55
+2026-06-02 09:12:20  INFO      ✅ SMTP connected
+2026-06-02 09:12:38  INFO      ✔ [1/23] Sent → aditya.pratap@makunaiglobal.ai
+2026-06-02 09:13:01  INFO      ✔ [2/23] Sent → anushka.raturi@programming.com
+2026-06-02 09:13:21  INFO      ✔ [3/23] Sent → bhawna.talentoj@gmail.com
+2026-06-02 09:13:42  INFO      ✔ [4/23] Sent → deepti.pamnani@oceantechventures.com
+2026-06-02 09:14:05  INFO      ✔ [5/23] Sent → hr6@nmgtechnologies.com
+2026-06-02 09:14:25  INFO      ✔ [6/23] Sent → hr@bharatjagriti.com
+2026-06-02 09:14:47  INFO      ✔ [7/23] Sent → in.dorothy@questhiring.com
+2026-06-02 09:15:11  INFO      ✔ [8/23] Sent → info@binder33labs.com
+2026-06-02 09:15:33  INFO      ✔ [9/23] Sent → lakshya.sharma@insurity.com
+2026-06-02 09:15:55  INFO      ✔ [10/23] Sent → nagalambuika.k@gmail.com
+2026-06-02 09:15:55  DEBUG     Domain burst pause (gmail.com): 23.0s
+2026-06-02 09:16:40  INFO      ✔ [11/23] Sent → naina.gupta@agyom.com
+2026-06-02 09:17:02  INFO      ✔ [12/23] Sent → pranjal.pandey@impactqa.com
+2026-06-02 09:17:26  INFO      ✔ [13/23] Sent → praveen.g@firstmeridian.com
+2026-06-02 09:17:46  INFO      ✔ [14/23] Sent → priyanka.chavan@innovect.com
+2026-06-02 09:18:07  INFO      ✔ [15/23] Sent → rajaram@linktreeit.com
+2026-06-02 09:18:30  INFO      ✔ [16/23] Sent → resume@webreinvent.com
+2026-06-02 09:18:53  INFO      ✔ [17/23] Sent → riya.chaurasia@programming.com
+2026-06-02 09:18:53  DEBUG     Domain burst pause (programming.com): 27.8s
+2026-06-02 09:19:43  INFO      ✔ [18/23] Sent → rumana.wasi@iitp.in
+2026-06-02 09:20:06  INFO      ✔ [19/23] Sent → saileela.y@aschpro.com
+2026-06-02 09:20:27  INFO      ✔ [20/23] Sent → sarita.swain@steerlean.com
+2026-06-02 09:20:49  INFO      ✔ [21/23] Sent → sirisha.d@aschpro.com
+2026-06-02 09:20:49  DEBUG     Domain burst pause (aschpro.com): 22.4s
+2026-06-02 09:21:34  INFO      ✔ [22/23] Sent → sonal.choudhary@vnurt.com
+2026-06-02 09:21:58  INFO      ✔ [23/23] Sent → vardhika@spexiotech.com
+2026-06-02 09:22:05  INFO      🎉 Done — 23/23 emails sent today.
+2026-06-02 09:22:05  INFO      📊 Total sent all time: 425
+2026-06-02 09:22:05  INFO      All emails sent. Deleting source PDF(s)…
+2026-06-02 09:22:05  INFO      🗑  Deleted PDF: NCR_Noida_Delhi_Gurgaon (88).pdf
+2026-06-02 09:31:23  INFO      📅 Daily cap: 250 | Sent today: 23 | Remaining: 227
+2026-06-02 09:31:23  INFO      Reading PDF: Bangalore_Chennai (42).pdf
+2026-06-02 09:31:27  INFO      Unique emails found across all PDFs: 82
+2026-06-02 09:31:27  INFO      Already sent (all time): 425  |  New to send today: 73
+2026-06-02 09:31:27  INFO      🚀 Starting send: 73 emails | Batch size: 40 | Max/hour: 55
+2026-06-02 09:31:28  INFO      ✅ SMTP connected
+2026-06-02 09:31:45  INFO      ✔ [1/73] Sent → abhay.epochfolio@gmail.com
+2026-06-02 09:32:07  INFO      ✔ [2/73] Sent → abhishek.tiwari@curetechservices.com
+2026-06-02 09:32:31  INFO      ✔ [3/73] Sent → akansha2@aliqan.com
+2026-06-02 09:32:56  INFO      ✔ [4/73] Sent → akhillakkimsetty55@gmail.com
+2026-06-02 09:32:56  DEBUG     Domain burst pause (gmail.com): 20.6s
+2026-06-02 09:33:36  INFO      ✔ [5/73] Sent → anil.kumar@sourceresources.co
+2026-06-02 09:33:59  INFO      ✔ [6/73] Sent → arthi.arthi@capgemini.com
+2026-06-02 09:34:21  INFO      ✔ [7/73] Sent → balakrishna.goba@gyansys.com
+2026-06-02 09:34:45  INFO      ✔ [8/73] Sent → bhavanak@vilwaatech.com
+2026-06-02 09:35:08  INFO      ✔ [9/73] Sent → careers.embeddeddev@happiestminds.com
+2026-06-02 09:35:31  INFO      ✔ [10/73] Sent → careers@nexaq.io
+2026-06-02 09:35:53  INFO      ✔ [11/73] Sent → careers@predigle.com
+2026-06-02 09:36:16  INFO      ✔ [12/73] Sent → charul@bloomscouts.com
+2026-06-02 09:36:37  INFO      ✔ [13/73] Sent → csa.namrata8081@gmail.com
+2026-06-02 09:36:59  INFO      ✔ [14/73] Sent → devendra.singh@trantorinc.com
+2026-06-02 09:37:23  INFO      ✔ [15/73] Sent → dinesh.g@nygci.com
+2026-06-02 09:37:45  INFO      ✔ [16/73] Sent → domesticreqs@gmail.com
+2026-06-02 09:37:45  DEBUG     Domain burst pause (gmail.com): 22.4s
+2026-06-02 09:38:28  INFO      ✔ [17/73] Sent → gajala@ambiencehr.com
+2026-06-02 09:38:51  INFO      ✔ [18/73] Sent → giridhar@orbitshift.ai
+2026-06-02 09:39:13  INFO      ✔ [19/73] Sent → gopi.c@acesoftlabs.com
+2026-06-02 09:39:36  INFO      ✔ [20/73] Sent → harish.k@mjcglobaltech.com
+2026-06-02 09:39:57  INFO      ✔ [21/73] Sent → harshita@infowaygroup.com
+2026-06-02 09:40:20  INFO      ✔ [22/73] Sent → hr@webdigitalmantra.in
+2026-06-02 09:40:40  INFO      ✔ [23/73] Sent → info@gipconsultancy.in
+2026-06-02 09:41:01  INFO      ✔ [24/73] Sent → info@sainokoyo.com
+2026-06-02 09:41:22  INFO      ✔ [25/73] Sent → irfan.w@phygital-insights.com
+2026-06-02 09:41:44  INFO      ✔ [26/73] Sent → ishika.gupta@infojiniconsulting.com
+2026-06-02 09:42:07  INFO      ✔ [27/73] Sent → jobs@qrewz.com
+2026-06-02 09:42:28  INFO      ✔ [28/73] Sent → jyoti.s@strawberryinfotech.com
+2026-06-02 09:42:51  INFO      ✔ [29/73] Sent → karthik.k@alpconsulting.in
+2026-06-02 09:43:11  INFO      ✔ [30/73] Sent → kashish@rocked.us
+2026-06-02 09:43:32  INFO      ✔ [31/73] Sent → kavitha.hp@izmoltd.com
+2026-06-02 09:43:53  INFO      ✔ [32/73] Sent → mahek@aliqan.com
+2026-06-02 09:43:53  DEBUG     Domain burst pause (aliqan.com): 15.1s
+2026-06-02 09:44:29  INFO      ✔ [33/73] Sent → mallela.naveen@careernet.in
+2026-06-02 09:44:50  INFO      ✔ [34/73] Sent → malu@velodata.in
+2026-06-02 09:45:13  INFO      ✔ [35/73] Sent → manisha.n@ashudividend.com
+2026-06-02 09:45:32  INFO      ✔ [36/73] Sent → mansi@infowaygroup.com
+2026-06-02 09:45:32  DEBUG     Domain burst pause (infowaygroup.com): 19.6s
+2026-06-02 09:46:13  INFO      ✔ [37/73] Sent → meda.lokesh.tpr@pwc.com
+2026-06-02 09:46:33  INFO      ✔ [38/73] Sent → melvin.joseph@circledv.com
+2026-06-02 09:46:55  INFO      ✔ [39/73] Sent → namita.madival@talnxt.com
+2026-06-02 09:47:18  INFO      ✔ [40/73] Sent → neha@ambiencehr.com
+2026-06-02 09:47:18  DEBUG     Domain burst pause (ambiencehr.com): 15.4s
+2026-06-02 09:47:40  INFO      ☕ Batch 1/2 complete (40 sent). Session break: 19 minutes…
+2026-06-02 09:52:40  INFO      ⏰ Resuming in 14 minutes…
+2026-06-02 09:57:40  INFO      ⏰ Resuming in 9 minutes…
+2026-06-02 10:25:20  INFO      ⏰ Resuming in 4 minutes…
+2026-06-02 10:29:16  INFO      ✅ SMTP connected
+2026-06-02 10:29:33  INFO      ✔ [41/73] Sent → nirmala@xanikainfotech.com
+2026-06-02 10:29:57  INFO      ✔ [42/73] Sent → nisha.ganapathi@khatabook.com
+2026-06-02 10:30:19  INFO      ✔ [43/73] Sent → nmogilipally@primusglobal.com
+2026-06-02 10:30:43  INFO      ✔ [44/73] Sent → pallavi@mnrsolutions.in
+2026-06-02 10:31:04  INFO      ✔ [45/73] Sent → parthikptl2002@gmail.com
+2026-06-02 10:31:26  INFO      ✔ [46/73] Sent → pavan.p@bct-consulting.com
+2026-06-02 10:31:48  INFO      ✔ [47/73] Sent → payal.raisinghani@xebia.com
+2026-06-02 10:32:09  INFO      ✔ [48/73] Sent → pranav.dillikar@xoriant.com
+2026-06-02 10:32:33  INFO      ✔ [49/73] Sent → prashansa.gupta@walkingtree.tech
+2026-06-02 10:32:57  INFO      ✔ [50/73] Sent → priyanka.sharma@xebia.com
+2026-06-02 10:32:57  DEBUG     Domain burst pause (xebia.com): 25.6s
+2026-06-02 10:33:45  INFO      ✔ [51/73] Sent → punit.singh@appriffy.com
+2026-06-02 10:34:05  INFO      ✔ [52/73] Sent → pushpa@talentone.in
+2026-06-02 10:34:27  INFO      ✔ [53/73] Sent → ramya@orisonsolutions.com
+2026-06-02 10:34:50  INFO      ✔ [54/73] Sent → reena.aulakh@outlook.com
+2026-06-02 10:35:10  INFO      ✔ [55/73] Sent → riya@dynastyhrsolutions.com
+2026-06-02 10:35:33  INFO      ✔ [56/73] Sent → saba@aliqan.com
+2026-06-02 10:35:55  INFO      ✔ [57/73] Sent → saikumar@macronix.in
+2026-06-02 10:36:17  INFO      ✔ [58/73] Sent → samuel.d@uixtech.com
+2026-06-02 10:36:39  INFO      ✔ [59/73] Sent → sandeep@dynastyhrsolutions.com
+2026-06-02 10:36:39  DEBUG     Domain burst pause (dynastyhrsolutions.com): 23.6s
+2026-06-02 10:37:26  INFO      ✔ [60/73] Sent → sandesh@amrapalisolutions.in
+2026-06-02 10:37:46  INFO      ✔ [61/73] Sent → sanjana@onfinance.in
+2026-06-02 10:38:09  INFO      ✔ [62/73] Sent → shaurya.omar@huntingcube.com
+2026-06-02 10:38:30  INFO      ✔ [63/73] Sent → skygate.cons82@gmail.com
+2026-06-02 10:38:30  DEBUG     Domain burst pause (gmail.com): 26.6s
+2026-06-02 10:39:19  INFO      ✔ [64/73] Sent → sneha.k@precisiontechcorp.com
+2026-06-02 10:39:41  INFO      ✔ [65/73] Sent → soumyajit.d@2coms.com
+2026-06-02 10:40:03  INFO      ✔ [66/73] Sent → sreeni.esb@gmail.com
+2026-06-02 10:40:24  INFO      ✔ [67/73] Sent → surekha.m@bct-consulting.com
+2026-06-02 10:40:24  DEBUG     Domain burst pause (bct-consulting.com): 29.0s
+2026-06-02 10:41:16  INFO      ✔ [68/73] Sent → tae4@mazenetsolution.com
+2026-06-02 10:41:37  INFO      ✔ [69/73] Sent → tahir.hussen@ambiquest.com
+2026-06-02 10:42:01  INFO      ✔ [70/73] Sent → vandana.singh@xebia.com
+2026-06-02 10:42:24  INFO      ✔ [71/73] Sent → vinay@pixelitcenter.com
+2026-06-02 10:42:45  INFO      ✔ [72/73] Sent → vincily@vegaintellisoft.com
+2026-06-02 10:43:08  INFO      ✔ [73/73] Sent → vishnu@flyett.com
+2026-06-02 10:43:14  INFO      🎉 Done — 73/73 emails sent today.
+2026-06-02 10:43:14  INFO      📊 Total sent all time: 498
+2026-06-02 10:43:14  INFO      All emails sent. Deleting source PDF(s)…
+2026-06-02 10:43:14  INFO      🗑  Deleted PDF: Bangalore_Chennai (42).pdf
+2026-06-02 10:44:44  INFO      📅 Daily cap: 250 | Sent today: 96 | Remaining: 154
+2026-06-02 10:44:44  INFO      Reading PDF: Pune Mumbai (24).pdf
+2026-06-02 10:44:45  INFO      Unique emails found across all PDFs: 19
+2026-06-02 10:44:45  INFO      Already sent (all time): 498  |  New to send today: 16
+2026-06-02 10:44:45  INFO      🚀 Starting send: 16 emails | Batch size: 40 | Max/hour: 55
+2026-06-02 10:44:46  INFO      ✅ SMTP connected
+2026-06-02 10:45:03  INFO      ✔ [1/16] Sent → bhoomika@adroitinnovative.com
+2026-06-02 10:45:26  INFO      ✔ [2/16] Sent → careers@cantiktech.com
+2026-06-02 10:45:47  INFO      ✔ [3/16] Sent → deeksha.b@aptohr.com
+2026-06-02 10:46:09  INFO      ✔ [4/16] Sent → deepti@albireorecruiters.in
+2026-06-02 10:46:31  INFO      ✔ [5/16] Sent → hrd@vrautomationpune.com
+2026-06-02 10:46:52  INFO      ✔ [6/16] Sent → megha.basantani@samvadsocial.com
+2026-06-02 10:47:15  INFO      ✔ [7/16] Sent → nehanaik@hamsmail.com
+2026-06-02 10:47:38  INFO      ✔ [8/16] Sent → prathyusha.p@crastix.com
+2026-06-02 10:48:01  INFO      ✔ [9/16] Sent → ramesh.a@tekskills.in
+2026-06-02 10:48:24  INFO      ✔ [10/16] Sent → ramya@microacademy.net
+2026-06-02 10:48:44  INFO      ✔ [11/16] Sent → shilpa@0101digitall.com
+2026-06-02 10:49:05  INFO      ✔ [12/16] Sent → shwetathakur20003@gmail.com
+2026-06-02 10:49:29  INFO      ✔ [13/16] Sent → sonalii.transcendence@gmail.com
+2026-06-02 10:49:29  DEBUG     Domain burst pause (gmail.com): 19.7s
+2026-06-02 10:50:09  INFO      ✔ [14/16] Sent → sravani.cella@webpipl.com
+2026-06-02 10:50:30  INFO      ✔ [15/16] Sent → suresh@doodleblue.com
+2026-06-02 10:50:52  INFO      ✔ [16/16] Sent → swarajika@enfycon.com
+2026-06-02 10:50:58  INFO      🎉 Done — 16/16 emails sent today.
+2026-06-02 10:50:58  INFO      📊 Total sent all time: 514
+2026-06-02 10:50:58  INFO      All emails sent. Deleting source PDF(s)…
+2026-06-02 11:19:28  INFO      📅 Daily cap: 250 | Sent today: 112 | Remaining: 138
+2026-06-02 11:19:28  INFO      Reading PDF: Hyderabad (40).pdf
+2026-06-02 11:19:30  INFO      Unique emails found across all PDFs: 52
+2026-06-02 11:19:30  INFO      Already sent (all time): 514  |  New to send today: 37
+2026-06-02 11:19:30  INFO      🚀 Starting send: 37 emails | Batch size: 40 | Max/hour: 55
+2026-06-02 11:19:31  INFO      ✅ SMTP connected
+2026-06-02 11:19:49  INFO      ✔ [1/37] Sent → amrut@quantumcentric.ai
+2026-06-02 11:24:31  INFO      ✔ [2/37] Sent → anuj.raut@programming.com
+2026-06-02 11:24:54  INFO      ✔ [3/37] Sent → ashasonal.connect@gmail.com
+2026-06-02 11:25:16  INFO      ✔ [4/37] Sent → career@huquo.com
+2026-06-02 11:25:37  INFO      ✔ [5/37] Sent → gandhik@compugra.com
+2026-06-02 11:25:57  INFO      ✔ [6/37] Sent → geetha.p@hansree.com
+2026-06-02 11:26:21  INFO      ✔ [7/37] Sent → geethika@intraedge.com
+2026-06-02 11:26:44  INFO      ✔ [8/37] Sent → gunjan.tiwari@hcltech.com
+2026-06-02 11:27:06  INFO      ✔ [9/37] Sent → helen@xbattery.energy
+2026-06-02 11:27:27  INFO      ✔ [10/37] Sent → hr@sritechsoftwareservices.com
+2026-06-02 11:27:50  INFO      ✔ [11/37] Sent → hr@xbattery.energy
+2026-06-02 11:27:50  DEBUG     Domain burst pause (xbattery.energy): 16.9s
+2026-06-02 11:28:27  INFO      ✔ [12/37] Sent → infant.r@riscrm.com
+2026-06-02 11:28:51  INFO      ✔ [13/37] Sent → info@versatileitsol.com
+2026-06-02 11:29:12  INFO      ✔ [14/37] Sent → jobs@isourcecorp.com
+2026-06-02 11:29:33  INFO      ✔ [15/37] Sent → kavya@peopleimpact.in
+2026-06-02 11:29:56  INFO      ✔ [16/37] Sent → lincy.b@kaygen.com
+2026-06-02 11:30:17  INFO      ✔ [17/37] Sent → mamatha.p@amplelogic.com
+2026-06-02 11:30:39  INFO      ✔ [18/37] Sent → monisha@huquo.com
+2026-06-02 11:30:39  DEBUG     Domain burst pause (huquo.com): 20.3s
+2026-06-02 11:31:22  INFO      ✔ [19/37] Sent → naresh@sritechsoftwareservices.com
+2026-06-02 11:31:22  DEBUG     Domain burst pause (sritechsoftwareservices.com): 22.0s
+2026-06-02 11:32:08  INFO      ✔ [20/37] Sent → people@secumintit.com
+2026-06-02 11:32:31  INFO      ✔ [21/37] Sent → pkalyandharmendra@rezolve.com
+2026-06-02 11:32:53  INFO      ✔ [22/37] Sent → raina.das@tsit.co.in
+2026-06-02 11:33:13  INFO      ✔ [23/37] Sent → ranipriya.m@cyanous.com
+2026-06-02 11:33:35  INFO      ✔ [24/37] Sent → ravikiran@gameshastra.in
+2026-06-02 11:33:59  INFO      ✔ [25/37] Sent → recruitment@xautomations.com
+2026-06-02 11:34:21  INFO      ✔ [26/37] Sent → sagarika@edurungroup.in
+2026-06-02 11:34:44  INFO      ✔ [27/37] Sent → sai.n@eniacsys.com
+2026-06-02 11:35:05  INFO      ✔ [28/37] Sent → saraswathi.m@rudhrainfosolutions.com
+2026-06-02 11:35:26  INFO      ✔ [29/37] Sent → shraddha.dubey@visioncraftconsulting.com
+2026-06-02 11:35:46  INFO      ✔ [30/37] Sent → soundaya.samboju@sparity.com
+2026-06-02 11:36:09  INFO      ✔ [31/37] Sent → sreeja.bandi@bitsilica.com
+2026-06-02 11:36:30  INFO      ✔ [32/37] Sent → srikanth.m@versatileitsol.com
+2026-06-02 11:36:30  DEBUG     Domain burst pause (versatileitsol.com): 19.5s
+2026-06-02 11:37:10  INFO      ✔ [33/37] Sent → sujana@tquanta.in
+2026-06-02 11:37:33  INFO      ✔ [34/37] Sent → sushmitha.t@clientservertech.com
+2026-06-02 11:37:54  INFO      ✔ [35/37] Sent → talenthubhire.hr@gmail.com
+2026-06-02 11:37:54  DEBUG     Domain burst pause (gmail.com): 26.2s
+2026-06-02 11:38:42  INFO      ✔ [36/37] Sent → vasudha@silverlinktechnologies.com
+2026-06-02 11:39:05  INFO      ✔ [37/37] Sent → yoginikothakota.ga.recruiter@gmail.com
+2026-06-02 11:39:10  INFO      🎉 Done — 37/37 emails sent today.
+2026-06-02 11:39:10  INFO      📊 Total sent all time: 551
+2026-06-02 11:39:10  INFO      All emails sent. Deleting source PDF(s)…
+2026-06-02 11:39:10  INFO      🗑  Deleted PDF: Hyderabad (40).pdf

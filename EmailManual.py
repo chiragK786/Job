@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
 """
-OPTIMISED MULTI-PDF EMAIL SENDER v3
+MANUAL EMAIL SENDER
+- Email addresses manually entered (CSV file or direct list)
 - Port 587 (STARTTLS) primary, 465 (SSL) fallback
-- 30-second connection timeout
-- Auto-retry connect up to 3 times
-- 200+ emails/day without Gmail block
-- Smart batching: 40 emails per SMTP session
-- Long session breaks (20-35 min) between batches
-- Faster per-email delay (3-7 sec)
-- Hourly rate limiter (max 55/hour)
-- Warm-up mode for new accounts
-- Resumes automatically after breaks
-- All original features retained
+- Auto-retry, batching, rate limiting all included
 """
 
 import re
@@ -22,61 +14,71 @@ import random
 import mimetypes
 import smtplib
 import logging
-import pdfplumber
 from email.message import EmailMessage
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 from typing import Set, List, Dict, Union
 
 # ─────────────────────────────────────────────
+#  ✅ ADD YOUR EMAILS HERE (manual list)
+# ─────────────────────────────────────────────
+MANUAL_EMAILS: List[str] = ["kumari.singh@birlasoft.com","Bhupesh.Mahara@birlasoft.com"
+                            #hr@company1.com",
+
+
+                            # "recruiter@company2.com",
+                            # "jobs@company3.com",
+                            # Add as many as you need
+                            ]
+
+# ─────────────────────────────────────────────
+#  ✅ OR LOAD FROM CSV FILE
+#  CSV should have only one column: Email
+#  Example: manual_emails.csv
+#    Email
+#    hr@company1.com
+#    recruiter@company2.com
+# ─────────────────────────────────────────────
+MANUAL_EMAILS_CSV: str = ""  # Example: "/Users/yourname/Desktop/manual_emails.csv"
+# Leave blank if using the list above
+
+# ─────────────────────────────────────────────
 #  CONFIG
 # ─────────────────────────────────────────────
-PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/Downloads/NCR_Noida_Delhi_Gurgaon (90).pdf",
-]
-
 ATTACHMENT_PATH = (
     "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
-    "Chirag_Khanduja_QA_Resume_AI_SDET.pdf"
+    "Chirag_Khanduja_SDET_QA_AI_Tester.pdf"
 )
 
-EMAIL_ADDRESS  = "chiragkhanduja786@gmail.com"
+EMAIL_ADDRESS = "chiragkhanduja786@gmail.com"
 EMAIL_PASSWORD = "ivci swwm gwfx btku"
 
-BASE_DIR           = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")
-SENT_EMAILS_FILE   = BASE_DIR / "sent_emails.csv"
-LOG_FILE           = BASE_DIR / "email_log.csv"
-PREVIEW_CSV        = BASE_DIR / "preview_recipients.csv"
-APP_LOG_FILE       = BASE_DIR / "app.log"
+BASE_DIR = Path("/Users/chiragkhanduja/PycharmProjects/PythonProject11")
+LOG_FILE = BASE_DIR / "email_log.csv"
+APP_LOG_FILE = BASE_DIR / "app.log"
 
-EXCLUDED_DOMAINS: Set[str] = {
-    "squareboat.com", "hudle.in", "programming.com"
-}
-
+EXCLUDED_DOMAINS: Set[str] = {"squareboat.com", "hudle.in", "programming.com"}
 EXCLUDED_EMAILS: Set[str] = {"info@jobcurator.in"}
 
-DRY_RUN = False
+DRY_RUN = False  # Set to True for testing only (no emails will be sent)
 
 # ─────────────────────────────────────────────
-#  SMTP CONNECTION SETTINGS
+#  SMTP SETTINGS
 # ─────────────────────────────────────────────
-SMTP_TIMEOUT        = 30          # seconds per connection attempt
-SMTP_MAX_RETRIES    = 3           # how many times to retry on failure
-SMTP_RETRY_WAIT     = (10, 20)    # seconds to wait between retries
+SMTP_TIMEOUT = 30
+SMTP_MAX_RETRIES = 3
+SMTP_RETRY_WAIT = (10, 20)
 
 # ─────────────────────────────────────────────
-#  ANTI-BLOCK / RATE LIMITING
+#  RATE LIMITING
 # ─────────────────────────────────────────────
-PER_EMAIL_DELAY    = (3, 7)
-DOMAIN_BURST_SIZE  = 2
+PER_EMAIL_DELAY = (3, 7)
+DOMAIN_BURST_SIZE = 2
 DOMAIN_BURST_PAUSE = (15, 30)
-BATCH_SIZE         = 50
-SESSION_BREAK      = (600, 1200)   # 20–35 min between batches
-MAX_PER_HOUR       = 65
-DAILY_CAP          = 250
-WARMUP_MODE        = False
-WARMUP_DAILY_CAP   = 50
-WARMUP_DELAY       = (8, 15)
+BATCH_SIZE = 40
+SESSION_BREAK = (600, 1200)
+MAX_PER_HOUR = 55
+DAILY_CAP = 250
 
 # ─────────────────────────────────────────────
 #  EMAIL CONTENT
@@ -141,8 +143,9 @@ QA Automation Engineer | SDET<br>
 </p>
 """
 
+
 # ─────────────────────────────────────────────
-#  LOGGING SETUP
+#  LOGGING
 # ─────────────────────────────────────────────
 def setup_logging() -> logging.Logger:
     APP_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -158,46 +161,84 @@ def setup_logging() -> logging.Logger:
     logger.addHandler(ch)
     return logger
 
+
 log = setup_logging()
 
 # ─────────────────────────────────────────────
-#  HOURLY RATE LIMITER
+#  EMAIL LOADING — manual list or CSV
 # ─────────────────────────────────────────────
-class HourlyRateLimiter:
-    def __init__(self, max_per_hour: int):
-        self.max_per_hour = max_per_hour
-        self.timestamps: List[float] = []
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,7}")
 
-    def wait_if_needed(self) -> None:
-        now = time.time()
-        self.timestamps = [t for t in self.timestamps if now - t < 3600]
-        if len(self.timestamps) >= self.max_per_hour:
-            oldest = self.timestamps[0]
-            wait_secs = 3600 - (now - oldest) + 5
-            log.info(
-                "⏳ Hourly limit (%d/hr) reached. Waiting %.0f minutes…",
-                self.max_per_hour, wait_secs / 60
-            )
-            time.sleep(wait_secs)
-            self.timestamps = []
 
-    def record(self) -> None:
-        self.timestamps.append(time.time())
+def load_manual_emails() -> List[str]:
+    """Load emails from MANUAL_EMAILS list + optional CSV file."""
+    emails: List[str] = []
+
+    # 1. From direct list
+    for e in MANUAL_EMAILS:
+        e = e.strip().lower()
+        if EMAIL_RE.fullmatch(e):
+            emails.append(e)
+        else:
+            log.warning("Invalid email skipped: %s", e)
+
+    # 2. From CSV file (if path provided)
+    if MANUAL_EMAILS_CSV:
+        csv_path = Path(MANUAL_EMAILS_CSV)
+        if not csv_path.exists():
+            log.error("CSV file not found: %s", MANUAL_EMAILS_CSV)
+        else:
+            with csv_path.open(newline="", encoding="utf-8-sig") as f:
+                reader = csv.DictReader(f)
+                # Column name is flexible: Email, email, EMAIL, all accepted
+                col = next(
+                    (c for c in (reader.fieldnames or []) if c.strip().lower() == "email"),
+                    None
+                )
+                if col is None:
+                    # No header — treat first column as email
+                    f.seek(0)
+                    plain_reader = csv.reader(f)
+                    for row in plain_reader:
+                        if row:
+                            e = row[0].strip().lower()
+                            if EMAIL_RE.fullmatch(e):
+                                emails.append(e)
+                else:
+                    for row in reader:
+                        e = row[col].strip().lower()
+                        if EMAIL_RE.fullmatch(e):
+                            emails.append(e)
+                        else:
+                            log.warning("Invalid email in CSV skipped: %s", row[col])
+            log.info("Loaded from CSV: %s", csv_path.name)
+
+    # Filter excluded
+    filtered = []
+    for e in emails:
+        domain = e.split("@")[-1]
+        if domain in EXCLUDED_DOMAINS:
+            log.debug("Excluded domain skipped: %s", e)
+        elif e in EXCLUDED_EMAILS:
+            log.debug("Excluded email skipped: %s", e)
+        else:
+            filtered.append(e)
+
+    # Deduplicate (preserve order)
+    seen = set()
+    unique = []
+    for e in filtered:
+        if e not in seen:
+            seen.add(e)
+            unique.append(e)
+
+    log.info("Total unique valid emails loaded: %d", len(unique))
+    return unique
+
 
 # ─────────────────────────────────────────────
-#  SENT-EMAIL TRACKING
+#  DAILY LOG
 # ─────────────────────────────────────────────
-def load_sent_emails() -> Set[str]:
-    if not SENT_EMAILS_FILE.exists():
-        return set()
-    with SENT_EMAILS_FILE.open(newline="") as f:
-        return {row[0].strip().lower() for row in csv.reader(f) if row}
-
-def mark_sent(email: str) -> None:
-    SENT_EMAILS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with SENT_EMAILS_FILE.open("a", newline="") as f:
-        csv.writer(f).writerow([email])
-
 def get_today_sent_count() -> int:
     today = date.today().isoformat()
     if not LOG_FILE.exists():
@@ -208,6 +249,7 @@ def get_today_sent_count() -> int:
         if row and row[0] == today:
             return int(row[1])
     return 0
+
 
 def update_daily_log(count: int) -> None:
     today = date.today().isoformat()
@@ -226,41 +268,37 @@ def update_daily_log(count: int) -> None:
     with LOG_FILE.open("w", newline="") as f:
         csv.writer(f).writerows(rows)
 
-# ─────────────────────────────────────────────
-#  EMAIL EXTRACTION
-# ─────────────────────────────────────────────
-EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,7}")
-
-def extract_emails_from_pdfs(pdf_paths: List[str]) -> Dict[str, int]:
-    counts: Dict[str, int] = {}
-    for path_str in pdf_paths:
-        path = Path(path_str)
-        if not path.exists():
-            log.warning("Missing PDF: %s", path)
-            continue
-        log.info("Reading PDF: %s", path.name)
-        with pdfplumber.open(path) as pdf:
-            for page in pdf.pages:
-                text = page.extract_text() or ""
-                for match in EMAIL_RE.findall(text):
-                    email = match.lower().strip()
-                    domain = email.split("@")[-1]
-                    if domain in EXCLUDED_DOMAINS:
-                        continue
-                    if email in EXCLUDED_EMAILS:
-                        continue
-                    counts[email] = counts.get(email, 0) + 1
-    log.info("Unique emails found across all PDFs: %d", len(counts))
-    return counts
 
 # ─────────────────────────────────────────────
-#  SMTP HELPERS
+#  HOURLY RATE LIMITER
+# ─────────────────────────────────────────────
+class HourlyRateLimiter:
+    def __init__(self, max_per_hour: int):
+        self.max_per_hour = max_per_hour
+        self.timestamps: List[float] = []
+
+    def wait_if_needed(self) -> None:
+        now = time.time()
+        self.timestamps = [t for t in self.timestamps if now - t < 3600]
+        if len(self.timestamps) >= self.max_per_hour:
+            oldest = self.timestamps[0]
+            wait_secs = 3600 - (now - oldest) + 5
+            log.info("⏳ Hourly limit reached. Waiting %.0f minutes…", wait_secs / 60)
+            time.sleep(wait_secs)
+            self.timestamps = []
+
+    def record(self) -> None:
+        self.timestamps.append(time.time())
+
+
+# ─────────────────────────────────────────────
+#  SMTP
 # ─────────────────────────────────────────────
 def build_message(to_email: str, attachment_data: bytes,
                   attach_mime: str, attach_name: str) -> EmailMessage:
     msg = EmailMessage()
-    msg["From"]    = EMAIL_ADDRESS
-    msg["To"]      = to_email
+    msg["From"] = EMAIL_ADDRESS
+    msg["To"] = to_email
     msg["Subject"] = EMAIL_SUBJECT
     msg.add_alternative(EMAIL_BODY, subtype="html")
     maintype, subtype = attach_mime.split("/", 1)
@@ -270,83 +308,44 @@ def build_message(to_email: str, attachment_data: bytes,
 
 
 def _try_starttls(timeout: int) -> smtplib.SMTP:
-    """Connect via port 587 with STARTTLS."""
     server = smtplib.SMTP("smtp.gmail.com", 587, timeout=timeout)
-    server.ehlo()
-    server.starttls()
+    server.ehlo();
+    server.starttls();
     server.ehlo()
     server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
     return server
 
 
 def _try_ssl(timeout: int) -> smtplib.SMTP_SSL:
-    """Connect via port 465 with SSL (fallback)."""
     server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=timeout)
     server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
     return server
 
 
 def connect_smtp() -> Union[smtplib.SMTP, smtplib.SMTP_SSL]:
-    """
-    Try STARTTLS (port 587) first, fall back to SSL (port 465).
-    Retries up to SMTP_MAX_RETRIES times with a short pause between attempts.
-    Raises RuntimeError if all attempts fail.
-    """
     for attempt in range(1, SMTP_MAX_RETRIES + 1):
-        # ── Try STARTTLS first ──────────────────────────────────────────
         try:
             server = _try_starttls(SMTP_TIMEOUT)
-            log.info("✅ SMTP connected via port 587 (STARTTLS) — attempt %d", attempt)
+            log.info("✅ Connected via 587 (STARTTLS) — attempt %d", attempt)
             return server
-        except (TimeoutError, OSError, smtplib.SMTPException) as exc:
-            log.warning("⚠️  Port 587 failed (attempt %d/%d): %s", attempt, SMTP_MAX_RETRIES, exc)
-
-        # ── Fall back to SSL ────────────────────────────────────────────
+        except Exception as exc:
+            log.warning("⚠️  Port 587 failed (%d/%d): %s", attempt, SMTP_MAX_RETRIES, exc)
         try:
             server = _try_ssl(SMTP_TIMEOUT)
-            log.info("✅ SMTP connected via port 465 (SSL) — attempt %d", attempt)
+            log.info("✅ Connected via 465 (SSL) — attempt %d", attempt)
             return server
-        except (TimeoutError, OSError, smtplib.SMTPException) as exc:
-            log.warning("⚠️  Port 465 failed (attempt %d/%d): %s", attempt, SMTP_MAX_RETRIES, exc)
-
+        except Exception as exc:
+            log.warning("⚠️  Port 465 failed (%d/%d): %s", attempt, SMTP_MAX_RETRIES, exc)
         if attempt < SMTP_MAX_RETRIES:
             wait = random.uniform(*SMTP_RETRY_WAIT)
-            log.info("🔄 Retrying SMTP in %.0f seconds…", wait)
+            log.info("🔄 Retrying in %.0f seconds…", wait)
             time.sleep(wait)
+    raise RuntimeError("❌ Cannot connect to Gmail SMTP. Check internet connection and firewall settings.")
 
-    raise RuntimeError(
-        "❌ Could not connect to Gmail SMTP after %d attempts on ports 587 and 465.\n"
-        "   • Check your internet connection / firewall / VPN.\n"
-        "   • Try: nc -zv smtp.gmail.com 587  (in Terminal) to verify port access.\n"
-        "   • Switching to a mobile hotspot often resolves ISP-level blocks."
-        % SMTP_MAX_RETRIES
-    )
 
 # ─────────────────────────────────────────────
-#  PROGRESS BAR
+#  PROGRESS
 # ─────────────────────────────────────────────
-try:
-    from rich.progress import (
-        Progress, BarColumn, TimeElapsedColumn,
-        TimeRemainingColumn, TextColumn, MofNCompleteColumn,
-    )
-    RICH = True
-except ImportError:
-    RICH = False
-
-def make_progress() -> "Progress":
-    from rich.progress import (
-        Progress, BarColumn, TimeElapsedColumn,
-        TimeRemainingColumn, TextColumn, MofNCompleteColumn,
-    )
-    return Progress(
-        TextColumn("[bold green]Sending"),
-        BarColumn(),
-        MofNCompleteColumn(),
-        TimeElapsedColumn(),
-        TimeRemainingColumn(),
-    )
-
 def simple_bar(done: int, total: int) -> None:
     if total == 0:
         return
@@ -354,22 +353,6 @@ def simple_bar(done: int, total: int) -> None:
     bar = "█" * filled + "─" * (45 - filled)
     print(f"\r[{bar}] {done}/{total}", end="", flush=True)
 
-# ─────────────────────────────────────────────
-#  PDF DELETION
-# ─────────────────────────────────────────────
-def delete_pdfs(pdf_paths: List[str], sent_count: int, total: int) -> None:
-    if sent_count != total:
-        log.warning("Skipping PDF deletion — only %d/%d emails sent.", sent_count, total)
-        return
-    log.info("All emails sent. Deleting source PDF(s)…")
-    for path_str in pdf_paths:
-        pdf_path = Path(path_str)
-        try:
-            if pdf_path.exists():
-                pdf_path.unlink()
-                log.info("🗑  Deleted PDF: %s", pdf_path.name)
-        except Exception as exc:
-            log.error("Failed to delete %s: %s", pdf_path.name, exc)
 
 # ─────────────────────────────────────────────
 #  MAIN
@@ -377,94 +360,66 @@ def delete_pdfs(pdf_paths: List[str], sent_count: int, total: int) -> None:
 def main() -> None:
     attach_path = Path(ATTACHMENT_PATH)
     if not attach_path.exists():
-        raise FileNotFoundError(f"Resume not found: {attach_path}")
-
-    effective_daily_cap   = WARMUP_DAILY_CAP if WARMUP_MODE else DAILY_CAP
-    effective_email_delay = WARMUP_DELAY      if WARMUP_MODE else PER_EMAIL_DELAY
-
-    if WARMUP_MODE:
-        log.info("🔥 WARM-UP MODE active — max %d emails today, slower delays", WARMUP_DAILY_CAP)
+        raise FileNotFoundError(f"Resume file not found: {attach_path}")
 
     already_today = get_today_sent_count()
-    remaining_cap = effective_daily_cap - already_today
+    remaining_cap = DAILY_CAP - already_today
     if remaining_cap <= 0:
-        log.info("📅 Daily cap of %d already reached today. Run again tomorrow.", effective_daily_cap)
+        log.info("📅 Daily cap (%d) already reached today. Run again tomorrow.", DAILY_CAP)
         return
-    log.info("📅 Daily cap: %d | Sent today: %d | Remaining: %d",
-             effective_daily_cap, already_today, remaining_cap)
+    log.info("📅 Daily cap: %d | Already sent today: %d | Remaining: %d",
+             DAILY_CAP, already_today, remaining_cap)
 
-    all_emails  = extract_emails_from_pdfs(PDF_PATHS)
-    sent_before = load_sent_emails()
-    send_list   = sorted(e for e in all_emails if e not in sent_before)
-    send_list   = send_list[:remaining_cap]
+    # ── Load emails ────────────────────────────────────────────────────
+    all_emails = load_manual_emails()
+    send_list = all_emails[:remaining_cap]
 
-    log.info("Already sent (all time): %d  |  New to send today: %d",
-             len(sent_before), len(send_list))
+    log.info("Total emails to send: %d", len(send_list))
 
     if not send_list:
-        log.info("No new recipients — nothing to do.")
+        log.info("No emails to send — script exiting.")
         return
 
     if DRY_RUN:
-        log.info("DRY RUN — writing preview to %s", PREVIEW_CSV)
-        with PREVIEW_CSV.open("w", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow(["Email", "Occurrences"])
-            for e in send_list:
-                writer.writerow([e, all_emails[e]])
-        log.info("Preview written (%d rows). Set DRY_RUN=False to send.", len(send_list))
+        log.info("🧪 DRY RUN MODE — no emails will be sent. Recipients:")
+        for e in send_list:
+            log.info("  → %s", e)
+        log.info("Set DRY_RUN=False to send actual emails.")
         return
 
     attach_data = attach_path.read_bytes()
     attach_mime = mimetypes.guess_type(str(attach_path))[0] or "application/octet-stream"
     attach_name = attach_path.name
 
-    total         = len(send_list)
-    sent_count    = 0
+    total = len(send_list)
+    sent_count = 0
     domain_count: Dict[str, int] = {}
-    rate_limiter  = HourlyRateLimiter(MAX_PER_HOUR)
+    rate_limiter = HourlyRateLimiter(MAX_PER_HOUR)
 
-    log.info("🚀 Starting send: %d emails | Batch size: %d | Max/hour: %d",
+    log.info("🚀 Starting to send: %d emails | Batch size: %d | Max per hour: %d",
              total, BATCH_SIZE, MAX_PER_HOUR)
 
     server = connect_smtp()
-
-    if RICH:
-        progress = make_progress()
-        progress.start()
-        task = progress.add_task("send", total=total)
 
     for i, to_email in enumerate(send_list):
 
         # ── Batch break ────────────────────────────────────────────────
         if i > 0 and i % BATCH_SIZE == 0:
-            if RICH:
-                progress.stop()
             pause = random.uniform(*SESSION_BREAK)
-            log.info(
-                "☕ Batch %d/%d complete (%d sent). Session break: %.0f minutes…",
-                i // BATCH_SIZE,
-                (total + BATCH_SIZE - 1) // BATCH_SIZE,
-                sent_count,
-                pause / 60,
-            )
+            log.info("☕ Batch complete (%d sent). Taking break for %.0f minutes…",
+                     sent_count, pause / 60)
             try:
                 server.quit()
             except Exception:
                 pass
             elapsed = 0
             while elapsed < pause:
-                sleep_chunk = min(300, pause - elapsed)
-                time.sleep(sleep_chunk)
-                elapsed += sleep_chunk
-                remaining = pause - elapsed
-                if remaining > 0:
-                    log.info("⏰ Resuming in %.0f minutes…", remaining / 60)
+                chunk = min(300, pause - elapsed)
+                time.sleep(chunk)
+                elapsed += chunk
+                if pause - elapsed > 0:
+                    log.info("⏰ Resuming in %.0f minutes…", (pause - elapsed) / 60)
             server = connect_smtp()
-            if RICH:
-                progress = make_progress()
-                progress.start()
-                task = progress.add_task("send", total=total)
 
         rate_limiter.wait_if_needed()
 
@@ -473,8 +428,7 @@ def main() -> None:
             server.send_message(msg)
             sent_count += 1
             rate_limiter.record()
-            mark_sent(to_email)
-            log.info("✔ [%d/%d] Sent → %s", sent_count, total, to_email)
+            log.info("✔ [%d/%d] Sent to → %s", sent_count, total, to_email)
 
         except smtplib.SMTPRecipientsRefused:
             log.warning("✘ Refused: %s", to_email)
@@ -486,34 +440,27 @@ def main() -> None:
                 server.send_message(msg)
                 sent_count += 1
                 rate_limiter.record()
-                mark_sent(to_email)
                 log.info("✔ [%d/%d] Sent (retry) → %s", sent_count, total, to_email)
             except Exception as exc:
-                log.error("✘ Retry failed for %s: %s", to_email, exc)
+                log.error("✘ Retry failed %s: %s", to_email, exc)
 
         except smtplib.SMTPException as exc:
-            log.error("✘ SMTP error for %s: %s", to_email, exc)
+            log.error("✘ SMTP error %s: %s", to_email, exc)
 
         except Exception as exc:
-            log.error("✘ Unexpected error for %s: %s", to_email, exc)
+            log.error("✘ Unexpected error %s: %s", to_email, exc)
 
-        if RICH:
-            progress.update(task, advance=1)
-        else:
-            simple_bar(sent_count, total)
+        simple_bar(sent_count, total)
 
-        # ── Domain burst pause ─────────────────────────────────────────
         domain = to_email.split("@")[-1]
         domain_count[domain] = domain_count.get(domain, 0) + 1
         if domain_count[domain] % DOMAIN_BURST_SIZE == 0:
             pause = random.uniform(*DOMAIN_BURST_PAUSE)
-            log.debug("Domain burst pause (%s): %.1fs", domain, pause)
             time.sleep(pause)
 
-        time.sleep(random.uniform(*effective_email_delay))
+        time.sleep(random.uniform(*PER_EMAIL_DELAY))
 
-    if RICH:
-        progress.stop()
+    print()  # newline after progress bar
 
     try:
         server.quit()
@@ -521,10 +468,7 @@ def main() -> None:
         pass
 
     update_daily_log(sent_count)
-    log.info("🎉 Done — %d/%d emails sent today.", sent_count, total)
-    log.info("📊 Total sent all time: %d", len(load_sent_emails()))
-
-    delete_pdfs(PDF_PATHS, sent_count, total)
+    log.info("🎉 Complete — sent %d/%d emails.", sent_count, total)
 
 
 if __name__ == "__main__":
