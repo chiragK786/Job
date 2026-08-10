@@ -17,7 +17,7 @@
       <span class="mark" aria-hidden="true"></span>
       <div>
         <h1>Mailer Desk</h1>
-        <p>Upload lists · preview · send with your Gmail backend</p>
+        <p>PDF lists + Manual emails · one dashboard</p>
       </div>
     </div>
     <div class="conn">
@@ -36,12 +36,39 @@
 
   <main class="layout">
     <section class="panel form-panel">
-      <h2>Campaign</h2>
+      <div class="mode-tabs" role="tablist">
+        <button type="button" class="mode-tab active" data-mode="pdf" id="tabPdf">PDF lists</button>
+        <button type="button" class="mode-tab" data-mode="manual" id="tabManual">Manual emails</button>
+      </div>
+      <p class="mode-hint" id="modeHint">Extract recipients from job-list PDFs (No_Limit flow).</p>
 
-      <label class="field">
-        <span>Job list PDF(s)</span>
-        <input id="pdfs" type="file" accept=".pdf,application/pdf" multiple />
-      </label>
+      <div id="pdfFields">
+        <label class="field">
+          <span>Job list PDF(s)</span>
+          <input id="pdfs" type="file" accept=".pdf,application/pdf" multiple />
+        </label>
+      </div>
+
+      <div id="manualFields" hidden>
+        <label class="field">
+          <span>Paste emails</span>
+          <textarea id="emailsText" rows="7" placeholder="hr@company.com&#10;recruiter@startup.io&#10;or comma / space separated…"></textarea>
+        </label>
+        <label class="field">
+          <span>Or CSV file <small>Email column or first column</small></span>
+          <input id="csvFile" type="file" accept=".csv,text/csv" />
+        </label>
+        <div class="row">
+          <label class="field">
+            <span>Max per hour</span>
+            <input id="maxPerHour" type="number" min="1" value="55" />
+          </label>
+          <label class="field">
+            <span>Daily cap</span>
+            <input id="manualDailyCap" type="number" min="1" value="250" />
+          </label>
+        </div>
+      </div>
 
       <label class="field">
         <span>Resume attachment</span>
@@ -63,7 +90,7 @@
           <span>Reply-To</span>
           <input id="replyTo" type="email" placeholder="same as sender if blank" />
         </label>
-        <label class="field">
+        <label class="field" id="pdfDailyCapWrap">
           <span>Daily cap (optional)</span>
           <input id="dailyCap" type="number" min="1" placeholder="e.g. 100" />
         </label>
@@ -78,17 +105,18 @@
         <div class="row">
           <label class="field">
             <span>Excluded domains</span>
-            <input id="excludedDomains" type="text" placeholder="squareboat.com, hudle.in" />
+            <input id="excludedDomains" type="text" placeholder="squareboat.com, hudle.in" value="squareboat.com,hudle.in,programming.com" />
           </label>
           <label class="field">
             <span>Excluded emails</span>
-            <input id="excludedEmails" type="text" placeholder="info@example.com" />
+            <input id="excludedEmails" type="text" placeholder="info@example.com" value="info@jobcurator.in" />
           </label>
         </div>
         <div class="checks">
           <label><input id="dryRun" type="checkbox" /> Dry run (preview only)</label>
           <label><input id="checkBounces" type="checkbox" checked /> Check IMAP bounces</label>
           <label><input id="warmup" type="checkbox" /> Warm-up mode</label>
+          <label id="skipSentWrap" hidden><input id="skipAlreadySent" type="checkbox" checked /> Skip already sent</label>
         </div>
         <label class="field">
           <span>Batch size</span>
@@ -111,7 +139,8 @@
         <div class="stat"><span>Already sent</span><strong id="sSentBefore">–</strong></div>
         <div class="stat"><span>Queued</span><strong id="sQueued">–</strong></div>
         <div class="stat"><span>Sent this run</span><strong id="sSentNow">0</strong></div>
-        <div class="stat"><span>Accounts on server</span><strong id="sAccounts">–</strong></div>
+        <div class="stat"><span>Sent today</span><strong id="sSentToday">–</strong></div>
+        <div class="stat"><span>Accounts</span><strong id="sAccounts">–</strong></div>
       </div>
       <div class="progress-wrap">
         <div id="progressBar" class="progress"></div>
@@ -127,11 +156,8 @@
   </main>
 
   <footer class="foot">
-    Frontend is static — host free on
-    <a href="https://pages.cloudflare.com/" target="_blank" rel="noopener">Cloudflare Pages</a>
-    or
-    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
-    (no card). Backend runs separately (PythonAnywhere free / your machine).
+    Modes: <strong>PDF lists</strong> (No_Limit) · <strong>Manual emails</strong> (EmailManual).
+    Frontend on GitHub Pages · backend on your machine / PythonAnywhere.
   </footer>
 
   <script src="./app.js"></script>

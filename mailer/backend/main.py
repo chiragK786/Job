@@ -32,8 +32,11 @@ from mailer_core import (
     DEFAULT_SUBJECT,
     SendConfig,
     extract_emails_from_pdfs,
+    get_today_sent_count,
+    load_emails_from_csv,
     load_sent_emails,
     parse_accounts_from_env,
+    parse_emails_from_text,
     run_send_job,
 )
 
@@ -69,6 +72,7 @@ stop_requested = False
 job_state = {
     "running": False,
     "phase": "idle",
+    "mode": None,
     "total_found": 0,
     "already_sent": 0,
     "queued": 0,
@@ -103,6 +107,9 @@ class PreviewResponse(BaseModel):
     already_sent: int
     new_to_send: int
     sample: List[str] = Field(default_factory=list)
+    sent_today: int = 0
+    remaining_today: Optional[int] = None
+    mode: str = "pdf"
 
 
 class StatusResponse(BaseModel):
@@ -199,6 +206,7 @@ async def start(
         pdf_paths=pdf_paths,
         attachment_path=str(resume_path),
         data_dir=DATA_DIR,
+        mode="pdf",
         dry_run=dry,
         check_bounces=bounces and not dry,
         warmup_mode=warmup,
@@ -211,11 +219,145 @@ async def start(
         on_log=push_log,
     )
 
+    _begin_job(cfg, dry)
+    return {"ok": True, "mode": "pdf"}
+
+
+@app.post("/api/manual/preview", response_model=PreviewResponse, dependencies=[Depends(require_api_key)])
+async def manual_preview(
+    emails_text: str = Form(""),
+    csv_file: Optional[UploadFile] = File(None),
+    excluded_domains: str = Form("squareboat.com,hudle.in,programming.com"),
+    excluded_emails: str = Form("info@jobcurator.in"),
+    daily_cap: int = Form(250),
+    skip_already_sent: str = Form("true"),
+):
+    domains = _split_csv(excluded_domains)
+    excluded = _split_csv(excluded_emails)
+    recipients = parse_emails_from_text(emails_text, domains, excluded)
+    if csv_file and csv_file.filename:
+        csv_path = await _save_one(csv_file, prefix="manual_csv")
+        from_csv = load_emails_from_csv(str(csv_path), domains, excluded, log=push_log)
+        # merge preserving order
+        seen = set(recipients)
+        for e in from_csv:
+            if e not in seen:
+                recipients.append(e)
+                seen.add(e)
+
+    sent_before = load_sent_emails(DATA_DIR / "sent_emails.csv")
+    skip = _as_bool(skip_already_sent)
+    new_list = [e for e in recipients if e not in sent_before] if skip else list(recipients)
+    sent_today = get_today_sent_count(DATA_DIR / "email_log.csv")
+    remaining = max(0, daily_cap - sent_today)
+    queued = new_list[:remaining]
+    return PreviewResponse(
+        total_found=len(recipients),
+        already_sent=len(sent_before),
+        new_to_send=len(queued),
+        sample=queued[:40],
+        sent_today=sent_today,
+        remaining_today=remaining,
+        mode="manual",
+    )
+
+
+@app.post("/api/manual/start", dependencies=[Depends(require_api_key)])
+async def manual_start(
+    resume: UploadFile = File(...),
+    emails_text: str = Form(""),
+    csv_file: Optional[UploadFile] = File(None),
+    subject: str = Form(DEFAULT_SUBJECT),
+    body_html: str = Form(DEFAULT_BODY),
+    reply_to: str = Form(""),
+    dry_run: str = Form("false"),
+    check_bounces: str = Form("false"),
+    warmup_mode: str = Form("false"),
+    batch_size: int = Form(40),
+    daily_cap: int = Form(250),
+    max_per_hour: int = Form(55),
+    skip_already_sent: str = Form("true"),
+    excluded_domains: str = Form("squareboat.com,hudle.in,programming.com"),
+    excluded_emails: str = Form("info@jobcurator.in"),
+    gmail_accounts: str = Form(""),
+):
+    global stop_requested
+    with job_lock:
+        if job_state["running"]:
+            raise HTTPException(status_code=409, detail="A send job is already running.")
+
+    dry = _as_bool(dry_run)
+    domains = _split_csv(excluded_domains)
+    excluded = _split_csv(excluded_emails)
+    recipients = parse_emails_from_text(emails_text, domains, excluded)
+    if csv_file and csv_file.filename:
+        csv_path = await _save_one(csv_file, prefix="manual_csv")
+        from_csv = load_emails_from_csv(str(csv_path), domains, excluded, log=push_log)
+        seen = set(recipients)
+        for e in from_csv:
+            if e not in seen:
+                recipients.append(e)
+                seen.add(e)
+
+    if not recipients:
+        raise HTTPException(status_code=400, detail="No valid emails found. Paste emails or upload a CSV.")
+
+    accounts = _parse_accounts_override(gmail_accounts) or parse_accounts_from_env()
+    if not accounts and not dry:
+        raise HTTPException(
+            status_code=400,
+            detail="No Gmail accounts. Set GMAIL_ACCOUNTS on the server or pass gmail_accounts.",
+        )
+
+    resume_path = await _save_one(resume, prefix="resume")
+    reply = reply_to.strip() or (accounts[0]["email"] if accounts else "")
+
+    cfg = SendConfig(
+        accounts=accounts,
+        reply_to=reply,
+        subject=subject,
+        body_html=body_html,
+        attachment_path=str(resume_path),
+        data_dir=DATA_DIR,
+        manual_emails=recipients,
+        mode="manual",
+        dry_run=dry,
+        check_bounces=_as_bool(check_bounces) and not dry,
+        warmup_mode=_as_bool(warmup_mode),
+        batch_size=max(1, batch_size),
+        daily_cap=daily_cap,
+        max_per_hour=max(0, max_per_hour),
+        skip_already_sent=_as_bool(skip_already_sent),
+        respect_daily_log_cap=True,
+        excluded_domains=domains,
+        excluded_emails=excluded,
+        stop_flag=lambda: stop_requested,
+        on_progress=_on_progress,
+        on_log=push_log,
+    )
+
+    _begin_job(cfg, dry)
+    return {"ok": True, "mode": "manual", "queued_candidates": len(recipients)}
+
+
+@app.post("/api/stop", dependencies=[Depends(require_api_key)])
+def stop():
+    global stop_requested
+    if not job_state["running"]:
+        return {"ok": False, "detail": "No job running"}
+    stop_requested = True
+    push_log("Stop requested from UI…")
+    return {"ok": True}
+
+
+def _begin_job(cfg: SendConfig, dry: bool) -> None:
+    global stop_requested
     stop_requested = False
     with job_lock:
         job_state.update(
             running=True,
             phase="starting",
+            mode=cfg.mode,
             total_found=0,
             already_sent=0,
             queued=0,
@@ -227,19 +369,7 @@ async def start(
             finished_at=None,
             error=None,
         )
-
     threading.Thread(target=_job_wrapper, args=(cfg,), daemon=True).start()
-    return {"ok": True}
-
-
-@app.post("/api/stop", dependencies=[Depends(require_api_key)])
-def stop():
-    global stop_requested
-    if not job_state["running"]:
-        return {"ok": False, "detail": "No job running"}
-    stop_requested = True
-    push_log("Stop requested from UI…")
-    return {"ok": True}
 
 
 def _job_wrapper(cfg: SendConfig) -> None:
@@ -266,6 +396,7 @@ def _on_progress(payload: dict) -> None:
             "dry_run",
             "stopped",
             "current",
+            "mode",
         ):
             if key in payload:
                 job_state[key] = payload[key]

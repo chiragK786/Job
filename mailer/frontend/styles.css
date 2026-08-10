@@ -187,6 +187,41 @@ input:focus, textarea:focus {
   gap: 10px;
 }
 
+.mode-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 4px;
+  background: rgba(232, 223, 207, 0.55);
+  border-radius: 12px;
+}
+
+.mode-tab {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.mode-tab:hover:not(:disabled) { transform: none; }
+
+.mode-tab.active {
+  background: #fff;
+  color: var(--pine-deep);
+  box-shadow: 0 4px 14px rgba(26, 34, 32, 0.08);
+}
+
+.mode-hint {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .panel h3 {
   margin: 18px 0 8px;
   font-size: 0.82rem;

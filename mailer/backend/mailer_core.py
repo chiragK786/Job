@@ -159,6 +159,132 @@ def extract_emails_from_pdfs(
     return counts
 
 
+def parse_emails_from_text(
+    text: str,
+    excluded_domains: Optional[Set[str]] = None,
+    excluded_emails: Optional[Set[str]] = None,
+) -> List[str]:
+    """Parse emails from paste text (one per line, comma/semicolon separated, or free text)."""
+    excluded_domains = excluded_domains or set()
+    excluded_emails = excluded_emails or set()
+    found: List[str] = []
+    seen: Set[str] = set()
+    for match in EMAIL_RE.findall(text or ""):
+        email = match.lower().strip()
+        if not is_valid_email(email) or email in seen:
+            continue
+        domain = email.split("@")[-1]
+        if domain in excluded_domains or email in excluded_emails:
+            continue
+        seen.add(email)
+        found.append(email)
+    return found
+
+
+def load_emails_from_csv(
+    csv_path: str,
+    excluded_domains: Optional[Set[str]] = None,
+    excluded_emails: Optional[Set[str]] = None,
+    log: Optional[Callable[[str], None]] = None,
+) -> List[str]:
+    """Load emails from CSV (Email column or first column)."""
+    excluded_domains = excluded_domains or set()
+    excluded_emails = excluded_emails or set()
+    path = Path(csv_path)
+    if not path.exists():
+        if log:
+            log(f"CSV not found: {path}")
+        return []
+
+    emails: List[str] = []
+    seen: Set[str] = set()
+    with path.open(newline="", encoding="utf-8-sig") as f:
+        sample = f.read(4096)
+        f.seek(0)
+        has_header = "email" in sample.lower().split("\n", 1)[0]
+        if has_header:
+            reader = csv.DictReader(f)
+            col = next(
+                (c for c in (reader.fieldnames or []) if c and c.strip().lower() == "email"),
+                None,
+            )
+            if col:
+                for row in reader:
+                    raw = (row.get(col) or "").strip().lower()
+                    if raw and EMAIL_RE.fullmatch(raw) and is_valid_email(raw):
+                        emails.append(raw)
+            else:
+                f.seek(0)
+                plain = csv.reader(f)
+                next(plain, None)
+                for row in plain:
+                    if row:
+                        emails.append(row[0].strip().lower())
+        else:
+            for row in csv.reader(f):
+                if row:
+                    emails.append(row[0].strip().lower())
+
+    unique: List[str] = []
+    for e in emails:
+        if not EMAIL_RE.fullmatch(e) or not is_valid_email(e) or e in seen:
+            continue
+        domain = e.split("@")[-1]
+        if domain in excluded_domains or e in excluded_emails:
+            continue
+        seen.add(e)
+        unique.append(e)
+    if log:
+        log(f"Loaded {len(unique)} email(s) from CSV: {path.name}")
+    return unique
+
+
+def get_today_sent_count(log_file: Path) -> int:
+    today = date.today().isoformat()
+    if not log_file.exists():
+        return 0
+    with log_file.open(newline="") as f:
+        rows = list(csv.reader(f))
+    for row in rows[1:]:
+        if row and row[0] == today:
+            try:
+                return int(row[1])
+            except ValueError:
+                return 0
+    return 0
+
+
+class HourlyRateLimiter:
+    def __init__(self, max_per_hour: int, log: Optional[Callable[[str], None]] = None):
+        self.max_per_hour = max_per_hour
+        self.timestamps: List[float] = []
+        self.log = log or (lambda _: None)
+
+    def wait_if_needed(self, stop_flag: Optional[Callable[[], bool]] = None) -> bool:
+        """Return False if stopped while waiting."""
+        if self.max_per_hour <= 0:
+            return True
+        now = time.time()
+        self.timestamps = [t for t in self.timestamps if now - t < 3600]
+        if len(self.timestamps) < self.max_per_hour:
+            return True
+        oldest = self.timestamps[0]
+        wait_secs = 3600 - (now - oldest) + 5
+        self.log(f"Hourly limit reached. Waiting {wait_secs / 60:.0f} minutes…")
+        elapsed = 0.0
+        while elapsed < wait_secs:
+            if stop_flag and stop_flag():
+                return False
+            chunk = min(30, wait_secs - elapsed)
+            time.sleep(chunk)
+            elapsed += chunk
+        self.timestamps = []
+        return True
+
+    def record(self) -> None:
+        self.timestamps.append(time.time())
+
+
 def fetch_bounced_emails(account: dict, log: Optional[Callable[[str], None]] = None) -> Set[str]:
     bounced: Set[str] = set()
     try:
@@ -336,9 +462,11 @@ class SendConfig:
         reply_to: str,
         subject: str,
         body_html: str,
-        pdf_paths: List[str],
         attachment_path: str,
         data_dir: Path,
+        pdf_paths: Optional[List[str]] = None,
+        manual_emails: Optional[List[str]] = None,
+        mode: str = "pdf",  # "pdf" | "manual"
         dry_run: bool = False,
         check_bounces: bool = True,
         warmup_mode: bool = False,
@@ -351,6 +479,9 @@ class SendConfig:
         excluded_domains: Optional[Set[str]] = None,
         excluded_emails: Optional[Set[str]] = None,
         daily_cap: Optional[int] = None,
+        max_per_hour: Optional[int] = None,
+        skip_already_sent: bool = True,
+        respect_daily_log_cap: bool = False,
         stop_flag: Optional[Callable[[], bool]] = None,
         on_progress: Optional[Callable[[dict], None]] = None,
         on_log: Optional[Callable[[str], None]] = None,
@@ -359,7 +490,9 @@ class SendConfig:
         self.reply_to = reply_to
         self.subject = subject
         self.body_html = body_html
-        self.pdf_paths = pdf_paths
+        self.pdf_paths = pdf_paths or []
+        self.manual_emails = manual_emails
+        self.mode = mode
         self.attachment_path = attachment_path
         self.data_dir = data_dir
         self.dry_run = dry_run
@@ -374,6 +507,9 @@ class SendConfig:
         self.excluded_domains = excluded_domains or set()
         self.excluded_emails = excluded_emails or set()
         self.daily_cap = daily_cap
+        self.max_per_hour = max_per_hour
+        self.skip_already_sent = skip_already_sent
+        self.respect_daily_log_cap = respect_daily_log_cap
         self.stop_flag = stop_flag or (lambda: False)
         self.on_progress = on_progress or (lambda _: None)
         self.on_log = on_log or (lambda _: None)
@@ -408,13 +544,36 @@ def run_send_job(cfg: SendConfig) -> dict:
     if cfg.warmup_mode:
         log("WARM-UP MODE active — slower delays")
 
-    all_emails = extract_emails_from_pdfs(
-        cfg.pdf_paths, cfg.excluded_domains, cfg.excluded_emails, log=log
-    )
+    occurrence: Dict[str, int] = {}
+    if cfg.manual_emails is not None:
+        log(f"Manual mode — {len(cfg.manual_emails)} recipient(s) provided")
+        for e in cfg.manual_emails:
+            occurrence[e] = occurrence.get(e, 0) + 1
+        all_emails = occurrence
+        ordered = list(dict.fromkeys(cfg.manual_emails))
+    else:
+        all_emails = extract_emails_from_pdfs(
+            cfg.pdf_paths, cfg.excluded_domains, cfg.excluded_emails, log=log
+        )
+        ordered = sorted(all_emails.keys())
+
     sent_before = load_sent_emails(cfg.sent_file)
-    send_list = sorted(e for e in all_emails if e not in sent_before)
-    if cfg.daily_cap is not None:
-        send_list = send_list[: cfg.daily_cap]
+    if cfg.skip_already_sent:
+        send_list = [e for e in ordered if e not in sent_before]
+    else:
+        send_list = list(ordered)
+
+    # EmailManual-style: remaining room under today's daily log count
+    effective_cap = cfg.daily_cap
+    if cfg.respect_daily_log_cap and cfg.daily_cap is not None:
+        already_today = get_today_sent_count(cfg.daily_log_file)
+        remaining = max(0, cfg.daily_cap - already_today)
+        log(
+            f"Daily cap: {cfg.daily_cap} | sent today: {already_today} | remaining: {remaining}"
+        )
+        effective_cap = remaining
+    if effective_cap is not None:
+        send_list = send_list[: effective_cap]
 
     result = {
         "total_found": len(all_emails),
@@ -423,6 +582,7 @@ def run_send_job(cfg: SendConfig) -> dict:
         "sent": 0,
         "dry_run": cfg.dry_run,
         "stopped": False,
+        "mode": cfg.mode,
     }
     cfg.on_progress({**result, "running": True, "phase": "queued"})
 
@@ -437,7 +597,7 @@ def run_send_job(cfg: SendConfig) -> dict:
             writer = csv.writer(f)
             writer.writerow(["Email", "Occurrences"])
             for e in send_list:
-                writer.writerow([e, all_emails[e]])
+                writer.writerow([e, all_emails.get(e, 1)])
         log(f"Preview written ({len(send_list)} rows).")
         cfg.on_progress({**result, "running": False, "phase": "preview"})
         return result
@@ -449,14 +609,24 @@ def run_send_job(cfg: SendConfig) -> dict:
     total = len(send_list)
     sent_count = 0
     domain_count: Dict[str, int] = {}
+    rate_limiter = HourlyRateLimiter(cfg.max_per_hour or 0, log=log)
     account_idx = 0
     server, account_idx = connect_smtp_with_fallback(cfg.accounts, account_idx, log=log)
     current_email = cfg.accounts[account_idx]["email"]
-    log(f"Starting send: {total} emails | Batch: {cfg.batch_size} | Account: {current_email}")
+    log(
+        f"Starting send ({cfg.mode}): {total} emails | Batch: {cfg.batch_size}"
+        + (f" | Max/hour: {cfg.max_per_hour}" if cfg.max_per_hour else "")
+        + f" | Account: {current_email}"
+    )
 
     for i, to_email in enumerate(send_list):
         if cfg.stop_flag():
             log("Stop requested — ending send job.")
+            result["stopped"] = True
+            break
+
+        if not rate_limiter.wait_if_needed(cfg.stop_flag):
+            log("Stop requested during hourly wait.")
             result["stopped"] = True
             break
 
@@ -497,6 +667,7 @@ def run_send_job(cfg: SendConfig) -> dict:
         try:
             server.send_message(msg)
             sent_count += 1
+            rate_limiter.record()
             mark_sent(cfg.sent_file, to_email)
             log(f"Sent [{sent_count}/{total}] → {to_email} (via {current_email})")
         except smtplib.SMTPRecipientsRefused:
@@ -512,6 +683,7 @@ def run_send_job(cfg: SendConfig) -> dict:
                 )
                 server.send_message(msg)
                 sent_count += 1
+                rate_limiter.record()
                 mark_sent(cfg.sent_file, to_email)
                 log(f"Sent (retry) [{sent_count}/{total}] → {to_email}")
             except Exception as exc:
@@ -534,6 +706,7 @@ def run_send_job(cfg: SendConfig) -> dict:
                     )
                     server.send_message(msg)
                     sent_count += 1
+                    rate_limiter.record()
                     mark_sent(cfg.sent_file, to_email)
                     log(f"Sent (switched) [{sent_count}/{total}] → {to_email}")
                 except RuntimeError:
