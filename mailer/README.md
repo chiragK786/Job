@@ -1,6 +1,8 @@
 # Mailer Desk
 
-`No_Limit.py` logic as a **Python FastAPI backend**, plus a **static frontend** you can host for free with **no credit card**.
+`No_Limit.py` + `EmailManual.py` as one app: **Python FastAPI backend + web UI**.
+
+**Phone se kahin se bhi use:** see [MOBILE.md](./MOBILE.md) — deploy once to **Koyeb free**, then open that single URL on mobile (no laptop).
 
 ```
 mailer/

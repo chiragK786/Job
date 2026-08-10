@@ -98,7 +98,38 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: center;
+}
+
+.health-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.conn-settings {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.45);
+}
+
+.conn-settings summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--pine-deep);
+  padding: 4px 0;
+}
+
+.conn-settings[open] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: end;
+}
+
+.conn-settings[open] summary {
+  width: 100%;
 }
 
 .field {

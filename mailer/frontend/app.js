@@ -24,8 +24,18 @@ const $ = (id) => document.getElementById(id);
 let currentMode = localStorage.getItem("mailer_mode") || "pdf";
 
 function loadCfg() {
-  $("apiUrl").value = localStorage.getItem("mailer_api_url") || "http://127.0.0.1:8000";
-  $("apiKey").value = localStorage.getItem("mailer_api_key") || "";
+  const baked = window.MAILER_CONFIG || {};
+  const savedUrl = localStorage.getItem("mailer_api_url");
+  // blank apiUrl = same origin (use on Koyeb / any combined host)
+  if (savedUrl !== null) {
+    $("apiUrl").value = savedUrl;
+  } else if (baked.apiUrl != null && baked.apiUrl !== undefined) {
+    $("apiUrl").value = baked.apiUrl;
+  } else {
+    $("apiUrl").value = "";
+  }
+  $("apiKey").value =
+    localStorage.getItem("mailer_api_key") || baked.apiKey || "";
   $("subject").value = localStorage.getItem("mailer_subject") || DEFAULT_SUBJECT;
   $("body").value = localStorage.getItem("mailer_body") || DEFAULT_BODY;
   setMode(currentMode, false);
@@ -42,6 +52,7 @@ function saveCfg() {
 }
 
 function apiBase() {
+  // Empty → same origin (mobile cloud deploy)
   return ($("apiUrl").value || "").trim().replace(/\/$/, "");
 }
 
@@ -274,11 +285,21 @@ async function poll() {
 
 async function pingHealth() {
   const dot = $("healthDot");
+  const label = $("healthLabel");
   try {
     const r = await fetch(`${apiBase()}/api/health`);
-    dot.className = "dot " + (r.ok ? "ok" : "bad");
+    const ok = r.ok;
+    dot.className = "dot " + (ok ? "ok" : "bad");
+    if (label) {
+      label.textContent = ok ? "online — ready on mobile" : "backend offline";
+    }
   } catch {
     dot.className = "dot bad";
+    if (label) {
+      label.textContent = apiBase()
+        ? "backend offline — check API URL"
+        : "open the Koyeb URL (not GitHub Pages) for anywhere-mobile";
+    }
   }
 }
 

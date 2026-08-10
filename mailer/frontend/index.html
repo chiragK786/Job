@@ -21,16 +21,20 @@
       </div>
     </div>
     <div class="conn">
-      <label class="field inline">
-        <span>API URL</span>
-        <input id="apiUrl" type="url" placeholder="https://your-backend.pythonanywhere.com" autocomplete="off" />
-      </label>
-      <label class="field inline">
-        <span>API Key</span>
-        <input id="apiKey" type="password" placeholder="X-API-Key" autocomplete="off" />
-      </label>
-      <button type="button" class="ghost" id="btnSaveCfg">Save</button>
       <span id="healthDot" class="dot" title="Backend health"></span>
+      <span id="healthLabel" class="health-label">checking…</span>
+      <details class="conn-settings">
+        <summary>Server</summary>
+        <label class="field inline">
+          <span>API URL <small>blank = this site</small></span>
+          <input id="apiUrl" type="url" placeholder="leave blank on Koyeb URL" autocomplete="off" />
+        </label>
+        <label class="field inline">
+          <span>API Key</span>
+          <input id="apiKey" type="password" placeholder="if you set API_KEY on server" autocomplete="off" />
+        </label>
+        <button type="button" class="ghost" id="btnSaveCfg">Save</button>
+      </details>
     </div>
   </header>
 
@@ -156,10 +160,10 @@
   </main>
 
   <footer class="foot">
-    Modes: <strong>PDF lists</strong> (No_Limit) · <strong>Manual emails</strong> (EmailManual).
-    Frontend on GitHub Pages · backend on your machine / PythonAnywhere.
+    PDF lists + Manual emails · open this URL on phone from anywhere after cloud deploy.
   </footer>
 
+  <script src="./config.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

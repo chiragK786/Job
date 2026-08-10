@@ -25,6 +25,7 @@ from typing import List, Optional, Set
 
 from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from mailer_core import (
@@ -41,6 +42,11 @@ from mailer_core import (
 )
 
 BASE_DIR = Path(__file__).resolve().parent
+# frontend/ sits next to backend/ in the mailer/ folder (also copied into image)
+FRONTEND_DIR = Path(os.environ.get("FRONTEND_DIR", BASE_DIR.parent / "frontend"))
+if not FRONTEND_DIR.exists():
+    FRONTEND_DIR = BASE_DIR / "frontend"
+
 DATA_DIR = Path(os.environ.get("DATA_DIR", BASE_DIR / "data"))
 UPLOAD_DIR = DATA_DIR / "uploads"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -55,7 +61,7 @@ CORS_ORIGINS = [
     if o.strip()
 ]
 
-app = FastAPI(title="Mailer API", version="1.0.0")
+app = FastAPI(title="Mailer API", version="1.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS if CORS_ORIGINS != ["*"] else ["*"],
@@ -436,6 +442,26 @@ def _parse_accounts_override(raw: str) -> List[dict]:
         email, password = part.split(":", 1)
         accounts.append({"email": email.strip(), "password": password.strip()})
     return accounts
+
+
+# ── Serve the mobile web UI from the SAME URL as the API ──────────────
+# Registered last so /api/* keeps priority.
+if FRONTEND_DIR.exists():
+
+    @app.get("/")
+    def ui_index():
+        return FileResponse(FRONTEND_DIR / "index.html")
+
+    @app.get("/{asset_path:path}")
+    def ui_assets(asset_path: str):
+        if asset_path.startswith("api/") or asset_path.startswith("docs") or asset_path.startswith("openapi"):
+            raise HTTPException(status_code=404, detail="Not found")
+        candidate = (FRONTEND_DIR / asset_path).resolve()
+        if not str(candidate).startswith(str(FRONTEND_DIR.resolve())):
+            raise HTTPException(status_code=404, detail="Not found")
+        if candidate.is_file():
+            return FileResponse(candidate)
+        raise HTTPException(status_code=404, detail="Not found")
 
 
 if __name__ == "__main__":
