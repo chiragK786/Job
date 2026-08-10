@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mailer Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <h1>Mailer Desk</h1>
+        <p>Upload lists · preview · send with your Gmail backend</p>
+      </div>
+    </div>
+    <div class="conn">
+      <label class="field inline">
+        <span>API URL</span>
+        <input id="apiUrl" type="url" placeholder="https://your-backend.pythonanywhere.com" autocomplete="off" />
+      </label>
+      <label class="field inline">
+        <span>API Key</span>
+        <input id="apiKey" type="password" placeholder="X-API-Key" autocomplete="off" />
+      </label>
+      <button type="button" class="ghost" id="btnSaveCfg">Save</button>
+      <span id="healthDot" class="dot" title="Backend health"></span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <h2>Campaign</h2>
+
+      <label class="field">
+        <span>Job list PDF(s)</span>
+        <input id="pdfs" type="file" accept=".pdf,application/pdf" multiple />
+      </label>
+
+      <label class="field">
+        <span>Resume attachment</span>
+        <input id="resume" type="file" accept=".pdf,application/pdf" />
+      </label>
+
+      <label class="field">
+        <span>Subject</span>
+        <input id="subject" type="text" />
+      </label>
+
+      <label class="field">
+        <span>HTML body</span>
+        <textarea id="body" rows="10"></textarea>
+      </label>
+
+      <div class="row">
+        <label class="field">
+          <span>Reply-To</span>
+          <input id="replyTo" type="email" placeholder="same as sender if blank" />
+        </label>
+        <label class="field">
+          <span>Daily cap (optional)</span>
+          <input id="dailyCap" type="number" min="1" placeholder="e.g. 100" />
+        </label>
+      </div>
+
+      <details class="advanced">
+        <summary>Advanced</summary>
+        <label class="field">
+          <span>Gmail accounts override <small>email:app_password;email2:pass2</small></span>
+          <input id="gmailAccounts" type="password" placeholder="leave blank to use server env" autocomplete="off" />
+        </label>
+        <div class="row">
+          <label class="field">
+            <span>Excluded domains</span>
+            <input id="excludedDomains" type="text" placeholder="squareboat.com, hudle.in" />
+          </label>
+          <label class="field">
+            <span>Excluded emails</span>
+            <input id="excludedEmails" type="text" placeholder="info@example.com" />
+          </label>
+        </div>
+        <div class="checks">
+          <label><input id="dryRun" type="checkbox" /> Dry run (preview only)</label>
+          <label><input id="checkBounces" type="checkbox" checked /> Check IMAP bounces</label>
+          <label><input id="warmup" type="checkbox" /> Warm-up mode</label>
+        </div>
+        <label class="field">
+          <span>Batch size</span>
+          <input id="batchSize" type="number" min="1" value="50" />
+        </label>
+      </details>
+
+      <div class="actions">
+        <button type="button" class="ghost" id="btnPreview">Preview recipients</button>
+        <button type="button" class="primary" id="btnStart">Start sending</button>
+        <button type="button" class="danger" id="btnStop" disabled>Stop</button>
+      </div>
+      <p id="formError" class="error" hidden></p>
+    </section>
+
+    <section class="panel stats-panel">
+      <h2>Status <span id="phaseBadge" class="badge">idle</span></h2>
+      <div class="stats">
+        <div class="stat"><span>Found</span><strong id="sFound">–</strong></div>
+        <div class="stat"><span>Already sent</span><strong id="sSentBefore">–</strong></div>
+        <div class="stat"><span>Queued</span><strong id="sQueued">–</strong></div>
+        <div class="stat"><span>Sent this run</span><strong id="sSentNow">0</strong></div>
+        <div class="stat"><span>Accounts on server</span><strong id="sAccounts">–</strong></div>
+      </div>
+      <div class="progress-wrap">
+        <div id="progressBar" class="progress"></div>
+      </div>
+      <p class="hint" id="currentLine">Waiting for backend…</p>
+
+      <h3>Sample recipients</h3>
+      <ul id="sampleList" class="sample"></ul>
+
+      <h3>Live log</h3>
+      <pre id="log" class="log"></pre>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Frontend is static — host free on
+    <a href="https://pages.cloudflare.com/" target="_blank" rel="noopener">Cloudflare Pages</a>
+    or
+    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+    (no card). Backend runs separately (PythonAnywhere free / your machine).
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
