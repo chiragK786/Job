@@ -132,6 +132,9 @@ def extract_emails_from_pdfs(
 ) -> Dict[str, int]:
     import pdfplumber
 
+    # Harmless pdfminer noise on many job-list PDFs (CropBox → MediaBox).
+    logging.getLogger("pdfminer").setLevel(logging.ERROR)
+
     counts: Dict[str, int] = {}
     skipped = 0
     for path_str in pdf_paths:
