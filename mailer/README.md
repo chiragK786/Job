@@ -1,6 +1,8 @@
 # Mailer Desk
 
-`No_Limit.py` logic as a **Python FastAPI backend**, plus a **static frontend** you can host for free with **no credit card**.
+`No_Limit.py` + `EmailManual.py` as one app: **Python FastAPI backend + web UI**.
+
+**Phone se kahin se bhi use:** see [MOBILE.md](./MOBILE.md) — deploy once to **Koyeb free**, then open that single URL on mobile (no laptop).
 
 ```
 mailer/
@@ -129,6 +131,15 @@ Paste the `https://….trycloudflare.com` URL into the frontend **API URL**.
 
 ---
 
+## Modes in the UI
+
+| Tab | Same as | Recipients |
+|-----|---------|------------|
+| **PDF lists** | `No_Limit.py` | Extract from uploaded PDFs |
+| **Manual emails** | `EmailManual.py` | Paste list and/or CSV (`Email` column) |
+
+Manual mode defaults: batch 40, max 55/hour, daily cap 250, respects today's send count.
+
 ## API quick reference
 
 | Method | Path | Purpose |
@@ -136,7 +147,9 @@ Paste the `https://….trycloudflare.com` URL into the frontend **API URL**.
 | GET | `/api/health` | Public ping |
 | GET | `/api/status` | Job + live log |
 | POST | `/api/preview` | Extract emails from PDFs |
-| POST | `/api/start` | Start send / dry-run |
+| POST | `/api/start` | Start PDF send / dry-run |
+| POST | `/api/manual/preview` | Preview pasted / CSV emails |
+| POST | `/api/manual/start` | Start manual send / dry-run |
 | POST | `/api/stop` | Request stop |
 
 All routes except `/api/health` require header `X-API-Key` when `API_KEY` is set.

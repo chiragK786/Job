@@ -42,7 +42,7 @@ from typing import Dict, List, Set, Union
 # ─────────────────────────────────────────────
 #  ✅ ADD YOUR EMAILS HERE (manual list)
 # ─────────────────────────────────────────────
-MANUAL_EMAILS: List[str] = ["h.salama@minds_pool.com","Sunil.b@dprsolutionsinc.com","recruitment@atdrive.com"
+MANUAL_EMAILS: List[str] = ["a.vagga@zensar.com"
     # "hr@company1.com",
     # "recruiter@company2.com",
 ]
@@ -52,14 +52,14 @@ MANUAL_EMAILS: List[str] = ["h.salama@minds_pool.com","Sunil.b@dprsolutionsinc.c
 #  CSV can have a header called "Email" (any case), or no header at all
 #  (first column is treated as the email).
 # ─────────────────────────────────────────────
-MANUAL_EMAILS_CSV: str = ""   # e.g. "recipients.csv" — leave blank to skip
+MANUAL_EMAILS_CSV: str = "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Email - Sheet1.csv"   # e.g. "recipients.csv" — leave blank to skip
 
 # ─────────────────────────────────────────────
 #  CONFIG — fill these in yourself
 # ─────────────────────────────────────────────
 ATTACHMENT_PATH = (
     "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
-    "Kanishkakohli_Resume (2).pdf"
+    "KanishkaKohli - Resume.pdf"
 )
 
 EMAIL_ADDRESS  = "kanishkakohli4@gmail.com"

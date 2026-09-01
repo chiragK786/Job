@@ -98,7 +98,38 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: center;
+}
+
+.health-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.conn-settings {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.45);
+}
+
+.conn-settings summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--pine-deep);
+  padding: 4px 0;
+}
+
+.conn-settings[open] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: end;
+}
+
+.conn-settings[open] summary {
+  width: 100%;
 }
 
 .field {
@@ -185,6 +216,41 @@ input:focus, textarea:focus {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 4px;
+  background: rgba(232, 223, 207, 0.55);
+  border-radius: 12px;
+}
+
+.mode-tab {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.mode-tab:hover:not(:disabled) { transform: none; }
+
+.mode-tab.active {
+  background: #fff;
+  color: var(--pine-deep);
+  box-shadow: 0 4px 14px rgba(26, 34, 32, 0.08);
+}
+
+.mode-hint {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .panel h3 {

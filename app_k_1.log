@@ -1,0 +1,54 @@
+2026-07-13 17:16:03  INFO      Daily cap: 40 | Sent today: 0 | Remaining: 40
+2026-07-13 17:16:03  INFO      Total unique valid emails loaded: 1
+2026-07-13 17:16:03  INFO      New recipients to send today: 1
+2026-07-13 17:16:06  INFO      Connected via 587 (STARTTLS) — attempt 1
+2026-07-13 17:16:09  INFO      [1/1] Sent -> chiragkhanduja786@gmail.com
+2026-07-13 17:16:20  INFO      Done — sent 1/1 emails today.
+2026-07-15 11:55:53  INFO      Daily cap: 40 | Sent today: 0 | Remaining: 40
+2026-07-15 11:55:53  INFO      Loaded from CSV: Email - Sheet1.csv
+2026-07-15 11:55:53  DEBUG     Excluded: naiteik.mishra@cognizant.com
+2026-07-15 11:55:53  DEBUG     Excluded: naiteik.mishra@cognizant.com
+2026-07-15 11:55:53  INFO      Total unique valid emails loaded: 91
+2026-07-15 11:55:53  INFO      New recipients to send today: 40
+2026-07-15 11:55:55  INFO      Connected via 587 (STARTTLS) — attempt 1
+2026-07-15 11:55:58  INFO      [1/40] Sent -> pranjal.mishra@parahittech.com
+2026-07-15 11:56:09  INFO      [2/40] Sent -> akumar@anemoprime.com
+2026-07-15 11:56:19  INFO      [3/40] Sent -> sonam.kumari@tanishasystems.com
+2026-07-15 11:56:29  INFO      [4/40] Sent -> juhi.kumari@flipkart.com
+2026-07-15 11:56:40  INFO      [5/40] Sent -> sachin@questhiring.com
+2026-07-15 11:56:52  INFO      [6/40] Sent -> bharat.chauhan@lenskart.com
+2026-07-15 11:57:03  INFO      [7/40] Sent -> akansha.kumari@genpact.com
+2026-07-15 11:57:12  INFO      [8/40] Sent -> shrutirohilla@urbancompany.com
+2026-07-15 11:57:23  INFO      [9/40] Sent -> arpit.sharma@seedsfincap.com
+2026-07-15 11:57:33  INFO      [10/40] Sent -> shweta@credebadvisors.com
+2026-07-15 11:57:46  INFO      [11/40] Sent -> astha.b@getnitro.co
+2026-07-15 11:57:58  INFO      [12/40] Sent -> vijay@impressionsgroup.in
+2026-07-15 11:58:08  INFO      [13/40] Sent -> arjita@talentsquad.co.in
+2026-07-15 11:58:20  INFO      [14/40] Sent -> vineet@minutesbazaar.in
+2026-07-15 11:58:32  INFO      [15/40] Sent -> shivam.singh@agoda.com
+2026-07-15 11:58:45  INFO      [16/40] Sent -> priya.gupta@successpact.com
+2026-07-15 11:58:59  INFO      [17/40] Sent -> chanchal.sharma@enco.in
+2026-07-15 11:59:10  INFO      [18/40] Sent -> ankita.patel@tanishasystems.com
+2026-07-15 11:59:23  INFO      [19/40] Sent -> kumara@gic.com.sg
+2026-07-15 11:59:36  INFO      [20/40] Sent -> navya.suri@gabit.com
+2026-07-15 11:59:47  INFO      [21/40] Sent -> khushi.modi@codersbrain.com
+2026-07-15 12:00:01  INFO      [22/40] Sent -> banikaur@policybazaar.com
+2026-07-15 12:00:14  INFO      [23/40] Sent -> amit.saha@gitgeeks.com
+2026-07-15 12:00:28  INFO      [24/40] Sent -> diksha7241@rotarypublicschool.org
+2026-07-15 12:00:43  INFO      [25/40] Sent -> yashasvi.lakhmera@taskus.com
+2026-07-15 12:00:55  INFO      [26/40] Sent -> vaishnavi@hunar.ai
+2026-07-15 12:01:05  INFO      [27/40] Sent -> kusum@allureglobalsourcing.com
+2026-07-15 12:01:14  INFO      [28/40] Sent -> bb@jbmgroup.com
+2026-07-15 12:01:25  INFO      [29/40] Sent -> anamika.singh@cooperlybranth.com
+2026-07-15 12:01:34  INFO      [30/40] Sent -> sonia@devnexussolutions.com
+2026-07-15 12:01:43  INFO      [31/40] Sent -> rohit@exceltechcomputers.com
+2026-07-15 12:01:52  INFO      [32/40] Sent -> khushboopathak@trcconsulting.org
+2026-07-15 12:02:04  INFO      [33/40] Sent -> mgupta@srsicorp.com
+2026-07-15 12:02:18  INFO      [34/40] Sent -> ksharma@deloitte.co.uk
+2026-07-15 12:02:29  INFO      [35/40] Sent -> arti.k@focusinfotech.com
+2026-07-15 12:02:42  INFO      [36/40] Sent -> dishi@talentsquad.co.in
+2026-07-15 12:02:52  INFO      [37/40] Sent -> umesh.singh@sisindia.com
+2026-07-15 12:03:00  INFO      [38/40] Sent -> mahi.rawat@getwork.org
+2026-07-15 12:03:14  INFO      [39/40] Sent -> asingh@deloitte.com
+2026-07-15 12:03:23  INFO      [40/40] Sent -> tanisha@superwaveinfra.com
+2026-07-15 12:03:32  INFO      Done — sent 40/40 emails today.

@@ -29,12 +29,12 @@ from typing import Set, List, Dict
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/PycharmProjects/PythonProject11/Pune Mumbai (6).pdf",
+    "/Users/chiragkhanduja/Downloads/NCR_Noida_Delhi_Gurgaon (5).pdf",
 ]
 
 ATTACHMENT_PATH = (
     "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
-    "Kanishkakohli_Resume (2).pdf"
+    "Kanishka Kohli - CV (1).pdf"
 )
 
 EMAIL_ADDRESS  = "kanishkakohli4@gmail.com"
@@ -100,66 +100,64 @@ WARMUP_DELAY       = (8, 15)
 #  EMAIL CONTENT
 # ─────────────────────────────────────────────
 EMAIL_SUBJECT = (
-    "Exploring HR Opportunities | Sr. HR Executive – 4 Years Experience"
+    "HR Business Partner | HR Operations | 4+ Years of Experience"
 )
 
 EMAIL_BODY = """\
 <p>Dear Hiring Manager,</p>
 
+<p>I hope you're doing well.</p>
+
 <p>
-I am writing to express my strong interest in an HR opportunity within your organization.
-With <strong>close to 4 years</strong> of hands-on experience across core HR functions, I am
-confident in my ability to contribute meaningfully to people operations, employee engagement,
-and strategic HR initiatives.
+I am reaching out to express my interest in opportunities within
+<strong>HR Business Partnering, HR Operations, and People Operations</strong>.
 </p>
 
-<p><strong>Here is a brief overview of what I bring to the role:</strong></p>
+<p>
+With <strong>4+ years of experience</strong>, here's a quick snapshot of my expertise:
+</p>
 <ul>
   <li>
-    <strong>HR Operations:</strong> Extensive experience managing end-to-end people processes
-    in fast-paced environments, ensuring smooth and compliant day-to-day HR functioning.
+    Partnered with business leaders on
+    <strong>workforce planning, resource allocation, performance management, and employee relations</strong>
+    to support business priorities.
   </li>
   <li>
-    <strong>Employee Engagement &amp; Performance Management:</strong> Proven track record of
-    driving engagement initiatives and supporting performance cycles that foster a motivated
-    and high-performing workforce.
+    <strong>Managed end-to-end HR Operations</strong>, including employee lifecycle,
+    HR documentation, payroll coordination, HRIS, policy implementation, and compliance.
   </li>
   <li>
-    <strong>Stakeholder &amp; Resource Management:</strong> Skilled at collaborating with
-    cross-functional teams and managing resources effectively to meet evolving business
-    requirements.
+    <strong>Led Talent Acquisition</strong> by collaborating with hiring managers to close
+    critical positions and support project-driven workforce requirements.
   </li>
   <li>
-    <strong>Client &amp; Vendor Coordination:</strong> Hands-on experience liaising with
-    external clients and vendors to support organizational goals and maintain productive
-    partnerships.
+    <strong>Prepared HR reports and workforce dashboards</strong> to monitor headcount,
+    hiring progress, and resource planning, enabling informed people decisions.
   </li>
   <li>
-    <strong>Communication &amp; Problem-Solving:</strong> Strong interpersonal and
-    coordination skills with the ability to navigate complex situations and deliver
-    people-centric solutions.
+    <strong>Implemented HR policies, standardized internal processes, and supported change
+    management initiatives</strong> to improve process consistency and employee experience.
   </li>
 </ul>
 
 <p>
-I am currently looking for opportunities where I can grow further in strategic HR roles. I
-am open to positions across Pan India locations and am eager to bring my experience to an
-organization that values people, culture, and continuous growth.
+I am currently exploring opportunities where I can contribute as an HR Business Partner /
+HR Operations / People Operations professional while continuing to grow in a strategic HR role.
 </p>
 
 <p>
-I have attached my resume for your consideration. I would love the opportunity to connect
-for a brief conversation to explore how my background aligns with your team's needs.
+Please find my resume attached for your review. I would be grateful for an opportunity to
+connect and discuss how my experience can add value to your team.
 </p>
 
-<p>Thank you for your time and consideration. I look forward to hearing from you.</p>
+<p>Thank you for your time and consideration.</p>
 
 <p>
-<strong>Best regards,</strong><br>
+<strong>Best Regards</strong>,<br>
 Kanishka Kohli<br>
-Sr. HR Executive | HR Operations &amp; People Management<br>
-+91 9999926371<br>
-<a href="https://www.linkedin.com/in/kanishka-kohli2308/">linkedin.com/in/kanishka-kohli2308</a>
+Senior HR Executive | HRBP | HR Operations | People Operations<br>
+📞 +91 99999 26371<br>
+🔗 <a href="https://www.linkedin.com/in/kanishka-kohli2308/">linkedin.com/in/kanishka-kohli2308</a>
 </p>
 """
 

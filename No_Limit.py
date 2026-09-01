@@ -33,12 +33,12 @@ from typing import Set, List, Dict, Union, Tuple
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/Downloads/TestingJobs_FullList (2).pdf"
+    "/Users/chiragkhanduja/Downloads/Testing Jobs Full List (2).pdf",
 ]
 
 ATTACHMENT_PATH = (
     "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
-    "Chirag_Khanduja_SDET_QA_AI_Tester.pdf"
+    "Chirag_Khanduja_AITester_SDET_QA_Engineer.pdf"
 )
 
 # ── Accounts — primary first, fallback second ──

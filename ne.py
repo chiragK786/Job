@@ -9,8 +9,8 @@ from email.message import EmailMessage
 import mimetypes
 
 # --- CONFIGURATION ---
-pdf_path = "/Users/chiragkhanduja/Downloads/TestingJobs_FullList.pdf"
-excluded_domains = ['']
+pdf_path = "/Users/chiragkhanduja/Downloads/TestingJobs_FullList (1).pdf"
+excluded_domains = ['@hudle.com']
 emails = set()
 
 # --- DYNAMIC CSV FILENAME ---
@@ -153,7 +153,7 @@ for index, row in data.iterrows():
 server.quit()
 
 # === LOG EMAIL COUNT DATE-WISE ===
-log_file = '/Users/chiragkhanduja/PycharmProjects/PythonProject11/email_8.csv'
+log_file = '/Users/chiragkhanduja/PycharmProjects/PythonProject11/email_log.csv'
 today = datetime.now().strftime("%Y-%m-%d")
 
 if os.path.exists(log_file):

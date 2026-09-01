@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: mailer-desk
+    runtime: docker
+    plan: free
+    branch: mailer-pages
+    rootDir: mailer
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: FRONTEND_DIR
+        value: /app/frontend
+      - key: DATA_DIR
+        value: /app/data
+      - key: GMAIL_ADDRESS
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false
+      - key: API_KEY
+        sync: false

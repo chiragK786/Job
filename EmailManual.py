@@ -22,7 +22,7 @@ from typing import Set, List, Dict, Union
 # ─────────────────────────────────────────────
 #  ✅ ADD YOUR EMAILS HERE (manual list)
 # ─────────────────────────────────────────────
-MANUAL_EMAILS: List[str] = ["kumari.singh@birlasoft.com","Bhupesh.Mahara@birlasoft.com"
+MANUAL_EMAILS: List[str] = ["ayushi.sharma1@orcapod.work"
                             #hr@company1.com",
 
 
@@ -47,7 +47,7 @@ MANUAL_EMAILS_CSV: str = ""  # Example: "/Users/yourname/Desktop/manual_emails.c
 # ─────────────────────────────────────────────
 ATTACHMENT_PATH = (
     "/Users/chiragkhanduja/PycharmProjects/PythonProject11/"
-    "Chirag_Khanduja_SDET_QA_AI_Tester.pdf"
+    "Chirag_Khanduja_QA_Resume_AI_SDET.pdf"
 )
 
 EMAIL_ADDRESS = "chiragkhanduja786@gmail.com"
