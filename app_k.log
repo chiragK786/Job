@@ -7784,3 +7784,49 @@
 2026-09-01 10:39:09  INFO      📊 Total sent all time: 3034
 2026-09-01 10:39:09  INFO      All emails sent. Deleting source PDF(s)…
 2026-09-01 10:39:09  INFO      🗑  Deleted PDF: NCR_Noida_Delhi_Gurgaon (5).pdf
+2026-09-02 09:58:54  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-09-02 09:58:54  INFO      ⛔ Excluded domains (27): bonami.in, cgi.com, cognizant.com, dotpe.in, dronamaps.com, earthclock.in, embglobal.com, grappus.com, herovired.com, hudle.in, idreamcareer.com, infosys.com, legistify.com, locofast.com, ongrid.in, primathon.in, pushowl.com, questt.com, raftlabs.co, rayosys.com, scuderia.in, sparkeighteen.com, squareboat.com, squareops.com, tradingwithvivek.com, venturasecurities.com, wizzybox.com
+2026-09-02 09:58:54  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon.pdf
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:54  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  DEBUG     ⛔ Excluded: info@jobcurator.in
+2026-09-02 09:58:55  INFO      Unique emails found: 25  |  Excluded (domain/email filter): 21
+2026-09-02 09:58:55  INFO      Already sent (all time): 3034  |  New to send today: 14
+2026-09-02 09:58:55  INFO      🚀 Starting send: 14 emails | Batch size: 40 | Max/hour: 55
+2026-09-02 09:58:56  INFO      ✅ SMTP connected
+2026-09-02 09:58:59  INFO      ✔ [1/14] Sent → anu.shekhar@onzestt.com
+2026-09-02 09:59:07  INFO      ✔ [2/14] Sent → bharathi.d@upstreamgs.com
+2026-09-02 09:59:13  INFO      ✔ [3/14] Sent → chaudhary.pratima@orangemantra.in
+2026-09-02 09:59:21  INFO      ✔ [4/14] Sent → deepali.dogra@akivna.com
+2026-09-02 09:59:28  INFO      ✔ [5/14] Sent → deshpreet@icsglobal.in
+2026-09-02 09:59:37  INFO      ✔ [6/14] Sent → fathima.sajid@warpdrivetech.in
+2026-09-02 09:59:46  INFO      ✔ [7/14] Sent → hr@areteminds.com
+2026-09-02 09:59:54  INFO      ✔ [8/14] Sent → komal.pal@asyvainfotech.com
+2026-09-02 10:00:00  INFO      ✔ [9/14] Sent → kritika.srivastava@akvina.com
+2026-09-02 10:00:09  INFO      ✔ [10/14] Sent → kumari.savita@ebix.com
+2026-09-02 10:00:15  INFO      ✔ [11/14] Sent → muthu.kumar@agiliztech.ai
+2026-09-02 10:00:24  INFO      ✔ [12/14] Sent → nitin.bajaj@securitas.in
+2026-09-02 10:00:32  INFO      ✔ [13/14] Sent → preeti.tanwar@hashtagorange.in
+2026-09-02 10:00:39  INFO      ✔ [14/14] Sent → saloni.verma@telesourcenow.com
+2026-09-02 10:00:44  INFO      🎉 Done — 14/14 emails sent today.
+2026-09-02 10:00:44  INFO      📊 Total sent all time: 3048
+2026-09-02 10:00:44  INFO      All emails sent. Deleting source PDF(s)…
+2026-09-02 10:00:44  INFO      🗑  Deleted PDF: NCR_Noida_Delhi_Gurgaon.pdf

@@ -29,7 +29,7 @@ from typing import Set, List, Dict
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/Downloads/NCR_Noida_Delhi_Gurgaon (5).pdf",
+    "/Users/chiragkhanduja/Downloads/NCR_Noida_Delhi_Gurgaon.pdf",
 ]
 
 ATTACHMENT_PATH = (

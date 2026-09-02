@@ -33,7 +33,7 @@ from typing import Set, List, Dict, Union, Tuple
 #  CONFIG
 # ─────────────────────────────────────────────
 PDF_PATHS: List[str] = [
-    "/Users/chiragkhanduja/Downloads/Testing Jobs Full List (2).pdf",
+    "/Users/chiragkhanduja/Downloads/Testing Jobs Full List (1).pdf",
 ]
 
 ATTACHMENT_PATH = (
@@ -96,7 +96,7 @@ EMAIL_BODY = """\
 I am writing to express my strong interest in a QA Automation Engineer / SDET opportunity
 at your organization. With <strong>4 years</strong> of hands-on experience building and scaling
 test automation frameworks, I am confident in my ability to deliver measurable improvements
-in software quality, release velocity, and test coverage.
+in software quality, release velocity, and test coverage. I am available to join immediately.
 </p>
 
 <p><strong>Here is a brief overview of what I bring to the role:</strong></p>
@@ -106,11 +106,11 @@ in software quality, release velocity, and test coverage.
     Appium to design and maintain robust end-to-end and cross-platform test suites.
   </li>
   <li>
-    <strong>API &amp; Integration Testing:</strong> Extensive experience validating REST APIs
+    <strong>API and Integration Testing:</strong> Extensive experience validating REST APIs
     using Postman and building automated integration checks for reliable service communication.
   </li>
   <li>
-    <strong>Test Strategy &amp; Engineering:</strong> Designed regression suites and
+    <strong>Test Strategy and Engineering:</strong> Designed regression suites and
     release-ready test plans that reduced manual testing effort and improved defect detection.
   </li>
   <li>
@@ -126,7 +126,8 @@ in software quality, release velocity, and test coverage.
 <p>
 I am particularly drawn to organizations that value engineering quality and shift-left
 testing practices. I thrive in environments where test automation is treated as a
-first-class engineering discipline.
+first-class engineering discipline. I am immediately available to join and can start
+without a notice period.
 </p>
 
 <p>
@@ -139,7 +140,7 @@ for a brief 15-minute call to discuss how my experience aligns with your team's 
 <p>
 Warm regards,<br>
 <strong>Chirag Khanduja</strong><br>
-QA Automation Engineer | SDET<br>
+QA Automation Engineer | SDET | Available to Join Immediately<br>
 903-422-6868
 </p>
 """

@@ -1996,3 +1996,29 @@
 2026-09-01 10:39:09  INFO      📊 Total sent all time: 1366
 2026-09-01 10:39:09  INFO      All emails sent. Deleting source PDF(s)…
 2026-09-01 10:39:09  INFO      🗑  Deleted PDF: NCR_Noida_Delhi_Gurgaon (5).pdf
+2026-09-02 09:59:03  INFO      📅 Daily cap: 250 | Sent today: 0 | Remaining: 250
+2026-09-02 09:59:03  INFO      Reading PDF: NCR_Noida_Delhi_Gurgaon.pdf
+2026-09-02 09:59:04  INFO      Unique emails found across all PDFs: 25
+2026-09-02 09:59:04  INFO      Already sent (all time): 1366  |  New to send today: 16
+2026-09-02 09:59:04  INFO      🚀 Starting send: 16 emails | Batch size: 40 | Max/hour: 55
+2026-09-02 09:59:05  INFO      ✅ SMTP connected
+2026-09-02 09:59:08  INFO      ✔ [1/16] Sent → anu.shekhar@onzestt.com
+2026-09-02 09:59:16  INFO      ✔ [2/16] Sent → bharathi.d@upstreamgs.com
+2026-09-02 09:59:24  INFO      ✔ [3/16] Sent → chaudhary.pratima@orangemantra.in
+2026-09-02 09:59:32  INFO      ✔ [4/16] Sent → deepali.dogra@akivna.com
+2026-09-02 09:59:41  INFO      ✔ [5/16] Sent → deshpreet@icsglobal.in
+2026-09-02 09:59:48  INFO      ✔ [6/16] Sent → fathima.sajid@warpdrivetech.in
+2026-09-02 09:59:55  INFO      ✔ [7/16] Sent → hr@areteminds.com
+2026-09-02 10:00:02  INFO      ✔ [8/16] Sent → jasmitha.p@tscs.global
+2026-09-02 10:00:09  INFO      ✔ [9/16] Sent → komal.pal@asyvainfotech.com
+2026-09-02 10:00:18  INFO      ✔ [10/16] Sent → kritika.srivastava@akvina.com
+2026-09-02 10:00:23  INFO      ✔ [11/16] Sent → kumari.savita@ebix.com
+2026-09-02 10:00:31  INFO      ✔ [12/16] Sent → muthu.kumar@agiliztech.ai
+2026-09-02 10:00:40  INFO      ✔ [13/16] Sent → nitin.bajaj@securitas.in
+2026-09-02 10:00:47  INFO      ✔ [14/16] Sent → preeti.tanwar@hashtagorange.in
+2026-09-02 10:00:53  INFO      ✔ [15/16] Sent → saloni.verma@telesourcenow.com
+2026-09-02 10:01:00  INFO      ✔ [16/16] Sent → shubhangi@questhiring.com
+2026-09-02 10:01:06  INFO      🎉 Done — 16/16 emails sent today.
+2026-09-02 10:01:06  INFO      📊 Total sent all time: 1382
+2026-09-02 10:01:06  INFO      All emails sent. Deleting source PDF(s)…
+2026-09-02 10:01:06  INFO      🗑  Deleted PDF: NCR_Noida_Delhi_Gurgaon.pdf
